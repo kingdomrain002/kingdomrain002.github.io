@@ -95,8 +95,16 @@
         <h2 id="git-学习笔记"><a href="#git-学习笔记" class="headerlink" title="git 学习笔记"></a>git 学习笔记</h2><p>一句话介绍git：世界上目前最先进的分布式版本控制系统。</p>
 <p>最好的入门教程 : <a href="https://learngitbranching.js.org" target="_blank" rel="noopener">https://learngitbranching.js.org</a><br>最全的资料 : <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">https://git-scm.com/book/en/v2</a><br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/git/WX20180919-132910%402x.png" alt="Image text"><br>git官网地址 : <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a>  </p>
 <p>比较好的教程 :<br>1.廖雪峰git教程 <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a><br>2.菜鸟教程  <a href="http://www.runoob.com/git/git-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/git/git-tutorial.html</a>   </p>
-<p>廖雪峰git教程笔记:<br>CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别呢？集中式vs分布式?<br>CVS和SVN的缺点:<br>1.这些集中式的版本控制系统不但速度慢，而且必须联网才能使用。<br>2.Git极其强大的分支管理，把SVN等远远抛在了后面。</p>
+<p>廖雪峰git教程笔记:<br>实践出真知</p>
+<p>CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别呢？<br>CVS和SVN的缺点:<br>1.这些集中式的版本控制系统不但速度慢，而且必须联网才能使用。<br>2.Git极其强大的分支管理，把SVN等远远抛在了后面。</p>
+<p>集中式vs分布式?<br>分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步。</p>
 <p>Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub。</p>
+<p>暂存区是什么？</p>
+<p>为什么Git比其他版本控制系统设计得优秀？<br>因为Git跟踪并管理的是修改，而非文件。  </p>
+<p>如何关联远程库?</p>
+<p>分支管理<br>Git的分支是与众不同的，无论创建、切换和删除分支,都很快。因为创建、合并和删除分支非常快，所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，这和直接在master分支上工作效果是一样的，但过程更安全。</p>
+<p>进行分支管理的几个基本原则<br>1.master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；<br>2.干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；</p>
+<p>多人协作时大家的工作模式<br>大家都会往master和dev分支上推送各自的修改</p>
 
         
         
