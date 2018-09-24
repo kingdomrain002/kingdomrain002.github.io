@@ -210,15 +210,18 @@
         
 
         
-          <h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ol>
-<li><a href="https://cocoapods.org/" target="_blank" rel="noopener">cocoapods官网地址</a></li>
-</ol>
-<h2 id="我的实践笔记"><a href="#我的实践笔记" class="headerlink" title="我的实践笔记"></a>我的实践笔记</h2><p>1.创建的Git仓库<br>    大家通过pod安装第三方时，都需要在创建Podfile文件之后，在其头部添加source ‘<a href="https://github.com/CocoaPods/Specs’。访问该地址，显示如下图" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs’。访问该地址，显示如下图</a>.<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204445%402x.png" alt="CocoaPods/Specs"><br>   也就是它是CocoaPods的公共仓库。<br>   现在我们在码云上创建私有的Git仓库，将其命名成 <code>PrivatePodspec</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204758%402x.png" alt="CocoaPods/Specs"><br>      <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204831%402x.png" alt="CocoaPods/Specs"><br>      我们选择是否开源这里选中<code>公开</code>,添加开源许可证选择<code>MIT License</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-205246%402x.png" alt="CocoaPods/Specs"></p>
+          <h2 id="我的实践笔记"><a href="#我的实践笔记" class="headerlink" title="我的实践笔记"></a>我的实践笔记</h2><p>   这里就需要两个仓库,其中一个仓库是托管cocoapods所需要的配置文件,另外一个仓库才是存放我们的代码。</p>
+<p>1.创建的Git仓库<br>    大家通过pod安装第三方时，都需要在创建Podfile文件之后，在其头部添加source ‘<a href="https://github.com/CocoaPods/Specs’。访问该地址，显示如下图。" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs’。访问该地址，显示如下图。</a><br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204445%402x.png" alt="CocoaPods/Specs"><br>   cocoapods是通过.podspec文件来索引私有库真的存代码的仓库。其所有配置文件托管在Master Repo。podspec文件为你的代码仓库索引描述文件,CocoaPods通过该文件对你真正存储代码工程的Git仓库进行索引与下载。</p>
+<p>   现在我们在码云上创建私有的Git仓库，将其命名成 <code>PrivatePodspec</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204758%402x.png" alt="CocoaPods/Specs"><br>      <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204831%402x.png" alt="CocoaPods/Specs"><br>      我们选择是否开源这里选中<code>公开</code>,添加开源许可证选择<code>MIT License</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-205246%402x.png" alt="CocoaPods/Specs"></p>
 <p>2.创建私有Git仓库<br> 我们创建的第一个私有库名称为<code>TestPrivateLib</code>。<br>    <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212519%402x.png" alt="CocoaPods/Specs"><br>   我们选择是否开源这里选中<code>私有</code>。创建完成之后，显示如下:<br> <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212652%402x.png" alt="CocoaPods/Specs"></p>
 <p> 现在本地创建pod模板，然后再关联远程Git地址。</p>
 <p>3.上传.podspec到第一个远程私有仓库<br>cd ~/.cocoapods/repos</p>
 <p>创建一个私有仓库目录</p>
-<h4 id="如何使用私有库"><a href="#如何使用私有库" class="headerlink" title="如何使用私有库"></a>如何使用私有库</h4>
+<h4 id="如何使用私有库"><a href="#如何使用私有库" class="headerlink" title="如何使用私有库"></a>如何使用私有库</h4><h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ol>
+<li><a href="https://cocoapods.org/" target="_blank" rel="noopener">cocoapods官网地址</a>    </li>
+<li><a href="https://www.aliyun.com/jiaocheng/351617.html" target="_blank" rel="noopener">Cocoapods私有库管理</a></li>
+</ol>
+
         
       
     </div>
