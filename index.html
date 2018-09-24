@@ -187,6 +187,46 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/09/24/socket网络编程/">socket网络编程</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-09-24
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/09/22/私有pods创建/">私有pods创建</a>
         
       </h1>
@@ -211,13 +251,12 @@
 
         
           <h2 id="我的实践笔记"><a href="#我的实践笔记" class="headerlink" title="我的实践笔记"></a>我的实践笔记</h2><p>   这里就需要两个仓库,其中一个仓库是托管cocoapods所需要的配置文件,另外一个仓库才是存放我们的代码。</p>
-<p>1.创建的Git仓库<br>    大家通过pod安装第三方时，都需要在创建Podfile文件之后，在其头部添加source ‘<a href="https://github.com/CocoaPods/Specs’。访问该地址，显示如下图。" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs’。访问该地址，显示如下图。</a><br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204445%402x.png" alt="CocoaPods/Specs"><br>   cocoapods是通过.podspec文件来索引私有库真的存代码的仓库。其所有配置文件托管在Master Repo。podspec文件为你的代码仓库索引描述文件,CocoaPods通过该文件对你真正存储代码工程的Git仓库进行索引与下载。</p>
-<p>   现在我们在码云上创建私有的Git仓库，将其命名成 <code>PrivatePodspec</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204758%402x.png" alt="CocoaPods/Specs"><br>      <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204831%402x.png" alt="CocoaPods/Specs"><br>      我们选择是否开源这里选中<code>公开</code>,添加开源许可证选择<code>MIT License</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-205246%402x.png" alt="CocoaPods/Specs"></p>
+<p>1.创建管理podspec索引文件的Git仓库<br>    大家通过pod安装第三方时，都需要在创建Podfile文件之后，在其头部添加source ‘<a href="https://github.com/CocoaPods/Specs’。访问该地址，显示如下图。" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs’。访问该地址，显示如下图。</a><br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204445%402x.png" alt="CocoaPods/Specs"><br>   cocoapods是通过.podspec文件来索引私有库真的存代码的仓库。其所有配置文件托管在Master Repo。podspec文件为你的代码仓库索引描述文件,CocoaPods通过该文件对你真正存储代码工程的Git仓库进行索引与下载。<br>   现在我们在码云上创建私有的Git仓库，将其命名成 <code>PrivatePodspec</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204758%402x.png" alt="CocoaPods/Specs"><br>      <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204831%402x.png" alt="CocoaPods/Specs"><br>      我们选择是否开源这里选中<code>公开</code>,添加开源许可证选择<code>MIT License</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-205246%402x.png" alt="CocoaPods/Specs"></p>
 <p>2.创建私有Git仓库<br> 我们创建的第一个私有库名称为<code>TestPrivateLib</code>。<br>    <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212519%402x.png" alt="CocoaPods/Specs"><br>   我们选择是否开源这里选中<code>私有</code>。创建完成之后，显示如下:<br> <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212652%402x.png" alt="CocoaPods/Specs"></p>
 <p> 现在本地创建pod模板，然后再关联远程Git地址。</p>
 <p>3.上传.podspec到第一个远程私有仓库<br>cd ~/.cocoapods/repos</p>
 <p>创建一个私有仓库目录</p>
-<h4 id="如何使用私有库"><a href="#如何使用私有库" class="headerlink" title="如何使用私有库"></a>如何使用私有库</h4><h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ol>
+<h3 id="如何使用私有库"><a href="#如何使用私有库" class="headerlink" title="如何使用私有库"></a>如何使用私有库</h3><h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ol>
 <li><a href="https://cocoapods.org/" target="_blank" rel="noopener">cocoapods官网地址</a>    </li>
 <li><a href="https://www.aliyun.com/jiaocheng/351617.html" target="_blank" rel="noopener">Cocoapods私有库管理</a></li>
 </ol>
@@ -262,61 +301,6 @@
 
         
           <p>学习资料整理</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/19/git/">git</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-19
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h2 id="git-学习笔记"><a href="#git-学习笔记" class="headerlink" title="git 学习笔记"></a>git 学习笔记</h2><p>一句话介绍git：世界上目前最先进的分布式版本控制系统。</p>
-<p>最好的入门教程 : <a href="https://learngitbranching.js.org" target="_blank" rel="noopener">https://learngitbranching.js.org</a><br>最全的资料 : <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">https://git-scm.com/book/en/v2</a><br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/git/WX20180919-132910%402x.png" alt="Image text"><br>git官网地址 : <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a>  </p>
-<p>比较好的教程 :<br>1.<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰git教程</a><br>2.<a href="http://www.runoob.com/git/git-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a>   </p>
-<h3 id="廖雪峰git教程笔记"><a href="#廖雪峰git教程笔记" class="headerlink" title="廖雪峰git教程笔记"></a>廖雪峰git教程笔记</h3><p>实践出真知</p>
-<p>CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别呢？<br>CVS和SVN的缺点:<br>1.这些集中式的版本控制系统不但速度慢，而且必须联网才能使用。<br>2.Git极其强大的分支管理，把SVN等远远抛在了后面。</p>
-<p>集中式vs分布式?<br>分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步。</p>
-<p>Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub。</p>
-<p>暂存区是什么？</p>
-<p>为什么Git比其他版本控制系统设计得优秀？<br>因为Git跟踪并管理的是修改，而非文件。  </p>
-<p>如何关联远程库?</p>
-<p>分支管理<br>Git的分支是与众不同的，无论创建、切换和删除分支,都很快。因为创建、合并和删除分支非常快，所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，这和直接在master分支上工作效果是一样的，但过程更安全。</p>
-<p>进行分支管理的几个基本原则<br>1.master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；<br>2.干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；</p>
-<p>多人协作时大家的工作模式<br>大家都会往master和dev分支上推送各自的修改</p>
-<p>标签管理</p>
-<p>一份整理git常用命令的手册:</p>
 
         
       
