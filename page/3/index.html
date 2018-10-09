@@ -82,7 +82,7 @@
 
 
 <script>
-  window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":20},"tag_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+  window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":20},"category_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
 </script>
 
     <title> yuzhifei的技术博客 </title>
@@ -199,6 +199,57 @@
   
   <section id="posts" class="posts">
     
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/09/27/iOS网络编程-1/">iOS-网络编程-1</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-09-27
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>在iOS中，我们常用发送HTTP请求的方案有<br>苹果原生（自带）<br>NSURLConnection：用法简单，最古老最经典最直接的一种方案 （iOS 9.0弃用)<br>NSURLSession：功能比NSURLConnection更加强大，苹果目前比较推荐使用这种技术.<br>第三方框架AFNetworking：简单易用，提供了基本够用的常用功能，维护和使用者多.</p>
+<h2 id="NSURLRequest"><a href="#NSURLRequest" class="headerlink" title="NSURLRequest"></a>NSURLRequest</h2><h2 id="NSURLSession"><a href="#NSURLSession" class="headerlink" title="NSURLSession"></a>NSURLSession</h2><p>使用NSURLSession就需要用到NSURLSessionTask，所以关于Task的类和其子类的关系还是要了解的。NSURLsessionTask是一个抽象类，其下有3个实体子类可以直接使用：NSURLSessionDataTask、NSURLSessionUploadTask、NSURLSessionDownloadTask。所有task都是可以取消，暂停或恢复的。这3个子类封装了程序三个最基本的网络任务：获取数据，比如 JSON 或者 XML，上传文件和下载文件。<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180930-114007%402x.png" alt="NSURLSessionTask类和其子类的关系"></p>
+<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><p>dataTaskWithURL  根据请求的URL创建任务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSURLSession *session = [NSURLSession sharedSession];  </span><br><span class="line">NSURL *url = [NSURL URLWithString:@&quot;http://example.com&quot;];</span><br><span class="line">NSURLSessionTask *task = [session dataTaskWithURL:url</span><br><span class="line">  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) &#123;</span><br><span class="line">&#125;];</span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure>
+<p>dataTaskWithRequest 根据请求对象创建任务  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NSURL *URL = [NSURL URLWithString:@&quot;http://example.com&quot;];</span><br><span class="line">NSURLRequest *request = [NSURLRequest requestWithURL:URL];</span><br><span class="line">NSURLSession *session = [NSURLSession sharedSession];</span><br><span class="line">NSURLSessionDataTask *task = [session dataTaskWithRequest:request</span><br><span class="line">          completionHandler:</span><br><span class="line">     ^(NSData *data, NSURLResponse *response, NSError *error) &#123;</span><br><span class="line">          // ...</span><br><span class="line">     &#125;];</span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><p>post请求必须使用dataTaskWithRequest创建任务。</p>
+<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>NSURLSessionDownloadTask大文件之block下载<br>NSURLSessionDownloadTask大文件之代理方法下载<br>NSURLSessionDownloadTask大文件之代理方法实现断点续传下载</p>
+<p>Block下载方式不适合大文件下载，因为该方法需要等到文件下载完毕了，才会回调completionHandler。</p>
+<h4 id="离线文件下载"><a href="#离线文件下载" class="headerlink" title="离线文件下载"></a>离线文件下载</h4><h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>总的来说，NSURLSession仍然是实现更高级别网络功能的一个强大的基础框架。</p>
+<p>参考链接:<br>1.<a href="https://www.jianshu.com/p/78964aac72d5" target="_blank" rel="noopener">https://www.jianshu.com/p/78964aac72d5</a><br>2.<a href="https://developer.apple.com/documentation/foundation/nsurlsession?language=objc" target="_blank" rel="noopener">苹果官方文档 NSURLSession</a><br>3.<a href="https://github.com/ming1016/study/wiki/NSURLSession" target="_blank" rel="noopener">NSURLSession知识点整理</a><br>4.<a href="https://objccn.io/issue-5-4/" target="_blank" rel="noopener">从 NSURLConnection 到 NSURLSession</a>  精品博文<br>5.<a href="https://www.jianshu.com/p/816467910783" target="_blank" rel="noopener">IOS开发系列——NSUrlSession专题</a><br>6.<a href="https://www.cnblogs.com/goodboy-heyang/p/5193960.html" target="_blank" rel="noopener">iOS开发之网络编程–1、NSURLSession的基本使用</a></p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
       
         
   <article class="post">
@@ -621,55 +672,6 @@
   </article>
 
       
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/07/26/hello-world/">Hello World</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-07-26
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
       
   <nav class="pagination">
     
@@ -678,6 +680,11 @@
         <span class="prev-text">上一页</span>
       </a>
     
+    
+      <a class="next" href="/page/4/">
+        <span class="next-text">下一页</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
 
