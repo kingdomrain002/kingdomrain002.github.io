@@ -205,6 +205,144 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/10/10/iOS代码混淆研究/">iOS代码混淆研究</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-10
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/10/iOS制作framework静态库总结/">iOS制作framework静态库总结</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-10
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>  我将用我之前做过的一个手势密码插件为例，一步一步实现。我将demo放在github上：<a href="https://github.com/kingdomrain002/KRGestureLock。" target="_blank" rel="noopener">https://github.com/kingdomrain002/KRGestureLock。</a></p>
+<h2 id="知识储备"><a href="#知识储备" class="headerlink" title="知识储备"></a>知识储备</h2><p>库是什么？<br>“库”是共享程序代码的一种方式！</p>
+<h4 id="“静态库”和“动态库”有什么区别？"><a href="#“静态库”和“动态库”有什么区别？" class="headerlink" title="“静态库”和“动态库”有什么区别？"></a>“静态库”和“动态库”有什么区别？</h4><p>“静态库” 链接时候完整的拷贝至可执行文件中，被多次使用就会有多次拷贝。<br>“动态库” 链接时候不复制，程序运行时由系统动态加载到内存，供程序调用，系统只加载一次，多个程序共用，节省内存！</p>
+<h4 id="iOS里静态和动态库形式"><a href="#iOS里静态和动态库形式" class="headerlink" title="iOS里静态和动态库形式"></a>iOS里静态和动态库形式</h4><p>静态库形式： .a和.framework.<br>动态库形式： .dylib和.framework</p>
+<h4 id="a与-framework有什么区别"><a href="#a与-framework有什么区别" class="headerlink" title="a与.framework有什么区别?"></a>a与.framework有什么区别?</h4><p>.a是一个纯二进制文件，.framework中除了有二进制文件之外还有资源文件。<br>.a文件不能直接使用，至少要有.h文件配合，.framework文件可以直接使用。<br>.a + .h + sourceFile = .framework。<br>所以我们建议用.framework。</p>
+<h4 id="framwork支持的架构"><a href="#framwork支持的架构" class="headerlink" title="framwork支持的架构"></a>framwork支持的架构</h4><p>模拟器32位处理器测试需要i386架构，<br>模拟器64位处理器测试需要x86_64架构，<br>真机32位处理器需要armv7,或者armv7s架构，<br>真机64位处理器需要arm64架构。</p>
+<h4 id="lipo"><a href="#lipo" class="headerlink" title="lipo"></a>lipo</h4><p>lipo是管理Fat File的工具, 可以查看cpu架构, 提取特定架构，整合和拆分库文件。 </p>
+<p><code>lipo -info xxxx.framework/xxxx或/xxxx.a</code>  查看信息,支持的cpu架构列表<br><code>lipo -create xxxx   xxxx  -output xxxx</code>  整合成Fat文件<br><code>lipo xxxx -thin cpu(armv7/arm64等)  -output  xxxx</code> 提取特定的cpu架构的thin文件<br><code>lipo -remove cpu(armv7/arm64等) xxxx -output  xxxx</code> 移除掉特定的cpu架构的文件</p>
+<h4 id="知识点-bundle制作和使用总结"><a href="#知识点-bundle制作和使用总结" class="headerlink" title="知识点:bundle制作和使用总结"></a>知识点:bundle制作和使用总结</h4><h2 id="实践步骤"><a href="#实践步骤" class="headerlink" title="实践步骤"></a>实践步骤</h2><p>1.创建framework</p>
+<p>接下来对我们的这个.framework静态库进行一些简单的设置，如下图所示。<br>Build Settings下：<br>1.首先是Dead Code Stripping设置为NO<br>2.然后将Link With Standard Libraries设置为NO<br>3.最后将Mach-O Type设为Static Library<br>4.Build Active Architecture Only 设置为 NO<br>5.Enable Bitcode 设置为NO</p>
+<p>接下里就是设置我们有那些头文件是需要公开的，如下图设置。</p>
+<p>生成我们.framework文件的最后一步了：利用终端把模拟机和真机的文件我们合并成一份.</p>
+<p>lipo -create XXXXXX/KRGestrueLock.framework/KRGestrueLock XXXXXX/KRGestrueLock.framework/KRGestrueLock -output XXXXXX/KRGestrueLock</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料:"></a>参考资料:</h3><p>1.<a href="https://cloud.tencent.com/developer/article/1336323" target="_blank" rel="noopener">代码管理| 手把手教你封装自己的静态库SDK</a><br>2.<a href="https://zhuanlan.zhihu.com/p/35944449" target="_blank" rel="noopener">iOS 封装.framework 以及使用</a><br>3.<a href="https://blog.csdn.net/Feng512275/article/details/77982962" target="_blank" rel="noopener">iOS-制作并调用Bundle资源包</a><br>4.<a href="https://www.cnblogs.com/zjoch/p/4702745.html" target="_blank" rel="noopener">iOS中bundle的意义</a><br>5.<a href="https://blog.csdn.net/zhao15127334470/article/details/80936912" target="_blank" rel="noopener">ios静态库常用lipo命令</a></p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/09/iOS无埋点的行为统计2-奔溃统计/">iOS无埋点的行为统计二--奔溃统计</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-09
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="我的实践"><a href="#我的实践" class="headerlink" title="我的实践"></a>我的实践</h2><p><a href="https://github.com/kingdomrain002/UserBehaviorStatistics" target="_blank" rel="noopener">https://github.com/kingdomrain002/UserBehaviorStatistics</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.jianshu.com/p/05aad21e319e" target="_blank" rel="noopener">iOS被开发者遗忘在角落的NSException-其实它很强大</a><br>介绍了NSException的使用。<br>利用category + runtime + 异常的捕获 来写一个防止崩溃。</p>
+<p>2.<a href="https://github.com/warmlight/UncaughtExceptionHandler" target="_blank" rel="noopener">iOS崩溃 捕获异常处理</a></p>
+<p>3.<a href="https://blog.csdn.net/xiangjai/article/details/49125153" target="_blank" rel="noopener">IOS SDK NSSetUncaughtExceptionHandler异常处理</a><br>现成的函数 NSSetUncaughtExceptionHandler 用来做异常处理，<br>引起崩溃的大多数原因如：内存访问错误，重复释放等错误捕获不到，因为这些异常抛出的是Signal，所以必须要专门做Signal处理。</p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/10/07/iOS-UI知识整理-UIView和CAlayer/">iOS知识-UI整理</a>
         
       </h1>
@@ -484,130 +622,6 @@
         
           <p>如果我是面试官，我问的第一道算法题肯定就是排序问题。这个很基础有可以很快看出面试者功底。</p>
 <p>参考资料:<br>1.<a href="https://www.jianshu.com/p/2496f7be35d3" target="_blank" rel="noopener">Swift实现常用排序算法总结</a><br>2.</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/03/iOS多线程2-NSOperation-NSOperationQueue/">iOS多线程二-NSOperation,NSOperationQueue</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-03
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>NSOperation、NSOperationQueue 是苹果提供给我们的一套多线程解决方案。实际上 NSOperation、NSOperationQueue 是基于 GCD 更高一层的封装，完全面向对象。但是比 GCD 更简单易用、代码可读性也更高。</p>
-<h3 id="NSOperation"><a href="#NSOperation" class="headerlink" title="NSOperation"></a>NSOperation</h3><h3 id="NSOperationQueue"><a href="#NSOperationQueue" class="headerlink" title="NSOperationQueue"></a>NSOperationQueue</h3><h3 id="NSOperation和NSOperationQueue使用步骤"><a href="#NSOperation和NSOperationQueue使用步骤" class="headerlink" title="NSOperation和NSOperationQueue使用步骤"></a>NSOperation和NSOperationQueue使用步骤</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>1.<a href="https://www.jianshu.com/p/4b1d77054b35" target="_blank" rel="noopener">iOS 多线程：『NSOperation、NSOperationQueue』详尽总结</a><br>2.<a href="https://www.jianshu.com/p/5266de748144" target="_blank" rel="noopener">iOS多线程 – NSOperation相关学习笔记</a>    这篇文章后面罗列的参考文章都比较好</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/03/iOS多线程3-RunLoop/">多线程--RunLoop</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-03
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.jianshu.com/p/d260d18dd551" target="_blank" rel="noopener">iOS 多线程：『RunLoop』详尽总结</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/02/iOS内存管理/">iOS内存管理</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-02
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.jianshu.com/p/48665652e4e4" target="_blank" rel="noopener">OC 知识：彻底理解 iOS 内存管理（MRC、ARC）</a><br>2.<a href="http://www.cocoachina.com/ios/20170930/20692.html" target="_blank" rel="noopener">iOS 简单而粗暴的说一说内存管理</a><br>3.<a href="https://www.jianshu.com/p/7d73654ed91a" target="_blank" rel="noopener">iOS五大块知识总结之内存管理</a></p>
 
         
       
