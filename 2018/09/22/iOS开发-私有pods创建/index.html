@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="iOS开发-私有pods创建"/>
+  <meta name="description" content="iOS开发-基于cocoapods创建私有库"/>
 
 
 
 
-  <meta name="keywords" content="pods,cocoapods, yuzhifei的技术博客" />
+  <meta name="keywords" content="pod命令,cocoapods, yuzhifei的技术博客" />
 
 
 
@@ -86,10 +86,10 @@
 
 
 <script>
-  window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":20},"tag_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+  window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":20},"category_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
 </script>
 
-    <title> iOS开发-私有pods创建 - yuzhifei的技术博客 </title>
+    <title> iOS开发-基于cocoapods创建私有库 - yuzhifei的技术博客 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -205,7 +205,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          iOS开发-私有pods创建
+          iOS开发-基于cocoapods创建私有库
         
       </h1>
 
@@ -223,7 +223,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#我的实践笔记"><span class="toc-text">我的实践笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何提交有有依赖的私有库"><span class="toc-text">如何提交有有依赖的私有库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何使用私有库"><span class="toc-text">如何使用私有库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-text">学习资料</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#我的实践笔记"><span class="toc-text">我的实践笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何提交有有依赖的私有库"><span class="toc-text">如何提交有有依赖的私有库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何使用私有库"><span class="toc-text">如何使用私有库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-text">学习资料</span></a></li></ol>
     </div>
   </div>
 
@@ -231,10 +231,11 @@
 
     <div class="post-content">
       
-        <h2 id="我的实践笔记"><a href="#我的实践笔记" class="headerlink" title="我的实践笔记"></a>我的实践笔记</h2><p>   我是基于码云来创建私有库的。<br>   这里就需要两个仓库,其中一个仓库是托管cocoapods所需要的配置文件,另外一个仓库才是存放我们的代码。<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-213645%402x.png" alt=""></p>
-<p>1.创建管理podspec索引文件的Git仓库<br>    大家通过pod安装第三方时，都需要在创建Podfile文件之后，在其头部添加source ‘<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs</a>’。访问该地址，显示如下图。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204445%402x.png" alt="CocoaPods/Specs"><br>   cocoapods是通过.podspec文件来索引私有库真的存代码的仓库。其所有配置文件托管在Master Repo。podspec文件为你的代码仓库索引描述文件,CocoaPods通过该文件对你真正存储代码工程的Git仓库进行索引与下载。<br>   现在我们在码云上创建私有的Git仓库，将其命名成 <code>PrivatePodspec</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204758%402x.png" alt="CocoaPods/Specs"><br>      <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204831%402x.png" alt="CocoaPods/Specs"><br>      我们选择是否开源这里选中<code>公开</code>,添加开源许可证选择<code>MIT License</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-205246%402x.png" alt="CocoaPods/Specs"></p>
+        <h2 id="我的实践笔记"><a href="#我的实践笔记" class="headerlink" title="我的实践笔记"></a>我的实践笔记</h2><p>   我是基于码云来创建私有库的。<br>   这里就需要两个仓库,其中一个仓库是托管cocoapods所需要的配置文件,另外一个仓库才是存放我们的代码。如下图所示。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-213645%402x.png" alt=""></p>
+<p>1.创建管理podspec索引文件的Git仓库<br>    大家通过pod安装第三方库时，都需要在创建Podfile文件之后，在其头部添加 <code>source https://github.com/CocoaPods/Specs</code>。访问该地址，显示如下图。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204445%402x.png" alt="CocoaPods/Specs"><br>   cocoapods是通过.podspec文件来索引私有库真的存代码的仓库。其所有配置文件托管在Master Repo。podspec文件为你的代码仓库索引描述文件,CocoaPods通过该文件对你真正存储代码工程的Git仓库进行索引与下载。</p>
+<p>   话不多说，我们进入主题。现在我们在码云上创建私有的Git仓库，将其命名成 <code>PrivatePodspec</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204758%402x.png" alt="CocoaPods/Specs"><br>   我们选择是否开源这里选中<code>公开</code>,添加开源许可证选择<code>MIT License</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-205246%402x.png" alt="CocoaPods/Specs"></p>
 <p>2.创建私有Git仓库<br> 我们创建的第一个私有库名称为<code>TestPrivateLib</code>。<br>    <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212519%402x.png" alt="CocoaPods/Specs"><br>   我们选择是否开源这里选中<code>私有</code>。创建完成之后，显示如下:<br> <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212652%402x.png" alt="CocoaPods/Specs"></p>
-<p> 现在本地创建pod模板，然后再关联远程Git地址。</p>
+<p>现在本地创建pod模板，然后再关联远程Git地址。<br>这里有两种方案1.</p>
 <p>3.上传.podspec到第一个远程私有仓库<br>cd ~/.cocoapods/repos</p>
 <p>cd ~/.cocoapods/repos/tiny-spec<br>pod repo update</p>
 <p>创建一个私有仓库目录</p>
@@ -242,7 +243,7 @@
 <p>pod spec lint XXXXXX.podspec –sources=’ 私有的cocoapods托管地址 ,<a href="https://github.com/CocoaPods/Specs.git&#39;" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git&#39;</a> –allow-warnings</p>
 <p>pod repo push tiny-spec XXXXXX.podspec –sources=’私有的cocoapods托管地址,<a href="https://github.com/CocoaPods/Specs.git&#39;" target="_blank" rel="noopener">https://github.com/CocoaPods/Specs.git&#39;</a> –allow-warnings</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo push tiny-spec TinyIM.podspec --sources=&apos;http://p.mtiny.cn:8000/xiangfp/tiny-spec.git,https://github.com/CocoaPods/Specs.git&apos; --allow-warnings</span><br></pre></td></tr></table></figure>
-<h2 id="如何提交有有依赖的私有库"><a href="#如何提交有有依赖的私有库" class="headerlink" title="如何提交有有依赖的私有库"></a>如何提交有有依赖的私有库</h2><h3 id="如何使用私有库"><a href="#如何使用私有库" class="headerlink" title="如何使用私有库"></a>如何使用私有库</h3><h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ol>
+<h3 id="如何提交有有依赖的私有库"><a href="#如何提交有有依赖的私有库" class="headerlink" title="如何提交有有依赖的私有库"></a>如何提交有有依赖的私有库</h3><h3 id="如何使用私有库"><a href="#如何使用私有库" class="headerlink" title="如何使用私有库"></a>如何使用私有库</h3><h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><ol>
 <li><a href="https://cocoapods.org/" target="_blank" rel="noopener">cocoapods官网地址</a>    </li>
 <li><a href="https://www.aliyun.com/jiaocheng/351617.html" target="_blank" rel="noopener">Cocoapods私有库管理</a></li>
 </ol>
@@ -281,7 +282,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/pods-cocoapods/">pods,cocoapods</a>
+              <a href="/tags/pod命令-cocoapods/">pod命令,cocoapods</a>
             
           </div>
         
