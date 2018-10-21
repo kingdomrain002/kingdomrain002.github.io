@@ -82,7 +82,7 @@
 
 
 <script>
-  window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"category_generator":{"per_page":20},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"tag_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
+  window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":20},"tag_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
 </script>
 
     <title> yuzhifei的技术博客 </title>
@@ -199,6 +199,153 @@
   
   <section id="posts" class="posts">
     
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/11/iOS常见的几种加密方法和使用场景总结/">iOS常见的几种加密方法和使用场景总结</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-11
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>常见的iOS代码加密常用加密方式,包括Base64加密、MD5加密、AES加密、RSA加密等。</p>
+<h2 id="iOS常见加密方法的封装"><a href="#iOS常见加密方法的封装" class="headerlink" title="iOS常见加密方法的封装"></a>iOS常见加密方法的封装</h2><blockquote>
+<p>我把自己工作常遇到加密方法封装了一下，包括MD5,Base64,3DES,DES,RSA等加密。github地址:<a href="https://github.com/kingdomrain002/KREncryption" target="_blank" rel="noopener"><code>https://github.com/kingdomrain002/KREncryption</code></a>。 如果喜欢可以给我点赞。</p>
+</blockquote>
+<h2 id="加密方式介绍"><a href="#加密方式介绍" class="headerlink" title="加密方式介绍"></a>加密方式介绍</h2><h4 id="1-安全散列算法"><a href="#1-安全散列算法" class="headerlink" title="1. 安全散列算法"></a><a href="#Secure-Hash-Algorithm">1. 安全散列算法</a></h4><blockquote>
+<p><strong>Secure Hash Algorithm</strong>，常见的算法包括了 <strong><a href="#md5">MD5</a></strong>、<strong><a href="#SHA">SHA1</a></strong>、<strong><a href="#HMAC">HMAC</a></strong> 等。<br>将任意长度的二进制值映射为较短的固定长度的二进制值，这个短的二进制值称为哈希值，这个算法具有不可逆、碰撞低等特性。同时该类算法可以用作数字签名，用来证实某个信息确实是由某个人发出的，同时可以保证信息没有被修改。<br>实际上，简单来说，这种算法有两个特性：</p>
+<p>A) 不同的输入一定得出不同的 hash 值；</p>
+<p>B) 无法从 hash 值倒推出原来的输入。</p>
+</blockquote>
+<h4 id="2-对称加密"><a href="#2-对称加密" class="headerlink" title="2. 对称加密"></a><a href="#symmetric-key-encryption">2. 对称加密</a></h4><blockquote>
+<p><strong>symmetric-key encryption</strong>，其中常见的算法包括了 <strong><a href="#AES">AES</a></strong>、<strong>DES</strong>、<strong>3DES</strong> 、<strong><a href="#RC4">RC4</a></strong>等。</p>
+</blockquote>
+<blockquote>
+<p>对称加密指的是可以使用同一个密钥对内容进行加密和解密，相比非对称加密，它的特点是加/解密速度快，并且加密的内容长度几乎没有限制。</p>
+</blockquote>
+<h4 id="3-非对称加密"><a href="#3-非对称加密" class="headerlink" title="3. 非对称加密"></a><a href="#asymmetric-public-key-encryption">3. 非对称加密</a></h4><blockquote>
+<p><strong>asymmetric/public-key encryption</strong>，常见的加密算法有 <strong><a href="#RSA">RSA</a></strong>、<strong>DSA</strong>、<strong>ECC</strong> 等。</p>
+</blockquote>
+<blockquote>
+<p>非对称加密有两个密钥，分别为公钥和私钥，其中公钥公开给所有人，私钥永远只能自己知道。</p>
+</blockquote>
+<blockquote>
+<p>使用公钥加密的信息只能使用私钥解密，使用私钥加密只能使用公钥解密。前者用来传输需要保密的信息，因为全世界只有知道对应私钥的人才可以解密；后者用来作数字签名，因为公钥对所有人公开的，可以用来确认这个信息是否是从私钥的拥有者发出的。</p>
+</blockquote>
+<h3 id="Base64加密"><a href="#Base64加密" class="headerlink" title="Base64加密"></a>Base64加密</h3><h3 id="MD5加密"><a href="#MD5加密" class="headerlink" title="MD5加密 "></a>MD5加密 <a name="md5"></a></h3><p>MD5加密是不可逆的，也就是说，MD5加密后是不能解密的。</p>
+<h3 id="AES加密"><a href="#AES加密" class="headerlink" title="AES加密"></a>AES加密</h3><h3 id="RSA加密"><a href="#RSA加密" class="headerlink" title="RSA加密"></a>RSA加密</h3><p>RSA是目前最有影响力的公钥加密算法</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>1.<a href="https://www.jianshu.com/p/d9cd97c77549" target="_blank" rel="noopener">iOS常用的加密模式</a><br>2.<a href="https://github.com/Flying-Einstein/Encryptions" target="_blank" rel="noopener">github项目 Flying-Einstein/Encryptions</a><br>3.<a href="https://github.com/chenxi141017/blog/blob/master/articles/data-encrypt.md" target="_blank" rel="noopener">iOS常见加密算法总结</a>  这个人整理的比较清楚,特别是最加密方式进行了分类，各种加密类型的代表加密方法。<br>4.<a href="https://www.jianshu.com/p/24010586f52c" target="_blank" rel="noopener">iOS加密实用总结</a><br>5.<a href="https://www.jianshu.com/p/43f7fc8d8e14" target="_blank" rel="noopener">iOS之RSA加密解密与后台之间的双向加密详解</a></p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/11/iOS-UI-图表总结/">iOS-UI-图表总结</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-11
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/10/iOS代码混淆研究/">iOS代码混淆研究</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-10
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
       
         
   <article class="post">
@@ -473,7 +620,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/10/04/iOS开发之Blocks/">iOS开发之Blocks</a>
+          <a class="post-link" href="/2018/10/04/iOS开发之Blocks/">iOS开发-Blocks</a>
         
       </h1>
 
@@ -496,137 +643,24 @@
         
 
         
-          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><h4 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h4><h4 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h4><p>1.<a href="https://www.jianshu.com/p/d28a5633b963" target="_blank" rel="noopener">iOS Block用法和实现原理</a>   《Objective-C高级编程》做的一些笔记<br>2.</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/04/UML及工具使用/">UML及工具使用</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-04
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>一句话介绍UML(Unified Modeling Language,统一建模语言)：</p>
+          <p>什么是代码块？<br>一句话介绍代码块 </p>
 <blockquote>
-<p>统一建模语言是面向对象软件的标准化建模语言。</p>
+<p>带有自动变量(局部变量)的匿名函数。</p>
 </blockquote>
-<h3 id="UML中的关系"><a href="#UML中的关系" class="headerlink" title="UML中的关系"></a>UML中的关系</h3><h3 id="UML中的图"><a href="#UML中的图" class="headerlink" title="UML中的图"></a>UML中的图</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><h4 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h4><p>1.《软件设计师教程》</p>
-<h4 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h4><p>1.<a href="https://www.jianshu.com/p/13005d6b1de6" target="_blank" rel="noopener">https://www.jianshu.com/p/13005d6b1de6</a><br>2.<a href="https://www.jianshu.com/p/7f9f628d8e78" target="_blank" rel="noopener">使用StarUML为iOS项目建模</a><br>3.<a href="https://www.jianshu.com/p/7d215ec9ca66" target="_blank" rel="noopener">Mac下一款好用的UML图绘制工具（StarUML）</a><br>4.<a href="https://www.jianshu.com/p/b6b1f6ad0bd6" target="_blank" rel="noopener">Mac StarUML 3.0 破解</a><br>5.<a href="https://www.cnblogs.com/hoojo/p/uml_design.html" target="_blank" rel="noopener">软件设计之UML—UML中的六大关系</a><br>6.<a href="http://www.uml.org.cn/oobject/201609062.asp" target="_blank" rel="noopener">UML类图几种关系的总结</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/03/常用排序算法/">常用排序算法</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-03
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>如果我是面试官，我问的第一道算法题肯定就是排序问题。这个很基础有可以很快看出面试者功底。</p>
-<p>参考资料:<br>1.<a href="https://www.jianshu.com/p/2496f7be35d3" target="_blank" rel="noopener">Swift实现常用排序算法总结</a><br>2.</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/03/iOS多线程2-NSOperation-NSOperationQueue/">iOS多线程二-NSOperation,NSOperationQueue</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-03
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>NSOperation、NSOperationQueue 是苹果提供给我们的一套多线程解决方案。实际上 NSOperation、NSOperationQueue 是基于 GCD 更高一层的封装，完全面向对象。但是比 GCD 更简单易用、代码可读性也更高。</p>
-<h3 id="NSOperation"><a href="#NSOperation" class="headerlink" title="NSOperation"></a>NSOperation</h3><h3 id="NSOperationQueue"><a href="#NSOperationQueue" class="headerlink" title="NSOperationQueue"></a>NSOperationQueue</h3><h3 id="NSOperation和NSOperationQueue使用步骤"><a href="#NSOperation和NSOperationQueue使用步骤" class="headerlink" title="NSOperation和NSOperationQueue使用步骤"></a>NSOperation和NSOperationQueue使用步骤</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>1.<a href="https://www.jianshu.com/p/4b1d77054b35" target="_blank" rel="noopener">iOS 多线程：『NSOperation、NSOperationQueue』详尽总结</a><br>2.<a href="https://www.jianshu.com/p/5266de748144" target="_blank" rel="noopener">iOS多线程 – NSOperation相关学习笔记</a>    这篇文章后面罗列的参考文章都比较好</p>
+<p>代码块在C语言中的地位，代码块在其他语言中的地位？</p>
+<p>代码块和函数指针的区别？</p>
+<p>代码块和变量的关系？</p>
+<p>代码块的使用场景？</p>
+<p>块对象类型声明</p>
+<p>如何检测当前的系统环境是否可以使用块对象？</p>
+<blockquote>
+<p>我们可以使用<code>__BLOCKS__</code>宏来检查当前系统是否可使用块对象。 </p>
+</blockquote>
+<p>如果我是面试官，我怎么来考察面试人员对Block的理解？</p>
+<p>1.编程几道和Block有关的题目，预测输出结果。其实这种题目主要还是考察代码块对变量的理解。<br>2.问那些地方使用了Block。</p>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>软件编程是一门实践性很强的事情。虽然编程里面有很高深的理论，但是最终都是用不同的编程语言体现出来了，那就还是要考动手。多把书本上的例子码一遍，不懂的地方可以断点调试一下，一步一步的调试，有些知识当时没有明白的，后面调试阶段就能看懂了。还有码下书上或网上提供的代码，也可以对方法的使用有感性的认识。最怕代码都是要靠复制粘贴的做法，那么不是没有网都不能写代码了吗？</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><h4 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h4><p>1.《Objective-C 编程全解》  第14章 块对象<br>2.《Objective-C高级编程》   第二章 Blocks</p>
+<h4 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h4><p>1.<a href="https://www.jianshu.com/p/d28a5633b963" target="_blank" rel="noopener">iOS Block用法和实现原理</a>   《Objective-C高级编程》做的一些笔记</p>
 
         
       
