@@ -17,12 +17,10 @@
 
 
 
-  <meta name="description" content="iOS单元测试"/>
+  <meta name="description" content="iOS网络编程3-网络层封装的思考"/>
 
 
 
-
-  <meta name="keywords" content="单元测试, yuzhifei的技术博客" />
 
 
 
@@ -42,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2018/10/05/单元测试/"/>
+<link rel="canonical" href="http://yoursite.com/2018/10/22/iOS网络编程3-对网络请求封装的思考/"/>
 
 
 
@@ -89,7 +87,7 @@
   window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":20},"tag_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
 </script>
 
-    <title> iOS单元测试 - yuzhifei的技术博客 </title>
+    <title> iOS网络编程3-网络层封装的思考 - yuzhifei的技术博客 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -205,13 +203,13 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          iOS单元测试
+          iOS网络编程3-网络层封装的思考
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2018-10-05
+          2018-10-22
         </span>
         
         
@@ -223,7 +221,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试驱动的iOS开发-学习笔记"><span class="toc-text">测试驱动的iOS开发-学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于原生的NSURLSeccion进行网络层的封装"><span class="toc-text">基于原生的NSURLSeccion进行网络层的封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于优秀的第三方库开源库进行网络层的封装"><span class="toc-text">基于优秀的第三方库开源库进行网络层的封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
     </div>
   </div>
 
@@ -231,9 +229,10 @@
 
     <div class="post-content">
       
-        <p>  周末去了一趟图书馆，发现了一本iOS相关的开发书籍。这本书涉及了测试驱动iOS开发，是自己之前没有接触过了的内容，所以就借回来好好研读一下。</p>
-<h2 id="测试驱动的iOS开发-学习笔记"><a href="#测试驱动的iOS开发-学习笔记" class="headerlink" title="测试驱动的iOS开发-学习笔记"></a>测试驱动的iOS开发-学习笔记</h2><h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>书籍<br>1.<a href="https://book.douban.com/subject/20172622/" target="_blank" rel="noopener">测试驱动的iOS开发</a></p>
-<p>网站<br>1.<a href="https://www.jianshu.com/p/06035117f97a" target="_blank" rel="noopener">测试驱动的 iOS 开发-简介与技巧</a></p>
+        <p>最新在总结iOS网络层的知识。<br>网络层封装的优势:<br>1.方便调用调用，不用写大量的重复代码。特别是文件上传，用系统NSURLSeccion去上传，简直就是一种折磨。<br>2.当服务端配置改变了，请求head带的参数改变了，还是用零散的网络请求去请求接口，到时候需要修改就很麻烦了。</p>
+<p>网络层封装实现的思路有两种:<br>1.一种思路是基于原生的NSURLSeccion来封装。<br>2.一种就是在开源的第三方库如AFnetworking的基础上，再做一层封装。</p>
+<h3 id="基于原生的NSURLSeccion进行网络层的封装"><a href="#基于原生的NSURLSeccion进行网络层的封装" class="headerlink" title="基于原生的NSURLSeccion进行网络层的封装"></a>基于原生的NSURLSeccion进行网络层的封装</h3><h3 id="基于优秀的第三方库开源库进行网络层的封装"><a href="#基于优秀的第三方库开源库进行网络层的封装" class="headerlink" title="基于优秀的第三方库开源库进行网络层的封装"></a>基于优秀的第三方库开源库进行网络层的封装</h3><p>其中优秀的第三方库开源库当属AFNetworking框架。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="http://www.cocoachina.com/ios/20170420/19088.html" target="_blank" rel="noopener">1.iOS开发封装通用网络请求方法</a><br>2.<a href="https://github.com/yuantiku/YTKNetwork" target="_blank" rel="noopener">YTKNetwork 是猿题库 iOS 研发团队基于 AFNetworking 封装的 iOS 网络库</a><br>3.<a href="https://blog.csdn.net/zhyxblog/article/details/78127273" target="_blank" rel="noopener">iOS网络-AFNetworking详解</a><br>4.<a href="https://www.cnblogs.com/guchengfengyun/p/8098188.html" target="_blank" rel="noopener">古成风云 IOS 开发 网络详解（十二）AFNetworking总结</a></p>
 
       
     </div>
@@ -249,7 +248,7 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="http://yoursite.com/2018/10/05/单元测试/">http://yoursite.com/2018/10/05/单元测试/</a>
+      <a href="http://yoursite.com/2018/10/22/iOS网络编程3-对网络请求封装的思考/">http://yoursite.com/2018/10/22/iOS网络编程3-对网络请求封装的思考/</a>
     </p>
     <p class="copyright-item">
       <span>许可协议: </span>
@@ -267,25 +266,19 @@
     
       <footer class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/单元测试/">单元测试</a>
-            
-          </div>
-        
         
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2018/10/06/iOS自动打包-shell实现/">
+      <a class="prev" href="/2018/10/22/iOS开发-IMP指针的研究/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">iOS自动打包-shell实现</span>
+        <span class="prev-text nav-default">iOS开发-IMP指针的研究</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
-      <a class="next" href="/2018/10/04/iOS开发之Blocks/">
-        <span class="next-text nav-default">iOS开发-Blocks</span>
+      <a class="next" href="/2018/10/21/IM-实现即时通讯的技术总结/">
+        <span class="next-text nav-default">IM-实现即时通讯的技术总结</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
