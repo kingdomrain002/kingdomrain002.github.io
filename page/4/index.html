@@ -205,6 +205,91 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/10/07/iOS-UI知识整理-UIView和CAlayer/">iOS知识-UI整理</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-07
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>最近在准备面试，需要把iOS相关知识点整理一下。刚好趁这个时机，通过问题的方式，把iOS UI相关的知识复习一下。</p>
+<p>1.UIView和CALayer是什么关系?<br>2.各版本iPhone设备像素，物理尺寸大小是多少？</p>
+<h2 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1.<a href="https://objccn.io/issue-3-0/" target="_blank" rel="noopener">ObjC 中国 卷首语-视图</a><br>2.<a href="https://objccn.io/issue-12-0/" target="_blank" rel="noopener">ObjC 中国 卷首语-动画</a></p>
+<p><a href="https://blog.csdn.net/Nick_since2016/article/details/80019578" target="_blank" rel="noopener">https://blog.csdn.net/Nick_since2016/article/details/80019578</a></p>
+<p>3.<a href="http://www.cocoachina.com/ios/20150828/13244.html" target="_blank" rel="noopener">详解 CALayer 和 UIView 的区别和联系</a></p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/06/iOS常见面试题总结/">常见iOS面试题总结</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-06
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/10/06/iOS自动打包-shell实现/">iOS自动打包-shell实现</a>
         
       </h1>
@@ -541,104 +626,6 @@
 
         
           <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.jianshu.com/p/48665652e4e4" target="_blank" rel="noopener">OC 知识：彻底理解 iOS 内存管理（MRC、ARC）</a><br>2.<a href="http://www.cocoachina.com/ios/20170930/20692.html" target="_blank" rel="noopener">iOS 简单而粗暴的说一说内存管理</a><br>3.<a href="https://www.jianshu.com/p/7d73654ed91a" target="_blank" rel="noopener">iOS五大块知识总结之内存管理</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/30/iOS多线程1/">iOS多线程(一)  GCD详解</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>乘着十一假期空闲在家，可以好好整理一下多线程编程的知识点。</p>
-<h3 id="GCD任务和队列"><a href="#GCD任务和队列" class="headerlink" title="GCD任务和队列"></a>GCD任务和队列</h3><p><code>任务</code>：就是执行操作的意思。</p>
-<p><code>队列（Dispatch Queue）</code>：这里的队列指执行任务的等待队列，即用来存放任务的队列。</p>
-<p>小结:</p>
-<blockquote>
-<p>同步函数不具备开启线程的能力，无论是什么队列都不会开启线程；异步函数具备开启线程的能力，开启几条线程由队列决定（串行队列只会开启一条新的线程，并发队列会开启多条线程）换句话说，异步执行（async）虽然具有开启新线程的能力，但是并不一定开启新线程。这跟任务所指定的队列类型有关。</p>
-</blockquote>
-<p>同步函数</p>
-<p>（1）并发队列：不会开线程</p>
-<p>（2）串行队列：不会开线程</p>
-<p>异步函数</p>
-<p>（1）并发队列：能开启N条线程</p>
-<p>（2）串行队列：开启1条线程</p>
-<h3 id="GCD的使用步骤"><a href="#GCD的使用步骤" class="headerlink" title="GCD的使用步骤"></a>GCD的使用步骤</h3><h3 id="GCD的其他方法"><a href="#GCD的其他方法" class="headerlink" title="GCD的其他方法"></a>GCD的其他方法</h3><h3 id="多线程适用场景"><a href="#多线程适用场景" class="headerlink" title="多线程适用场景"></a>多线程适用场景</h3><p>### </p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料:"></a>参考资料:</h3><p>1.<a href="https://www.jianshu.com/p/4b1d77054b35" target="_blank" rel="noopener">https://www.jianshu.com/p/4b1d77054b35</a><br>2.<a href="https://www.jianshu.com/p/2d57c72016c6" target="_blank" rel="noopener">iOS 多线程：『GCD』详尽总结</a>   写得根详细，特别是对几种组合的罗列<br>3.<a href="http://mrpeak.cn/blog/ios-thread-safety/" target="_blank" rel="noopener">iOS多线程到底不安全在哪里？</a><br>4.<a href="http://www.cocoachina.com/ios/20170817/20280.html" target="_blank" rel="noopener">iOS 开发多线程 —— GCD</a><br>5.<a href="http://mrpeak.cn/blog/ios-gcd-bottleneck/" target="_blank" rel="noopener">iOS App 使用 GCD 导致的卡顿问题</a><br>6.<a href="https://blog.csdn.net/Oboe_b/article/details/77849572" target="_blank" rel="noopener">多线程与网络</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/30/代码规范/">Objective-C代码规范</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>1.<a href="https://github.com/QianKaiLu/Objective-C-Coding-Guidelines-In-Chinese" target="_blank" rel="noopener">https://github.com/QianKaiLu/Objective-C-Coding-Guidelines-In-Chinese</a></p>
-<p>2.<a href="https://yourtion.gitbooks.io/objc-zen-book-cn/" target="_blank" rel="noopener">https://yourtion.gitbooks.io/objc-zen-book-cn/</a></p>
-<p>3.<a href="https://github.com/oa414/objc-zen-book-cn#%E5%85%B6%E4%BB%96%E7%9A%84-objective-c-%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">https://github.com/oa414/objc-zen-book-cn#%E5%85%B6%E4%BB%96%E7%9A%84-objective-c-%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97</a></p>
 
         
       

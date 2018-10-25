@@ -17,8 +17,12 @@
 
 
 
+  <meta name="description" content="iOS-网络编程1-NSURLConnection和NSURLSession使用总结"/>
 
 
+
+
+  <meta name="keywords" content="网络, yuzhifei的技术博客" />
 
 
 
@@ -38,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/page/5/"/>
+<link rel="canonical" href="http://yoursite.com/2018/09/27/iOS网络编程1-NSURLSession使用总结/"/>
 
 
 
@@ -85,7 +89,7 @@
   window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":20},"tag_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
 </script>
 
-    <title> yuzhifei的技术博客 </title>
+    <title> iOS-网络编程1-NSURLConnection和NSURLSession使用总结 - yuzhifei的技术博客 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -197,405 +201,11 @@
           <div id="content" class="content">
             
   
-  <section id="posts" class="posts">
-    
-      
-        
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/09/30/iOS多线程1/">iOS多线程(一)  GCD详解</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>乘着十一假期空闲在家，可以好好整理一下多线程编程的知识点。</p>
-<h3 id="GCD任务和队列"><a href="#GCD任务和队列" class="headerlink" title="GCD任务和队列"></a>GCD任务和队列</h3><p><code>任务</code>：就是执行操作的意思。</p>
-<p><code>队列（Dispatch Queue）</code>：这里的队列指执行任务的等待队列，即用来存放任务的队列。</p>
-<p>小结:</p>
-<blockquote>
-<p>同步函数不具备开启线程的能力，无论是什么队列都不会开启线程；异步函数具备开启线程的能力，开启几条线程由队列决定（串行队列只会开启一条新的线程，并发队列会开启多条线程）换句话说，异步执行（async）虽然具有开启新线程的能力，但是并不一定开启新线程。这跟任务所指定的队列类型有关。</p>
-</blockquote>
-<p>同步函数</p>
-<p>（1）并发队列：不会开线程</p>
-<p>（2）串行队列：不会开线程</p>
-<p>异步函数</p>
-<p>（1）并发队列：能开启N条线程</p>
-<p>（2）串行队列：开启1条线程</p>
-<h3 id="GCD的使用步骤"><a href="#GCD的使用步骤" class="headerlink" title="GCD的使用步骤"></a>GCD的使用步骤</h3><h3 id="GCD的其他方法"><a href="#GCD的其他方法" class="headerlink" title="GCD的其他方法"></a>GCD的其他方法</h3><h3 id="多线程适用场景"><a href="#多线程适用场景" class="headerlink" title="多线程适用场景"></a>多线程适用场景</h3><p>### </p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料:"></a>参考资料:</h3><p>1.<a href="https://www.jianshu.com/p/4b1d77054b35" target="_blank" rel="noopener">https://www.jianshu.com/p/4b1d77054b35</a><br>2.<a href="https://www.jianshu.com/p/2d57c72016c6" target="_blank" rel="noopener">iOS 多线程：『GCD』详尽总结</a>   写得根详细，特别是对几种组合的罗列<br>3.<a href="http://mrpeak.cn/blog/ios-thread-safety/" target="_blank" rel="noopener">iOS多线程到底不安全在哪里？</a><br>4.<a href="http://www.cocoachina.com/ios/20170817/20280.html" target="_blank" rel="noopener">iOS 开发多线程 —— GCD</a><br>5.<a href="http://mrpeak.cn/blog/ios-gcd-bottleneck/" target="_blank" rel="noopener">iOS App 使用 GCD 导致的卡顿问题</a><br>6.<a href="https://blog.csdn.net/Oboe_b/article/details/77849572" target="_blank" rel="noopener">多线程与网络</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/30/代码规范/">Objective-C代码规范</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>1.<a href="https://github.com/QianKaiLu/Objective-C-Coding-Guidelines-In-Chinese" target="_blank" rel="noopener">https://github.com/QianKaiLu/Objective-C-Coding-Guidelines-In-Chinese</a></p>
-<p>2.<a href="https://yourtion.gitbooks.io/objc-zen-book-cn/" target="_blank" rel="noopener">https://yourtion.gitbooks.io/objc-zen-book-cn/</a></p>
-<p>3.<a href="https://github.com/oa414/objc-zen-book-cn#%E5%85%B6%E4%BB%96%E7%9A%84-objective-c-%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97" target="_blank" rel="noopener">https://github.com/oa414/objc-zen-book-cn#%E5%85%B6%E4%BB%96%E7%9A%84-objective-c-%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97</a></p>
-<p>4.<a href="http://www.cocoachina.com/ios/20181022/25250.html" target="_blank" rel="noopener">iOS Coding Style Guide 代码规范</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/30/Mac上Web服务器使用/">Mac上Web服务器使用</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/30/iOS开发工具箱整理/">iOS开发工具箱整理</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>1.<a href="http://tang3w.com/productivity/2014/01/08/%E6%88%91%E7%9A%84-ios-%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E7%AE%B1.html" target="_blank" rel="noopener">我的 iOS 开发工具箱</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/30/iOS属性修饰符/">iOS属性修饰符</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/30/持续集成/">持续集成</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-30
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p>1.<a href="https://objccn.io/issue-6-5/" target="_blank" rel="noopener">为iOS建立Travis CI</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/29/设计模式/">设计模式</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-29
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="">ios开发的常用的23种设计模式</a><br>2.<a href="https://juejin.im/post/5b9526c1e51d450e69731dc2" target="_blank" rel="noopener">面向对象设计的六大设计原则（附 Demo 及 UML 类图）</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/29/高质量的技术博客整理/">高质量的技术博客整理</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-29
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="ios技术博客整理"><a href="#ios技术博客整理" class="headerlink" title="ios技术博客整理"></a>ios技术博客整理</h3><!--1.https://www.jianshu.com/p/64e33f9bdc03-->
-<p>1.<a href="http://mrpeak.cn/" target="_blank" rel="noopener">MrPeak杂货铺</a><br>2.<a href="https://www.jianshu.com/u/8d5b91490ca5" target="_blank" rel="noopener">故胤道长</a><br>3.<a href="https://juejin.im/user/57f8ffda2e958a005581e3c0/posts" target="_blank" rel="noopener">J_Knight_</a><br>4.<a href="https://www.jianshu.com/u/96a14318a4de" target="_blank" rel="noopener">iOS程序犭袁</a><br>5.<a href="https://www.objc.io/" target="_blank" rel="noopener">objc.io</a> 五星推荐   <a href="https://objccn.io/" target="_blank" rel="noopener">objccn.io</a> 中文翻译<br>9.<a href="http://www.imlifengfeng.com/blog/" target="_blank" rel="noopener">李峰峰博客</a><br>10.<a href="https://github.com/bestswifter/blog" target="_blank" rel="noopener">bestswifter 的博客</a><br>11.<a href="https://nshipster.cn/" target="_blank" rel="noopener">NSHipster</a></p>
-<p>12 . <a href="https://github.com/ming1016/study/wiki" target="_blank" rel="noopener">https://github.com/ming1016/study/wiki</a></p>
-<h3 id="综合技术博客"><a href="#综合技术博客" class="headerlink" title="综合技术博客"></a>综合技术博客</h3><p>11.<a href="https://tech.meituan.com/" target="_blank" rel="noopener">美团技术团队</a><br>8.<a href="http://wereadteam.github.io/" target="_blank" rel="noopener">WeRead团队博客</a>  </p>
-<h3 id="iOS学习指导类"><a href="#iOS学习指导类" class="headerlink" title="iOS学习指导类"></a>iOS学习指导类</h3><p>1.<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTIyNTUyMQ==&amp;mid=2709545194&amp;idx=1&amp;sn=e0e20cd038874aaf57b7e9de0910ab92&amp;scene=0#rd" target="_blank" rel="noopener">这可能是最详细的 iOS 学习入门指南（含书目/文档/学习资料）</a></p>
-<h3 id="主题类整理的不错的文章"><a href="#主题类整理的不错的文章" class="headerlink" title="主题类整理的不错的文章"></a>主题类整理的不错的文章</h3><p>1.动画<br><a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" target="_blank" rel="noopener">iOS-Core-Animation-Advanced-Techniques</a></p>
-<h3 id="他人整理的博客推荐"><a href="#他人整理的博客推荐" class="headerlink" title="他人整理的博客推荐"></a>他人整理的博客推荐</h3><p>1.<a href="https://blog.csdn.net/u013602835/article/details/79537366" target="_blank" rel="noopener">https://blog.csdn.net/u013602835/article/details/79537366</a><br>2.<a href="https://github.com/QianKaiLu/trip-to-iOS" target="_blank" rel="noopener">iOS 学习资料整理</a>  五星推荐</p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/29/iOS常见的面试题/">iOS常见的面试题</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-29
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h3><p>1.<a href="http://www.cocoachina.com/ios/20160414/15918.html" target="_blank" rel="noopener">那些著名或非著名的iOS面试题（上）</a><br>2.<a href="https://blog.csdn.net/ab20514/article/details/49160877" target="_blank" rel="noopener">iOS面试题汇总</a><br>3.<a href="https://www.jianshu.com/p/2e1b3f54b4f3" target="_blank" rel="noopener">iOS面试题及答案</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/27/iOS网络编程1-NSURLSession使用总结/">iOS-网络编程1-NSURLConnection和NSURLSession使用总结</a>
+          iOS-网络编程1-NSURLConnection和NSURLSession使用总结
         
       </h1>
 
@@ -610,15 +220,18 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NSURLRequest和NSMutableURLRequest"><span class="toc-text">NSURLRequest和NSMutableURLRequest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NSURLSession"><span class="toc-text">NSURLSession</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NSURLSessionConfiguration"><span class="toc-text">NSURLSessionConfiguration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get请求"><span class="toc-text">get请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#post请求"><span class="toc-text">post请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件下载"><span class="toc-text">文件下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件上传"><span class="toc-text">文件上传</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
 
 
     <div class="post-content">
       
-        
-        
-
-        
-          <p>在iOS中，我们常用发送网络请求的方案一般有如下两种方案:</p>
+        <p>在iOS中，我们常用发送网络请求的方案一般有如下两种方案:</p>
 <ul>
 <li>1.苹果原生（自带）框架<br>NSURLConnection：用法简单，最古老最经典最直接的一种方案 （iOS 9.0弃用)<br>NSURLSession：功能比NSURLConnection更加强大，苹果目前比较<strong>推荐使用</strong>这种技术.</li>
 <li>2.第三方框架AFNetworking：简单易用，提供了基本够用的常用功能，维护和使用者多.</li>
@@ -645,39 +258,76 @@
 <h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>总的来说，NSURLSession仍然是实现更高级别网络功能的一个强大的基础框架。</p>
 <p>参考链接:<br>1.<a href="https://www.jianshu.com/p/78964aac72d5" target="_blank" rel="noopener">iOS-网络编程(二)文件上传和断点离线下载</a>   整理得还不错，有原理也有案例<br>2.<a href="https://developer.apple.com/documentation/foundation/nsurlsession?language=objc" target="_blank" rel="noopener">苹果官方文档 NSURLSession</a><br>3.<a href="https://github.com/ming1016/study/wiki/NSURLSession" target="_blank" rel="noopener">NSURLSession知识点整理</a><br>4.<a href="https://objccn.io/issue-5-4/" target="_blank" rel="noopener">从 NSURLConnection 到 NSURLSession</a>  精品博文<br>5.<a href="https://www.jianshu.com/p/816467910783" target="_blank" rel="noopener">IOS开发系列——NSUrlSession专题</a><br>6.<a href="https://www.cnblogs.com/goodboy-heyang/p/5193960.html" target="_blank" rel="noopener">iOS开发之网络编程–1、NSURLSession的基本使用</a><br>7.<a href="https://blog.csdn.net/zenggen021151/article/details/70199713" target="_blank" rel="noopener">网络编程知识总结 之 iOS网络框架概述</a></p>
 
-        
       
     </div>
 
     
+      
+      
 
-    
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yoursite.com">yuzhifei</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yoursite.com/2018/09/27/iOS网络编程1-NSURLSession使用总结/">http://yoursite.com/2018/09/27/iOS网络编程1-NSURLSession使用总结/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
-  </article>
+
 
       
       
-  <nav class="pagination">
     
-      <a class="prev" href="/page/4/">
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/网络/">网络</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/09/29/iOS常见的面试题/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text">上一页</span>
+        <span class="prev-text nav-default">iOS常见的面试题</span>
+        <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
-      <a class="next" href="/page/6/">
-        <span class="next-text">下一页</span>
+      <a class="next" href="/2018/09/26/Charles使用/">
+        <span class="next-text nav-default">开发工具Charles使用实践</span>
+        <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
     
   </nav>
 
 
+      </footer>
     
-  </section>
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -760,6 +410,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     

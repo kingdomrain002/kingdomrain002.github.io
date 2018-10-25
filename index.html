@@ -205,6 +205,87 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/10/25/iOS开发-数据存储/">iOS开发-数据存储</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-25
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/10/23/iOS网路编程4-HTTPS适配总结/">iOS网路编程4-HTTPS适配总结</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-23
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>HTTPS单、双向验证</p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/10/22/iOS第三方源码学习-AFNetworking/">iOS第三方源码学习-AFNetworking</a>
         
       </h1>
@@ -311,10 +392,10 @@
         
 
         
-          <p>最新在总结iOS网络层的知识。<br>网络层封装的优势:<br>1.方便调用调用，不用写大量的重复代码。特别是文件上传，用系统NSURLSeccion去上传，简直就是一种折磨。<br>2.当服务端配置改变了，请求head带的参数改变了，还是用零散的网络请求去请求接口，到时候需要修改就很麻烦了。</p>
+          <p>最新在总结iOS网络层的知识。<br>网络层封装的优势:<br>1.方便调用调用，不用写大量的重复代码。特别是文件上传，用系统NSURLSeccion去上传，简直就是一种折磨。<br>2.当服务端配置改变了，请求head带的参数改变了，还是用零散的网络请求去请求接口，到时候需要修改就很麻烦了。<br>3.我们一般在使用AFN的时候会将他封装到一个工具类中，使工具类成为一个中间层，这样便于我们使用和对代码的管理，以后当AFN更新或者我们要换网络请求第三方类库的时候，直接更改工具类就可以了，其他类中的的网络请求方法都不用改变，这使我们以后维护代码更加简单快捷方便。</p>
 <p>网络层封装实现的思路有两种:<br>1.一种思路是基于原生的NSURLSeccion来封装。<br>2.一种就是在开源的第三方库如AFnetworking的基础上，再做一层封装。</p>
 <h3 id="基于原生的NSURLSeccion进行网络层的封装"><a href="#基于原生的NSURLSeccion进行网络层的封装" class="headerlink" title="基于原生的NSURLSeccion进行网络层的封装"></a>基于原生的NSURLSeccion进行网络层的封装</h3><h3 id="基于优秀的第三方库开源库进行网络层的封装"><a href="#基于优秀的第三方库开源库进行网络层的封装" class="headerlink" title="基于优秀的第三方库开源库进行网络层的封装"></a>基于优秀的第三方库开源库进行网络层的封装</h3><p>其中优秀的第三方库开源库当属AFNetworking框架。</p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="http://www.cocoachina.com/ios/20170420/19088.html" target="_blank" rel="noopener">1.iOS开发封装通用网络请求方法</a><br>2.<a href="https://github.com/yuantiku/YTKNetwork" target="_blank" rel="noopener">YTKNetwork 是猿题库 iOS 研发团队基于 AFNetworking 封装的 iOS 网络库</a><br>3.<a href="https://blog.csdn.net/zhyxblog/article/details/78127273" target="_blank" rel="noopener">iOS网络-AFNetworking详解</a><br>4.<a href="https://www.cnblogs.com/guchengfengyun/p/8098188.html" target="_blank" rel="noopener">古成风云 IOS 开发 网络详解（十二）AFNetworking总结</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="http://www.cocoachina.com/ios/20170420/19088.html" target="_blank" rel="noopener">1.iOS开发封装通用网络请求方法</a><br>2.<a href="https://github.com/yuantiku/YTKNetwork" target="_blank" rel="noopener">YTKNetwork 是猿题库 iOS 研发团队基于 AFNetworking 封装的 iOS 网络库</a><br>3.<a href="https://blog.csdn.net/zhyxblog/article/details/78127273" target="_blank" rel="noopener">iOS网络-AFNetworking详解</a><br>4.<a href="https://www.cnblogs.com/guchengfengyun/p/8098188.html" target="_blank" rel="noopener">古成风云 IOS 开发 网络详解（十二）AFNetworking总结</a><br>5.<a href="http://code.cocoachina.com/view/136929" target="_blank" rel="noopener">AFNetWorking 二次封装</a><br>6.<a href="https://www.jianshu.com/p/d94cb6b58573" target="_blank" rel="noopener">iOS-网络编程(三)AFNetworking使用</a>   </p>
 
         
       
@@ -395,7 +476,8 @@
         
 
         
-          
+          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="http://www.cocoachina.com/ios/20181022/25258.html" target="_blank" rel="noopener">iOS 从零到一搭建组件化项目框架</a></p>
+
         
       
     </div>
@@ -519,92 +601,6 @@
 
         
           
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/18/xcode-Bitcode的介绍及配置总结/">xcode-Bitcode的介绍及配置总结</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-18
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://blog.csdn.net/helloworld183/article/details/78249127" target="_blank" rel="noopener">xcode7中Bitcode的介绍及配置</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/10/17/iOS网络编程2-AFNetworking使用总结/">iOS网络编程2-AFNetworking使用总结</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-10-17
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>一句话介绍AFNetWorking:</p>
-<blockquote>
-<p>AFNetWorking一款轻量级网络请求开源框架，基于iOS和mac os 网络进行扩展的高性能框架，大大降低了iOS开发工程师处理网络请求的难度。</p>
-</blockquote>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="noopener">AFNetworking官网地址</a><br>2.</p>
-
         
       
     </div>
