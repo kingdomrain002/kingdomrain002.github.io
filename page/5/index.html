@@ -205,6 +205,47 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/10/02/iOS内存管理/">iOS内存管理</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-02
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.jianshu.com/p/48665652e4e4" target="_blank" rel="noopener">OC 知识：彻底理解 iOS 内存管理（MRC、ARC）</a><br>2.<a href="http://www.cocoachina.com/ios/20170930/20692.html" target="_blank" rel="noopener">iOS 简单而粗暴的说一说内存管理</a><br>3.<a href="https://www.jianshu.com/p/7d73654ed91a" target="_blank" rel="noopener">iOS五大块知识总结之内存管理</a></p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/09/30/iOS多线程1/">iOS多线程(一)  GCD详解</a>
         
       </h1>
@@ -304,7 +345,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/09/30/Mac上Web服务器使用/">Mac上Web服务器使用</a>
+          <a class="post-link" href="/2018/09/30/Mac上Web服务器使用/">Mac-Web服务器使用</a>
         
       </h1>
 
@@ -327,7 +368,10 @@
         
 
         
-          
+          <h3 id="启动Apache服务"><a href="#启动Apache服务" class="headerlink" title="启动Apache服务"></a>启动Apache服务</h3><p>Mac OS X自带了Apache，我们只需要简单的启动它就行了。使用如下命令:<br>启动：<code>sudo apachectl start</code><br>停止：<code>sudo apachectl stop</code><br>重启：<code>sudo apachectl restart</code><br>查看 Apache 版本 <code>httpd -v</code></p>
+<h3 id="开启PHP模块"><a href="#开启PHP模块" class="headerlink" title="开启PHP模块"></a>开启PHP模块</h3><p>Mac OS X已经内置PHP，因此我们只需要在Apache的配置中加载PHP模块即可。<br>打开Apache配置文件，路径如下:/etc/apache2/httpd.conf。<br>打开注释 <code>LoadModule php7_module libexec/apache2/libphp7.so</code><br>然后，重启Apache服务。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://blog.csdn.net/ismilesky/article/details/53894259" target="_blank" rel="noopener">10分钟教会你Mac上搭建Web服务器</a></p>
+
         
       
     </div>
@@ -578,72 +622,6 @@
 
         
           <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h3><p>1.<a href="http://www.cocoachina.com/ios/20160414/15918.html" target="_blank" rel="noopener">那些著名或非著名的iOS面试题（上）</a><br>2.<a href="https://blog.csdn.net/ab20514/article/details/49160877" target="_blank" rel="noopener">iOS面试题汇总</a><br>3.<a href="https://www.jianshu.com/p/2e1b3f54b4f3" target="_blank" rel="noopener">iOS面试题及答案</a></p>
-
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/09/27/iOS网络编程1-NSURLSession使用总结/">iOS-网络编程1-NSURLConnection和NSURLSession使用总结</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-09-27
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-
-        
-          <p>在iOS中，我们常用发送网络请求的方案一般有如下两种方案:</p>
-<ul>
-<li>1.苹果原生（自带）框架<br>NSURLConnection：用法简单，最古老最经典最直接的一种方案 （iOS 9.0弃用)<br>NSURLSession：功能比NSURLConnection更加强大，苹果目前比较<strong>推荐使用</strong>这种技术.</li>
-<li>2.第三方框架AFNetworking：简单易用，提供了基本够用的常用功能，维护和使用者多.</li>
-</ul>
-<p>知识点: NSURLConnection和NSURLSession两个框架，为什么苹果目前比较推荐使用NSURLSession？<br>答: NSURLSession改进是可以配置每个session的缓存，协议，cookie以及credential policy。每个NSURLSession对象都是一个NSURLSessionConfiguration对象来进行初始化，指定那些策略和增强移动设备上性能选项。</p>
-<h2 id="NSURLRequest和NSMutableURLRequest"><a href="#NSURLRequest和NSMutableURLRequest" class="headerlink" title="NSURLRequest和NSMutableURLRequest"></a>NSURLRequest和NSMutableURLRequest</h2><p>NSURLRequest默认的请求方法是GET，当我们需要修改请求方法为POST的时候就要用可变的NSMutableURLRequest，并设置请求方式，请求头和请求体。</p>
-<h2 id="NSURLSession"><a href="#NSURLSession" class="headerlink" title="NSURLSession"></a>NSURLSession</h2><p>使用NSURLSession就需要用到NSURLSessionTask，所以关于Task的类和其子类的关系还是要了解的。NSURLsessionTask是一个抽象类，其下有3个实体子类可以直接使用：NSURLSessionDataTask、NSURLSessionUploadTask、NSURLSessionDownloadTask。所有task都是可以取消，暂停或恢复的。这3个子类封装了程序三个最基本的网络任务：获取数据，比如 JSON 或者 XML，上传文件和下载文件。<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180930-114007%402x.png" alt="NSURLSessionTask类和其子类的关系"></p>
-<h3 id="NSURLSessionConfiguration"><a href="#NSURLSessionConfiguration" class="headerlink" title="NSURLSessionConfiguration"></a>NSURLSessionConfiguration</h3><p>NSURLSessionConfiguration对象用于初始化NSURLSession对象。当NSURLSession开启多个任务Task的时候可以用NSURLSessionConfiguration对象统一配置。<br>会话在初始化时复制它们的配置，NSURLSession有一个只读的配置属性，使得该配置对象上的变化对这个会话无效。配置在初始化时被读取一次，之后都是不会变化的。<br>NSURLSessionConfiguration有三个类构造函数:</p>
-<ul>
-<li>defaultSessionConfiguration返回标准默认配置，一般我们都使用这个</li>
-<li>ephemeralSessionConfiguration返回一个预设配置，没有持久性存储的缓存，Cookie或证书。可以用来实现像”无痕浏览”功能的功能。</li>
-<li>backgroundSessionConfiguration：独特之处在于，它会创建一个后台会话。它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。</li>
-</ul>
-<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><p>dataTaskWithURL  根据请求的URL创建任务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSURLSession *session = [NSURLSession sharedSession];  </span><br><span class="line">NSURL *url = [NSURL URLWithString:@&quot;http://example.com&quot;];</span><br><span class="line">NSURLSessionTask *task = [session dataTaskWithURL:url</span><br><span class="line">  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) &#123;</span><br><span class="line">&#125;];</span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure>
-<p>dataTaskWithRequest 根据请求对象创建任务  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NSURL *URL = [NSURL URLWithString:@&quot;http://example.com&quot;];</span><br><span class="line">NSURLRequest *request = [NSURLRequest requestWithURL:URL];</span><br><span class="line">NSURLSession *session = [NSURLSession sharedSession];</span><br><span class="line">NSURLSessionDataTask *task = [session dataTaskWithRequest:request</span><br><span class="line">          completionHandler:</span><br><span class="line">     ^(NSData *data, NSURLResponse *response, NSError *error) &#123;</span><br><span class="line">          // ...</span><br><span class="line">     &#125;];</span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure>
-<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><p>post请求<strong>必须</strong>使用dataTaskWithRequest创建任务。</p>
-<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>NSURLSessionDownloadTask大文件之block下载<br>NSURLSessionDownloadTask大文件之代理方法下载<br>NSURLSessionDownloadTask大文件之代理方法实现断点续传下载</p>
-<p>Block下载方式不适合大文件下载，因为该方法需要等到文件下载完毕了，才会回调completionHandler。</p>
-<ul>
-<li>离线文件下载<br>文件句柄<br>输出流</li>
-</ul>
-<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>总的来说，NSURLSession仍然是实现更高级别网络功能的一个强大的基础框架。</p>
-<p>参考链接:<br>1.<a href="https://www.jianshu.com/p/78964aac72d5" target="_blank" rel="noopener">iOS-网络编程(二)文件上传和断点离线下载</a>   整理得还不错，有原理也有案例<br>2.<a href="https://developer.apple.com/documentation/foundation/nsurlsession?language=objc" target="_blank" rel="noopener">苹果官方文档 NSURLSession</a><br>3.<a href="https://github.com/ming1016/study/wiki/NSURLSession" target="_blank" rel="noopener">NSURLSession知识点整理</a><br>4.<a href="https://objccn.io/issue-5-4/" target="_blank" rel="noopener">从 NSURLConnection 到 NSURLSession</a>  精品博文<br>5.<a href="https://www.jianshu.com/p/816467910783" target="_blank" rel="noopener">IOS开发系列——NSUrlSession专题</a><br>6.<a href="https://www.cnblogs.com/goodboy-heyang/p/5193960.html" target="_blank" rel="noopener">iOS开发之网络编程–1、NSURLSession的基本使用</a><br>7.<a href="https://blog.csdn.net/zenggen021151/article/details/70199713" target="_blank" rel="noopener">网络编程知识总结 之 iOS网络框架概述</a></p>
 
         
       
