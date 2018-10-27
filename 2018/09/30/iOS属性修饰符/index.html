@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="iOS属性修饰符"/>
+  <meta name="description" content="iOS开发-属性修饰符"/>
 
 
 
@@ -87,7 +87,7 @@
   window.config = {"title":"yuzhifei的技术博客","subtitle":null,"description":null,"author":"yuzhifei","language":null,"timezone":null,"url":"http://yoursite.com","root":"/","permalink":":year/:month/:day/:title/","permalink_defaults":null,"source_dir":"source","public_dir":"public","tag_dir":"tags","archive_dir":"archives","category_dir":"categories","code_dir":"downloads/code","i18n_dir":":lang","skip_render":null,"new_post_name":":title.md","default_layout":"post","titlecase":false,"external_link":true,"filename_case":0,"render_drafts":false,"post_asset_folder":false,"relative_link":false,"future":true,"highlight":{"enable":true,"auto_detect":false,"line_number":true,"tab_replace":null,"first_line_number":"always1"},"default_category":"uncategorized","category_map":null,"tag_map":null,"date_format":"YYYY-MM-DD","time_format":"HH:mm:ss","per_page":20,"pagination_dir":"page","theme":"even","deploy":{"type":"git","repository":"git@github.com:kingdomrain002/kingdomrain002.github.io.git","branch":"master"},"ignore":[],"keywords":null,"index_generator":{"per_page":10,"order_by":"-date","path":""},"archive_generator":{"per_page":20,"yearly":true,"monthly":true,"daily":false},"category_generator":{"per_page":20},"tag_generator":{"per_page":20},"marked":{"gfm":true,"pedantic":false,"sanitize":false,"tables":true,"breaks":true,"smartLists":true,"smartypants":true,"modifyAnchors":"","autolink":true},"server":{"port":4000,"log":false,"ip":"0.0.0.0","compress":false,"header":true},"since":2018,"favicon":"/horse.png","rss":"default","menu":{"Home":"/","Archives":"/archives/","Tags":"/tags/","About":"/about"},"color":"default","mode":"default","toc":true,"fancybox":true,"pjax":true,"copyright":{"enable":true,"license":"<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-nc/4.0/\" target=\"_blank\">知识共享署名-非商业性使用 4.0 国际许可协议</a>"},"reward":{"enable":false,"qrCode":{"wechat":null,"alipay":null}},"social":{"email":"your@email.com","stack-overflow":null,"twitter":null,"facebook":null,"linkedin":null,"google":null,"github":"https://github.com/kingdomrain002","weibo":null,"zhihu":null,"douban":null,"pocket":null,"tumblr":null,"instagram":null},"leancloud":{"app_id":null,"app_key":null},"baidu_analytics":null,"baidu_verification":null,"google_analytics":null,"google_verification":null,"disqus_shortname":null,"changyan":{"appid":null,"appkey":null},"livere_datauid":null,"version":"2.10.1"};
 </script>
 
-    <title> iOS属性修饰符 - yuzhifei的技术博客 </title>
+    <title> iOS开发-属性修饰符 - yuzhifei的技术博客 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -203,7 +203,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          iOS属性修饰符
+          iOS开发-属性修饰符
         
       </h1>
 
@@ -221,7 +221,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#property是什么？"><span class="toc-text">@property是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的属性描述符"><span class="toc-text">常见的属性描述符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用规范"><span class="toc-text">使用规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何考察这块知识点"><span class="toc-text">如何考察这块知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#书籍资料"><span class="toc-text">书籍资料</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网站资源"><span class="toc-text">网站资源</span></a></li></ol></li></ol></li></ol>
     </div>
   </div>
 
@@ -229,7 +229,80 @@
 
     <div class="post-content">
       
-        <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3>
+        <h2 id="property是什么？"><a href="#property是什么？" class="headerlink" title="@property是什么？"></a>@property是什么？</h2><p>@property声明属性的语法，它可以快速的为实例变量创建存取器，并且允许通过点语法使用存取器。 </p>
+<p>属性的参数应该按照下面的顺序排列：原子性，读写和内存管理。(–引自 禅与 Objective-C 编程艺术-属性)</p>
+<p>原子性</p>
+<ul>
+<li>atomic</li>
+<li>nonatomic</li>
+</ul>
+<p>读写</p>
+<ul>
+<li>readwrite</li>
+<li>readonly</li>
+</ul>
+<p>内存管理</p>
+<ul>
+<li>strong</li>
+<li>weak</li>
+<li>copy</li>
+<li>assign</li>
+</ul>
+<h3 id="常见的属性描述符"><a href="#常见的属性描述符" class="headerlink" title="常见的属性描述符"></a>常见的属性描述符</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:center">注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">strong</td>
+<td style="text-align:center">表示指向并拥有该对象，其修饰的对象引用计数会增加1。</td>
+</tr>
+<tr>
+<td style="text-align:left">weak</td>
+<td style="text-align:center">表示指向但不拥有该对象, 其修饰的对象引用计数不会增加。</td>
+</tr>
+<tr>
+<td style="text-align:left">assign</td>
+<td style="text-align:center">主要用于修饰基本数据类型,如NSInteger和NSFloat,这些数值主要存在于栈中。</td>
+</tr>
+<tr>
+<td style="text-align:left">copy</td>
+<td style="text-align:center">建立一个引用计数为1的对象，在赋值时，使用传入值的一份拷贝。</td>
+</tr>
+<tr>
+<td style="text-align:left">nonatomic</td>
+<td style="text-align:center">非原子性操作，不提供线程安全，效率更高</td>
+</tr>
+<tr>
+<td style="text-align:left">atomic</td>
+<td style="text-align:center">原子操作，提供线程安全，默认是atomic的，耗费系统资源</td>
+</tr>
+<tr>
+<td style="text-align:left">readwrite</td>
+<td style="text-align:center">属性可以读写，默认属性</td>
+</tr>
+<tr>
+<td style="text-align:left">readonly</td>
+<td style="text-align:center">属性只读</td>
+</tr>
+</tbody>
+</table>
+<p>ARC下,不显式指定任何属性关键字时,默认的关键字都有哪些?<br>基本数据：  <code>atomic,readwrite,assign</code><br>普通的OC对象: <code>atomic,readwrite,strong</code></p>
+<p>比较atomic和nonatomic关键字区别？</p>
+<p>atomic是否一定线程安全？</p>
+<p>浅拷贝和深拷贝的区别？</p>
+<h2 id="使用规范"><a href="#使用规范" class="headerlink" title="使用规范"></a>使用规范</h2><p>1.Delegate基本总是使用weak，以防止循环引用。特殊情况是，希望在dealloc中调用delegate的某些方法进行释放，此时如果使用weak将引起异常，因为此时已经是nil了，那么采用assign更为合适，这时需要自己手动在dealloc中给Delegate置为nil。</p>
+<p>2.属性可以存储一个代码块。为了让它存活到定义的块的结束，必须使用 copy （block 最早在栈里面创建，使用 copy让 block 拷贝到堆里面去）。</p>
+<h2 id="如何考察这块知识点"><a href="#如何考察这块知识点" class="headerlink" title="如何考察这块知识点"></a>如何考察这块知识点</h2><p>属性声明代码风格考察</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><h4 id="书籍资料"><a href="#书籍资料" class="headerlink" title="书籍资料"></a>书籍资料</h4><p>《iOS面试之道》 Page93</p>
+<h4 id="网站资源"><a href="#网站资源" class="headerlink" title="网站资源"></a>网站资源</h4><p>1.<a href="https://www.jianshu.com/p/8b3cf2187255" target="_blank" rel="noopener">iOS关于属性关键字，你又知道多少？</a><br>特别喜欢最前面的那句话，分享是每个优秀的程序员所必备的品质。<br>对属性修饰符的使用场景有介绍</p>
+<p>2.<a href="https://blog.csdn.net/ck_fear/article/details/53415208" target="_blank" rel="noopener">iOS中属性@property中的关键字的使用说明</a>  这篇有一个简单的demo，元知识都应该从简单的案例开始学习。整理的属性修饰符也比较全。</p>
+<p>3.<a href="https://github.com/oa414/objc-zen-book-cn#%E5%B1%9E%E6%80%A7" target="_blank" rel="noopener">禅与 Objective-C 编程艺术 属性</a></p>
+<p>4.<a href="https://www.jianshu.com/p/aa4cc28d7160" target="_blank" rel="noopener">iOS声明属性常用关键字解析</a></p>
+
       
     </div>
 
