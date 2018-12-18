@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="yuzhifei的技术博客">
 <meta property="og:description" content="如果能在发开之前就能明确定义一套代码规范,并且严格的去执行,肯定能非常有效的提高代码阅读性,也使得后期开发，维护等事半功倍,上手难度降低,在新人加入进行也能更快的融入团队。   清晰地组织代码和规范地进行定义, 是你对自己以及其他阅读代码的人的尊重。code organization is a matter of hygiene (代码组织是卫生问题)。  禅与Objective-C编程艺术">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-17T09:09:35.321Z">
+<meta property="og:updated_time" content="2018-12-18T09:25:02.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C代码规范">
 <meta name="twitter:description" content="如果能在发开之前就能明确定义一套代码规范,并且严格的去执行,肯定能非常有效的提高代码阅读性,也使得后期开发，维护等事半功倍,上手难度降低,在新人加入进行也能更快的融入团队。   清晰地组织代码和规范地进行定义, 是你对自己以及其他阅读代码的人的尊重。code organization is a matter of hygiene (代码组织是卫生问题)。  禅与Objective-C编程艺术">
@@ -98,7 +98,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#禅与Objective-C编程艺术-学习笔记"><span class="toc-number">1.</span> <span class="toc-text">禅与Objective-C编程艺术 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#条件语句"><span class="toc-number">1.1.</span> <span class="toc-text">条件语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nil-和-BOOL-检查"><span class="toc-number">1.1.1.</span> <span class="toc-text">nil 和 BOOL 检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#黄金大道"><span class="toc-number">1.1.2.</span> <span class="toc-text">黄金大道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三元运算符"><span class="toc-number">1.1.3.</span> <span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误处理"><span class="toc-number">1.1.4.</span> <span class="toc-text">错误处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Case语句"><span class="toc-number">1.2.</span> <span class="toc-text">Case语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">枚举类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名"><span class="toc-number">1.3.</span> <span class="toc-text">命名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通用的约定"><span class="toc-number">1.3.1.</span> <span class="toc-text">通用的约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常量"><span class="toc-number">1.3.2.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-number">1.3.3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字面值"><span class="toc-number">1.3.4.</span> <span class="toc-text">字面值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类"><span class="toc-number">1.4.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#instancetype"><span class="toc-number">1.4.1.</span> <span class="toc-text">instancetype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单例"><span class="toc-number">1.4.2.</span> <span class="toc-text">单例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-number">1.4.3.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#属性定义"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">属性定义</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可变对象"><span class="toc-number">1.4.4.</span> <span class="toc-text">可变对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pragma"><span class="toc-number">1.4.5.</span> <span class="toc-text">Pragma</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记"><span class="toc-number">2.</span> <span class="toc-text">Introduction to Coding Guidelines for Cocoa  学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-Objective-C-Style-Guide-学习笔记"><span class="toc-number">3.</span> <span class="toc-text">Google Objective-C Style Guide 学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#禅与Objective-C编程艺术-学习笔记"><span class="toc-number">1.</span> <span class="toc-text">禅与Objective-C编程艺术 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#条件语句"><span class="toc-number">1.1.</span> <span class="toc-text">条件语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nil-和-BOOL-检查"><span class="toc-number">1.1.1.</span> <span class="toc-text">nil 和 BOOL 检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#黄金大道"><span class="toc-number">1.1.2.</span> <span class="toc-text">黄金大道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三元运算符"><span class="toc-number">1.1.3.</span> <span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误处理"><span class="toc-number">1.1.4.</span> <span class="toc-text">错误处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Case语句"><span class="toc-number">1.2.</span> <span class="toc-text">Case语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">枚举类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名"><span class="toc-number">1.3.</span> <span class="toc-text">命名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通用的约定"><span class="toc-number">1.3.1.</span> <span class="toc-text">通用的约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常量"><span class="toc-number">1.3.2.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-number">1.3.3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字面值"><span class="toc-number">1.3.4.</span> <span class="toc-text">字面值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类"><span class="toc-number">1.4.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类名"><span class="toc-number">1.4.1.</span> <span class="toc-text">类名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Initializer-和-dealloc"><span class="toc-number">1.4.2.</span> <span class="toc-text">Initializer 和 dealloc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Designated-和-Secondary-初始化方法"><span class="toc-number">1.4.3.</span> <span class="toc-text">Designated 和 Secondary 初始化方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#instancetype"><span class="toc-number">1.4.4.</span> <span class="toc-text">instancetype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化模式"><span class="toc-number">1.4.5.</span> <span class="toc-text">初始化模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#单例"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">单例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-number">1.4.6.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#属性定义"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">属性定义</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可变对象"><span class="toc-number">1.4.7.</span> <span class="toc-text">可变对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pragma"><span class="toc-number">1.4.8.</span> <span class="toc-text">Pragma</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记"><span class="toc-number">2.</span> <span class="toc-text">Introduction to Coding Guidelines for Cocoa  学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-Objective-C-Style-Guide-学习笔记"><span class="toc-number">3.</span> <span class="toc-text">Google Objective-C Style Guide 学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
 		
 		</div>
 		
@@ -137,8 +137,14 @@
 <p>并在实现文件中为它赋值。</p>
 <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>方法名与方法类型 (-/+ 符号)之间应该以空格间隔。方法段之间也应该以空格间隔（以符合 Apple 风格）。参数前应该总是有一个描述性的关键词。</p>
 <h4 id="字面值"><a href="#字面值" class="headerlink" title="字面值"></a>字面值</h4><p>使用字面值来创建<strong>不可变</strong>的NSString, NSDictionary, NSArray, 和 NSNumber 对象。注意不要将 nil 传进 NSArray 和 NSDictionary 里，因为这样会导致崩溃。</p>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><h4 id="instancetype"><a href="#instancetype" class="headerlink" title="instancetype"></a>instancetype</h4><p>  在alloc或者init中，我们强烈建议对所有返回类的实例的类方法和实例方法使用 instancetype类型。 </p>
-<h4 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h4><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="属性定义"><a href="#属性定义" class="headerlink" title="属性定义"></a>属性定义</h5><p>属性的参数应该按照下面的顺序排列：原子性，读写和内存管理。 </p>
+<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><h4 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h4><p>类名应该以三个大写字母作为前缀（双字母前缀为Apple的类预留）。</p>
+<h4 id="Initializer-和-dealloc"><a href="#Initializer-和-dealloc" class="headerlink" title="Initializer 和 dealloc"></a>Initializer 和 dealloc</h4><p>推荐的代码组织方式是将 dealloc 方法放在实现文件的最前面，init 应该跟在 dealloc 方法后面。不过把 init 和 dealloc 放在一起可以从视觉上强调它们是一对的。</p>
+<h4 id="Designated-和-Secondary-初始化方法"><a href="#Designated-和-Secondary-初始化方法" class="headerlink" title="Designated 和 Secondary 初始化方法"></a>Designated 和 Secondary 初始化方法</h4><h4 id="instancetype"><a href="#instancetype" class="headerlink" title="instancetype"></a>instancetype</h4><p>  在alloc或者init中，我们强烈建议对所有返回类的实例的类方法和实例方法使用 instancetype类型。 </p>
+<h4 id="初始化模式"><a href="#初始化模式" class="headerlink" title="初始化模式"></a>初始化模式</h4><p>#####类簇</p>
+<h5 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h5><p>请使用一个线程安全的模式来创建共享的实例.<br>对于 GCD，用 dispatch_once() 函数就可以咯。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (instancetype)sharedInstance &#123;</span><br><span class="line">    static id sharedInstance = nil;</span><br><span class="line">    static dispatch_once_t onceToken = 0;</span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">        sharedInstance = [[self alloc] init];</span><br><span class="line">    &#125;);</span><br><span class="line">    return sharedInstance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>尝试着把单例作为一个对象的容器，在代码或者应用层面上共享，是一个糟糕和丑陋的设计。<br><a href="https://objccn.io/issue-13-2/" target="_blank" rel="noopener">避免滥用单例</a></p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="属性定义"><a href="#属性定义" class="headerlink" title="属性定义"></a>属性定义</h5><p>属性的参数应该按照下面的顺序排列：原子性，读写和内存管理。 </p>
 <p>问题:属性可以存储一个代码块。为什么必须使用<code>copy</code>？<br>答:为了让它存活到定义的块的结束，必须使用copy。block最早在栈里面创建，使用copy让 block拷贝到堆里面去。</p>
 <h4 id="可变对象"><a href="#可变对象" class="headerlink" title="可变对象"></a>可变对象</h4><p>任何可以用一个可变的对象设置的（(比如 NSString,NSArray,NSURLRequest)）属性的内存管理类型必须是copy的。</p>
 <h4 id="Pragma"><a href="#Pragma" class="headerlink" title="Pragma"></a>Pragma</h4><h2 id="Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记"><a href="#Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记" class="headerlink" title="Introduction to Coding Guidelines for Cocoa  学习笔记"></a>Introduction to Coding Guidelines for Cocoa  学习笔记</h2><h2 id="Google-Objective-C-Style-Guide-学习笔记"><a href="#Google-Objective-C-Style-Guide-学习笔记" class="headerlink" title="Google Objective-C Style Guide 学习笔记"></a>Google Objective-C Style Guide 学习笔记</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>问题: 如果让我来管理iOS的代码，我需要写一套iOS代码规范让我的组员来遵循，我该如何做？</p>
@@ -208,7 +214,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#禅与Objective-C编程艺术-学习笔记"><span class="toc-number">1.</span> <span class="toc-text">禅与Objective-C编程艺术 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#条件语句"><span class="toc-number">1.1.</span> <span class="toc-text">条件语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nil-和-BOOL-检查"><span class="toc-number">1.1.1.</span> <span class="toc-text">nil 和 BOOL 检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#黄金大道"><span class="toc-number">1.1.2.</span> <span class="toc-text">黄金大道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三元运算符"><span class="toc-number">1.1.3.</span> <span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误处理"><span class="toc-number">1.1.4.</span> <span class="toc-text">错误处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Case语句"><span class="toc-number">1.2.</span> <span class="toc-text">Case语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">枚举类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名"><span class="toc-number">1.3.</span> <span class="toc-text">命名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通用的约定"><span class="toc-number">1.3.1.</span> <span class="toc-text">通用的约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常量"><span class="toc-number">1.3.2.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-number">1.3.3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字面值"><span class="toc-number">1.3.4.</span> <span class="toc-text">字面值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类"><span class="toc-number">1.4.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#instancetype"><span class="toc-number">1.4.1.</span> <span class="toc-text">instancetype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单例"><span class="toc-number">1.4.2.</span> <span class="toc-text">单例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-number">1.4.3.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#属性定义"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">属性定义</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可变对象"><span class="toc-number">1.4.4.</span> <span class="toc-text">可变对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pragma"><span class="toc-number">1.4.5.</span> <span class="toc-text">Pragma</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记"><span class="toc-number">2.</span> <span class="toc-text">Introduction to Coding Guidelines for Cocoa  学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-Objective-C-Style-Guide-学习笔记"><span class="toc-number">3.</span> <span class="toc-text">Google Objective-C Style Guide 学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#禅与Objective-C编程艺术-学习笔记"><span class="toc-number">1.</span> <span class="toc-text">禅与Objective-C编程艺术 学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#条件语句"><span class="toc-number">1.1.</span> <span class="toc-text">条件语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nil-和-BOOL-检查"><span class="toc-number">1.1.1.</span> <span class="toc-text">nil 和 BOOL 检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#黄金大道"><span class="toc-number">1.1.2.</span> <span class="toc-text">黄金大道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三元运算符"><span class="toc-number">1.1.3.</span> <span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#错误处理"><span class="toc-number">1.1.4.</span> <span class="toc-text">错误处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Case语句"><span class="toc-number">1.2.</span> <span class="toc-text">Case语句</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#枚举类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">枚举类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命名"><span class="toc-number">1.3.</span> <span class="toc-text">命名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通用的约定"><span class="toc-number">1.3.1.</span> <span class="toc-text">通用的约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常量"><span class="toc-number">1.3.2.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-number">1.3.3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字面值"><span class="toc-number">1.3.4.</span> <span class="toc-text">字面值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类"><span class="toc-number">1.4.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类名"><span class="toc-number">1.4.1.</span> <span class="toc-text">类名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Initializer-和-dealloc"><span class="toc-number">1.4.2.</span> <span class="toc-text">Initializer 和 dealloc</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Designated-和-Secondary-初始化方法"><span class="toc-number">1.4.3.</span> <span class="toc-text">Designated 和 Secondary 初始化方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#instancetype"><span class="toc-number">1.4.4.</span> <span class="toc-text">instancetype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化模式"><span class="toc-number">1.4.5.</span> <span class="toc-text">初始化模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#单例"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">单例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-number">1.4.6.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#属性定义"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">属性定义</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可变对象"><span class="toc-number">1.4.7.</span> <span class="toc-text">可变对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pragma"><span class="toc-number">1.4.8.</span> <span class="toc-text">Pragma</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记"><span class="toc-number">2.</span> <span class="toc-text">Introduction to Coding Guidelines for Cocoa  学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Google-Objective-C-Style-Guide-学习笔记"><span class="toc-number">3.</span> <span class="toc-text">Google Objective-C Style Guide 学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
  
   </div>
 
@@ -231,7 +237,11 @@
 			
 		
 			
-				<li><a href="/tags/Charles/" title="Charles">Charles<sup>1</sup></a></li>
+				<li><a href="/tags/IM/" title="IM">IM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
@@ -239,7 +249,7 @@
 			
 		
 			
-				<li><a href="/tags/GCD/" title="GCD">GCD<sup>1</sup></a></li>
+				<li><a href="/tags/isa指针/" title="isa指针">isa指针<sup>1</sup></a></li>
 			
 		
 			
@@ -247,7 +257,7 @@
 			
 		
 			
-				<li><a href="/tags/NSOperation-NSOperationQueue/" title="NSOperation,NSOperationQueue">NSOperation,NSOperationQueue<sup>1</sup></a></li>
+				<li><a href="/tags/GCD/" title="GCD">GCD<sup>1</sup></a></li>
 			
 		
 			
@@ -259,7 +269,7 @@
 			
 		
 			
-				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+				<li><a href="/tags/NSOperation-NSOperationQueue/" title="NSOperation,NSOperationQueue">NSOperation,NSOperationQueue<sup>1</sup></a></li>
 			
 		
 			
@@ -267,7 +277,11 @@
 			
 		
 			
-				<li><a href="/tags/IM/" title="IM">IM<sup>1</sup></a></li>
+				<li><a href="/tags/Charles/" title="Charles">Charles<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
 			
 		
 			
@@ -275,15 +289,11 @@
 			
 		
 			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
 			
 		
 			
@@ -299,11 +309,7 @@
 			
 		
 			
-				<li><a href="/tags/排序/" title="排序">排序<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/设计模式/" title="设计模式">设计模式<sup>1</sup></a></li>
+				<li><a href="/tags/单元测试/" title="单元测试">单元测试<sup>1</sup></a></li>
 			
 		
 		</ul>
