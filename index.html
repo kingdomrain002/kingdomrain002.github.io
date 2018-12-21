@@ -241,7 +241,7 @@
 </header>
     <div class="article-content">
         
-        <p>   如果能在发开之前就能明确定义一套代码规范,并且严格的去执行,肯定能非常有效的提高代码阅读性,也使得后期开发，维护等事半功倍,上手难度降低,在新人加入进行也能更快的融入团队。<br>   清晰地组织代码和规范地进行定义, 是你对自己以及其他阅读代码的人的尊重。<code>code organization is a matter of hygiene (代码组织是卫生问题)</code>。 </p>
+        <p>   如果能在发开之前就能明确定义一套代码规范,并且严格的去执行,肯定能非常有效的提高代码阅读性,也使得后期开发，维护等事半功倍,上手难度降低,在新人加入进行也能更快的融入团队。<br>   清晰地组织代码和规范地进行定义, 是你对自己以及其他阅读代码的人的尊重。code organization is a matter of hygiene (代码组织是卫生问题)。 </p>
 <h2 id="禅与Objective-C编程艺术-学习笔记"><a href="#禅与Objective-C编程艺术-学习笔记" class="headerlink" title="禅与Objective-C编程艺术 学习笔记"></a>禅与Objective-C编程艺术 学习笔记</h2><blockquote>
 <p>为了方便自己以后复习，我主要还是摘录一些对我比较有帮助的知识点。</p>
 </blockquote>
@@ -296,16 +296,24 @@
 <p><code>为什么?</code><br>答案:这是为了确保防止在不明确的情况下修改被封装好的对象的值(译者注：比如执行 array(定义为 copy 的 NSArray 实例) = mutableArray，copy 属性会让 array 的 setter 方法为 array = [mutableArray copy], [mutableArray copy] 返回的是不可变的 NSArray 实例，就保证了正确性。用其他属性修饰符修饰，容易在直接赋值的时候，array 指向的是 NSMuatbleArray 的实例，在之后可以随意改变它的值，就容易出错)。</p>
 <h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><h5 id="参数断言"><a href="#参数断言" class="headerlink" title="参数断言"></a>参数断言</h5><p>你的方法可能要求一些参数来满足特定的条件（比如不能为nil），在这种情况下最好使用 NSParameterAssert() 来断言条件是否成立或是抛出一个异常。</p>
 <h5 id="私有方法"><a href="#私有方法" class="headerlink" title="私有方法"></a>私有方法</h5><p>永远不要在你的私有方法前加上 _ 前缀。这个前缀是 Apple 保留的。不要冒重写苹果的私有方法的险。</p>
-<h5 id="相等性"><a href="#相等性" class="headerlink" title="相等性"></a>相等性</h5><p>当你要实现相等性的时候记住这个约定：你需要同时实现isEqual 和 hash方法。</p>
-<h4 id="Pragma"><a href="#Pragma" class="headerlink" title="Pragma"></a>Pragma</h4><h2 id="Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记"><a href="#Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记" class="headerlink" title="Introduction to Coding Guidelines for Cocoa  学习笔记"></a>Introduction to Coding Guidelines for Cocoa  学习笔记</h2><h2 id="Google-Objective-C-Style-Guide-学习笔记"><a href="#Google-Objective-C-Style-Guide-学习笔记" class="headerlink" title="Google Objective-C Style Guide 学习笔记"></a>Google Objective-C Style Guide 学习笔记</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>问题: 如果让我来管理iOS的代码，我需要写一套iOS代码规范让我的组员来遵循，我该如何做？</p>
+<h5 id="相等性"><a href="#相等性" class="headerlink" title="相等性"></a>相等性</h5><p>当你要实现相等性的时候记住这个约定：你需要同时实现isEqual 和 hash方法。   </p>
+<p>一定要注意 hash 方法不能返回一个常量。这是一个典型的错误并且会导致严重的问题，因为实际上hash方法的返回值会作为对象在 hash 散列表中的 key,这会导致 hash 表 100% 的碰撞。</p>
+<p><a href="https://nshipster.cn/equality/" target="_blank" rel="noopener">参考资料</a></p>
+<h4 id="Categories"><a href="#Categories" class="headerlink" title="Categories"></a>Categories</h4><p>一个好的实践是在 category 名中使用前缀。</p>
+<p>分类可以用来在头文件中定义一组功能相似的方法。这是在 Apple的 Framework 也很常见的一个实践。我们也强烈建议在自己的代码中这样使用。我们的经验是，创建一组分类对以后的重构十分有帮助。一个类的接口增加的时候，可能意味着你的类做了太多事情，违背了类的单一功能原则。</p>
+<p><strong>例子</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@interface NSDate (ZOCTimeExtensions)</span><br><span class="line">- (NSString *)zoc_timeAgoShort;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h4 id="Protocols"><a href="#Protocols" class="headerlink" title="Protocols"></a>Protocols</h4><h4 id="NSNotification"><a href="#NSNotification" class="headerlink" title="NSNotification"></a>NSNotification</h4><p>当你定义你自己的 NSNotification 的时候你应该把你的通知的名字定义为一个字符串常量。<br>你应该按照统一的命名空间前缀法则，用类名前缀作为这个通知名字的前缀。同时，用一个 Did/Will 这样的动词以及用 “Notifications” 后缀来命名这个通知也是一个好的实践。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Foo.h</span><br><span class="line">extern NSString * const ZOCFooDidBecomeBarNotification</span><br><span class="line"></span><br><span class="line">// Foo.m</span><br><span class="line">NSString * const ZOCFooDidBecomeBarNotification = @&quot;ZOCFooDidBecomeBarNotification&quot;;</span><br></pre></td></tr></table></figure>
+<h4 id="美化代码"><a href="#美化代码" class="headerlink" title="美化代码"></a>美化代码</h4><h4 id="代码组织"><a href="#代码组织" class="headerlink" title="代码组织"></a>代码组织</h4><h2 id="Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记"><a href="#Introduction-to-Coding-Guidelines-for-Cocoa-学习笔记" class="headerlink" title="Introduction to Coding Guidelines for Cocoa  学习笔记"></a>Introduction to Coding Guidelines for Cocoa  学习笔记</h2><h2 id="Google-Objective-C-Style-Guide-学习笔记"><a href="#Google-Objective-C-Style-Guide-学习笔记" class="headerlink" title="Google Objective-C Style Guide 学习笔记"></a>Google Objective-C Style Guide 学习笔记</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>问题: 我如何来管理iOS的代码，我需要写一套iOS代码规范让我的组员来遵循，我该如何做？</p>
 <p>问题2:如果我是面试官，我怎么在面试的时候考察代码风格相关的知识？</p>
-<p>1.《禅与Objective-C编程艺术》里面有一道在技术面试中可以考察一个RSS阅读器</p>
-<p>给出部分实现，让面试者补充剩下的地方。</p>
+<p>1.《禅与Objective-C编程艺术》里面有一道在技术面试中可以考察一个RSS阅读器。要求很简单：在TableView中展示一个远程的RSS订阅。可以给出部分实现，让面试者补充剩下的地方。</p>
 <p>2.类簇 设计模式<br>一个经典的例子是如果你有为 iPad 和 iPhone 写的一样的 UIViewController子类，但是在不同的设备上有不同的行为。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@implementation ZOCKintsugiPhotoViewController</span><br><span class="line"></span><br><span class="line">- (id)initWithPhotos:(NSArray *)photos &#123;</span><br><span class="line">    if ([self isKindOfClass:ZOCKintsugiPhotoViewController.class]) &#123; </span><br><span class="line">        if ([UIDevice isPad]) &#123;</span><br><span class="line">            self = [[ZOCKintsugiPhotoViewController_iPad alloc] initWithPhotos:photos];</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            self = [[ZOCKintsugiPhotoViewController_iPhone alloc] initWithPhotos:photos];</span><br><span class="line">        &#125;</span><br><span class="line">        return self;</span><br><span class="line">    &#125;</span><br><span class="line">    return [super initWithNibName:nil bundle:nil];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <p>以上这段代码存在什么问题？<br><a href="https://github.com/oa414/objc-zen-book-cn/blob/master/README.md#%E7%B1%BB%E7%B0%87" target="_blank" rel="noopener">答案</a></p>
-<p>问题:属性可以存储一个代码块。为什么必须使用<code>copy</code>？<br>答:为了让它存活到定义的块的结束，必须使用copy。block最早在栈里面创建，使用copy让 block拷贝到堆里面去。</p>
-<p>属性定义</p>
+<p>3.问题:属性可以存储一个代码块。为什么必须使用<code>copy</code>？<br>答:为了让它存活到定义的块的结束，必须使用copy。block最早在栈里面创建，使用copy让 block拷贝到堆里面去。</p>
+<p>4.属性定义  改错题<br>面试之道的一道题目，就是考察代码风格的。可以用它们的那种形式来考察。</p>
+<p>5.相等性  代码编程题<br>写一个Person类，让面试人员添加方法isEqual方法。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>来自 Apple 的：</p>
 <p>1.<a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html#//apple_ref/doc/uid/10000146-SW1" target="_blank" rel="noopener">Introduction to Coding Guidelines for Cocoa</a>   苹果官方文档   5星推荐</p>
 <p>来自社区的:<br>2.<a href="https://github.com/oa414/objc-zen-book-cn" target="_blank" rel="noopener">禅与 Objective-C 编程艺术 </a>  非常好的代码规范教程，字字珠玑 堪称经典  </p>
@@ -670,15 +678,15 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Charles/" title="Charles">Charles<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/IM/" title="IM">IM<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/UserNotifications-推送/" title="UserNotifications,推送">UserNotifications,推送<sup>1</sup></a></li>
 			
 		
 			
@@ -686,7 +694,19 @@
 			
 		
 			
+				<li><a href="/tags/UserNotifications-推送/" title="UserNotifications,推送">UserNotifications,推送<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/内存泄露/" title="内存泄露">内存泄露<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/NSOperation-NSOperationQueue/" title="NSOperation,NSOperationQueue">NSOperation,NSOperationQueue<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GCD/" title="GCD">GCD<sup>1</sup></a></li>
 			
 		
 			
@@ -698,23 +718,11 @@
 			
 		
 			
-				<li><a href="/tags/GCD/" title="GCD">GCD<sup>1</sup></a></li>
+				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/NSOperation-NSOperationQueue/" title="NSOperation,NSOperationQueue">NSOperation,NSOperationQueue<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Charles/" title="Charles">Charles<sup>1</sup></a></li>
+				<li><a href="/tags/IM/" title="IM">IM<sup>1</sup></a></li>
 			
 		
 			
@@ -726,11 +734,15 @@
 			
 		
 			
-				<li><a href="/tags/AFNetWorking/" title="AFNetWorking">AFNetWorking<sup>1</sup></a></li>
+				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/socket-TCP-IP/" title="socket,TCP/IP">socket,TCP/IP<sup>1</sup></a></li>
+				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/AFNetWorking/" title="AFNetWorking">AFNetWorking<sup>1</sup></a></li>
 			
 		
 			
@@ -738,15 +750,11 @@
 			
 		
 			
+				<li><a href="/tags/socket-TCP-IP/" title="socket,TCP/IP">socket,TCP/IP<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/单元测试/" title="单元测试">单元测试<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/排序/" title="排序">排序<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/设计模式/" title="设计模式">设计模式<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -756,6 +764,12 @@
   <div class="linkslist">
   <p class="asidetitle">Links</p>
     <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
         
     </ul>
 </div>
@@ -769,7 +783,7 @@
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=&dpc=1"></iframe>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
 
@@ -785,13 +799,13 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m yuzhifei. <br/>
-			This is my blog.</p>
+		<p> Hello ,I&#39;m yuzhifei in Google. <br/>
+			This is my blog</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
-		<a href="http://weibo.com/5342521669" target="_blank" class="icon-weibo" title="微博"></a>
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
 		
 		
 		
@@ -907,7 +921,7 @@ $(document).ready(function(){
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?";
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
