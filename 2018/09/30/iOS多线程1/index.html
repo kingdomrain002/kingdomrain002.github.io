@@ -12,14 +12,14 @@
 
     
     <meta name="description" content="乘着十一假期空闲在家，可以好好整理一下多线程编程的知识点。 GCD任务和队列任务：就是执行操作的意思。 队列（Dispatch Queue）：这里的队列指执行任务的等待队列，即用来存放任务的队列。 小结:  同步函数不具备开启线程的能力，无论是什么队列都不会开启线程；异步函数具备开启线程的能力，开启几条线程由队列决定（串行队列只会开启一条新的线程，并发队列会开启多条线程）换句话说，异步执行（asy">
-<meta name="keywords" content="GCD">
+<meta name="keywords" content="多线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS多线程(一)  GCD详解">
 <meta property="og:url" content="http://yoursite.com/2018/09/30/iOS多线程1/index.html">
 <meta property="og:site_name" content="yuzhifei的技术博客">
 <meta property="og:description" content="乘着十一假期空闲在家，可以好好整理一下多线程编程的知识点。 GCD任务和队列任务：就是执行操作的意思。 队列（Dispatch Queue）：这里的队列指执行任务的等待队列，即用来存放任务的队列。 小结:  同步函数不具备开启线程的能力，无论是什么队列都不会开启线程；异步函数具备开启线程的能力，开启几条线程由队列决定（串行队列只会开启一条新的线程，并发队列会开启多条线程）换句话说，异步执行（asy">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-04T07:46:01.131Z">
+<meta property="og:updated_time" content="2018-12-21T06:25:24.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS多线程(一)  GCD详解">
 <meta name="twitter:description" content="乘着十一假期空闲在家，可以好好整理一下多线程编程的知识点。 GCD任务和队列任务：就是执行操作的意思。 队列（Dispatch Queue）：这里的队列指执行任务的等待队列，即用来存放任务的队列。 小结:  同步函数不具备开启线程的能力，无论是什么队列都不会开启线程；异步函数具备开启线程的能力，开启几条线程由队列决定（串行队列只会开启一条新的线程，并发队列会开启多条线程）换句话说，异步执行（asy">
@@ -125,7 +125,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/GCD/">GCD</a>
+  <span></span> <a href="/tags/多线程/">多线程</a>
   </div>
 
 </div>
@@ -195,11 +195,19 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/代码块/" title="代码块">代码块<sup>1</sup></a></li>
+				<li><a href="/tags/多线程/" title="多线程">多线程<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Charles/" title="Charles">Charles<sup>1</sup></a></li>
+				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Xcode-快捷键/" title="Xcode,快捷键">Xcode,快捷键<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Bitcode/" title="Bitcode">Bitcode<sup>1</sup></a></li>
 			
 		
 			
@@ -211,23 +219,15 @@
 			
 		
 			
-				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/GCD/" title="GCD">GCD<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/内存泄露/" title="内存泄露">内存泄露<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/NSOperation-NSOperationQueue/" title="NSOperation,NSOperationQueue">NSOperation,NSOperationQueue<sup>1</sup></a></li>
+				<li><a href="/tags/Charles/" title="Charles">Charles<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/面试题/" title="面试题">面试题<sup>1</sup></a></li>
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
@@ -235,7 +235,7 @@
 			
 		
 			
-				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+				<li><a href="/tags/面试题/" title="面试题">面试题<sup>1</sup></a></li>
 			
 		
 			
@@ -243,11 +243,15 @@
 			
 		
 			
-				<li><a href="/tags/奔溃统计/" title="奔溃统计">奔溃统计<sup>1</sup></a></li>
+				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
+				<li><a href="/tags/代码块/" title="代码块">代码块<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/奔溃统计/" title="奔溃统计">奔溃统计<sup>1</sup></a></li>
 			
 		
 			
@@ -256,10 +260,6 @@
 		
 			
 				<li><a href="/tags/socket-TCP-IP/" title="socket,TCP/IP">socket,TCP/IP<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Bitcode/" title="Bitcode">Bitcode<sup>1</sup></a></li>
 			
 		
 			
