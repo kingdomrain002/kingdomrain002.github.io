@@ -19,7 +19,7 @@
 <meta property="og:description" content="最近我在总结iOS UITableView组件的优化的知识。不管怎么说，tableView性能是否变好了，肯定是有工具可以检测出来的。涉及到屏幕掉帧、卡顿等现象。任何优化都是以业务需求为前提,在满足基本需求的情况下,逐步提高代码的质量,提升程序性能,不仅是自我能力的表现,也能从中获得一些收获及成就感. 性能检测工具介绍   Xcode自带的调试工具Instruments来看看项目界面的流畅度,及其">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/iOS-UI%E7%9F%A5%E8%AF%86-UITableView%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/WX20181015-141458%402x.png">
-<meta property="og:updated_time" content="2018-10-18T15:20:18.079Z">
+<meta property="og:updated_time" content="2018-12-28T09:13:49.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS-UI知识-UITableView的性能优化">
 <meta name="twitter:description" content="最近我在总结iOS UITableView组件的优化的知识。不管怎么说，tableView性能是否变好了，肯定是有工具可以检测出来的。涉及到屏幕掉帧、卡顿等现象。任何优化都是以业务需求为前提,在满足基本需求的情况下,逐步提高代码的质量,提升程序性能,不仅是自我能力的表现,也能从中获得一些收获及成就感. 性能检测工具介绍   Xcode自带的调试工具Instruments来看看项目界面的流畅度,及其">
@@ -125,11 +125,12 @@
 <p>   使用的是Instruments中的第5个工具:Core Animation(图形性能),这个模块显示程序显卡性能以及CPU使用情况,查看界面流畅度。</p>
 <p><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/iOS-UI%E7%9F%A5%E8%AF%86-UITableView%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/WX20181015-141458%402x.png" alt="Core Animation"></p>
 <p>Core Animation几个关键指标介绍</p>
-<h3 id="帧率"><a href="#帧率" class="headerlink" title="帧率"></a>帧率</h3><h3 id="跳帧"><a href="#跳帧" class="headerlink" title="跳帧"></a>跳帧</h3><h3 id="离屏渲染"><a href="#离屏渲染" class="headerlink" title="离屏渲染"></a>离屏渲染</h3><h3 id="栅格化"><a href="#栅格化" class="headerlink" title="栅格化"></a>栅格化</h3><h2 id="UITableView优化知识点"><a href="#UITableView优化知识点" class="headerlink" title="UITableView优化知识点"></a>UITableView优化知识点</h2><p>我自己</p>
-<p>UITableView的优化主要从三个方面入手:</p>
+<h3 id="帧率"><a href="#帧率" class="headerlink" title="帧率"></a>帧率</h3><h3 id="跳帧"><a href="#跳帧" class="headerlink" title="跳帧"></a>跳帧</h3><h3 id="离屏渲染"><a href="#离屏渲染" class="headerlink" title="离屏渲染"></a>离屏渲染</h3><h3 id="栅格化"><a href="#栅格化" class="headerlink" title="栅格化"></a>栅格化</h3><h2 id="UITableView优化知识点"><a href="#UITableView优化知识点" class="headerlink" title="UITableView优化知识点"></a>UITableView优化知识点</h2><p>UITableView的优化主要从三个方面入手:</p>
 <p>提前计算并缓存好高度（布局），因为heightForRowAtIndexPath:是调用最频繁的方法；(这个是开发中肯定会要优化的，不可能一个app就几个Cell吧)  </p>
 <p>滑动时按需加载，防止卡顿，这个我也认为是很有必要做的性能优化，配合SDWebImage<br>异步绘制，遇到复杂界面，遇到性能瓶颈时，可能就是突破口（如题，遇到复杂的界面，可以从这入手）<br>缓存一切可以缓存的，这个在开发的时候，往往是性能优化最多的方向</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1.<a href="http://www.cocoachina.com/ios/20150602/11968.html" target="_blank" rel="noopener">详细整理：UITableView优化技巧</a><br>2.2.<a href="https://www.jianshu.com/p/283f5d225840" target="_blank" rel="noopener">IOS之tableview卡顿情况解决方法以及性能优化</a><br>3.<a href="https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/" target="_blank" rel="noopener">iOS 保持界面流畅的技巧</a>     整理得很好，我技术博客想实现的目标，原创，有总结，有新意。<br>4.<a href="http://www.cocoachina.com/ios/20180511/23354.html" target="_blank" rel="noopener">iOS性能调优之–tableView优化</a><br>5.<a href="http://wereadteam.github.io/2016/05/03/WeRead-Performance/" target="_blank" rel="noopener">微信读书 iOS 性能优化总结</a></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1.<a href="http://www.cocoachina.com/ios/20150602/11968.html" target="_blank" rel="noopener">详细整理：UITableView优化技巧</a><br>2.2.<a href="https://www.jianshu.com/p/283f5d225840" target="_blank" rel="noopener">IOS之tableview卡顿情况解决方法以及性能优化</a><br>3.<a href="https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/" target="_blank" rel="noopener">iOS 保持界面流畅的技巧</a>     整理得很好，我技术博客想实现的目标，原创，有总结，有新意。<br>4.<a href="http://www.cocoachina.com/ios/20180511/23354.html" target="_blank" rel="noopener">iOS性能调优之–tableView优化</a>   </p>
+<p>5.<a href="http://wereadteam.github.io/2016/05/03/WeRead-Performance/" target="_blank" rel="noopener">微信读书 iOS 性能优化总结</a></p>
+<p>6.<a href="https://www.cnblogs.com/kenshincui/p/3931948.html#introduction" target="_blank" rel="noopener">iOS开发系列–UITableView全面解析</a><br>整理得很详细，demo也很清楚。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -207,7 +208,7 @@
 			
 		
 			
-				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 			
 		
 			
@@ -219,11 +220,11 @@
 			
 		
 			
-				<li><a href="/tags/isa指针/" title="isa指针">isa指针<sup>1</sup></a></li>
+				<li><a href="/tags/UserNotifications-推送/" title="UserNotifications,推送">UserNotifications,推送<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/UserNotifications-推送/" title="UserNotifications,推送">UserNotifications,推送<sup>1</sup></a></li>
+				<li><a href="/tags/isa指针/" title="isa指针">isa指针<sup>1</sup></a></li>
 			
 		
 			
@@ -235,10 +236,6 @@
 			
 		
 			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/加密/" title="加密">加密<sup>1</sup></a></li>
 			
 		
@@ -247,11 +244,11 @@
 			
 		
 			
-				<li><a href="/tags/IM/" title="IM">IM<sup>1</sup></a></li>
+				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+				<li><a href="/tags/IM/" title="IM">IM<sup>1</sup></a></li>
 			
 		
 			
@@ -280,6 +277,10 @@
 		
 			
 				<li><a href="/tags/设计模式/" title="设计模式">设计模式<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -346,7 +347,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2019 
 		
 		<a href="/about" target="_blank" title="yuzhifei">yuzhifei</a>
 		
