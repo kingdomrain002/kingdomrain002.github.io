@@ -79,20 +79,35 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/11/05/iOS第三方源码学习-SDWebImage/" title="iOS第三方源码学习-SDWebImage" itemprop="url">iOS第三方源码学习-SDWebImage</a>
+      <a href="/2018/09/30/iOS多线程1/" title="iOS多线程(一)  GCD详解" itemprop="url">iOS多线程(一)  GCD详解</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-11-05T02:50:48.000Z" itemprop="datePublished"> Published 2018-11-05</time>
+    <time datetime="2018-09-30T07:52:46.000Z" itemprop="datePublished"> Published 2018-09-30</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        
+        <p>乘着十一假期空闲在家，可以好好整理一下多线程编程的知识点。</p>
+<h3 id="GCD任务和队列"><a href="#GCD任务和队列" class="headerlink" title="GCD任务和队列"></a>GCD任务和队列</h3><p><code>任务</code>：就是执行操作的意思。</p>
+<p><code>队列（Dispatch Queue）</code>：这里的队列指执行任务的等待队列，即用来存放任务的队列。</p>
+<p>小结:</p>
+<blockquote>
+<p>同步函数不具备开启线程的能力，无论是什么队列都不会开启线程；异步函数具备开启线程的能力，开启几条线程由队列决定（串行队列只会开启一条新的线程，并发队列会开启多条线程）换句话说，异步执行（async）虽然具有开启新线程的能力，但是并不一定开启新线程。这跟任务所指定的队列类型有关。</p>
+</blockquote>
+<p>同步函数</p>
+<p>（1）并发队列：不会开线程</p>
+<p>（2）串行队列：不会开线程</p>
+<p>异步函数</p>
+<p>（1）并发队列：能开启N条线程</p>
+<p>（2）串行队列：开启1条线程</p>
+<h3 id="GCD的使用步骤"><a href="#GCD的使用步骤" class="headerlink" title="GCD的使用步骤"></a>GCD的使用步骤</h3><h3 id="GCD的其他方法"><a href="#GCD的其他方法" class="headerlink" title="GCD的其他方法"></a>GCD的其他方法</h3><h3 id="多线程适用场景"><a href="#多线程适用场景" class="headerlink" title="多线程适用场景"></a>多线程适用场景</h3><p>### </p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料:"></a>参考资料:</h3><p>1.<a href="https://www.jianshu.com/p/4b1d77054b35" target="_blank" rel="noopener">https://www.jianshu.com/p/4b1d77054b35</a><br>2.<a href="https://www.jianshu.com/p/2d57c72016c6" target="_blank" rel="noopener">iOS 多线程：『GCD』详尽总结</a>   写得根详细，特别是对几种组合的罗列<br>3.<a href="http://mrpeak.cn/blog/ios-thread-safety/" target="_blank" rel="noopener">iOS多线程到底不安全在哪里？</a><br>4.<a href="http://www.cocoachina.com/ios/20170817/20280.html" target="_blank" rel="noopener">iOS 开发多线程 —— GCD</a><br>5.<a href="http://mrpeak.cn/blog/ios-gcd-bottleneck/" target="_blank" rel="noopener">iOS App 使用 GCD 导致的卡顿问题</a><br>6.<a href="https://blog.csdn.net/Oboe_b/article/details/77849572" target="_blank" rel="noopener">多线程与网络</a></p>
+
         
         
         <p class="article-more-link">
@@ -102,6 +117,11 @@
     <footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/多线程/">多线程</a>
+  </div>
 
 </div>
 
@@ -128,171 +148,22 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/10/31/iOS开发-访问权限总结/" title="iOS开发-访问权限总结" itemprop="url">iOS开发-访问权限总结</a>
+      <a href="/2018/09/30/Mac上Web服务器使用/" title="Mac-Web服务器使用" itemprop="url">Mac-Web服务器使用</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-10-31T02:16:10.000Z" itemprop="datePublished"> Published 2018-10-31</time>
+    <time datetime="2018-09-30T06:21:13.000Z" itemprop="datePublished"> Published 2018-09-30</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2018/10/30/Mac-版本管理工具Cornerstone使用总结/" title="Mac-版本管理工具Cornerstone使用总结" itemprop="url">Mac-版本管理工具Cornerstone使用总结</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
-		
-  <p class="article-time">
-    <time datetime="2018-10-30T08:59:47.000Z" itemprop="datePublished"> Published 2018-10-30</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2018/10/30/iOS开发-iOS完整项目源码学习汇总/" title="iOS开发-iOS完整项目源码学习汇总" itemprop="url">iOS开发-iOS完整项目源码学习汇总</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
-		
-  <p class="article-time">
-    <time datetime="2018-10-30T07:36:09.000Z" itemprop="datePublished"> Published 2018-10-30</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2018/10/29/iOS开发-架构模式/" title="iOS开发-架构模式" itemprop="url">iOS开发-架构模式</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
-		
-  <p class="article-time">
-    <time datetime="2018-10-29T11:58:56.000Z" itemprop="datePublished"> Published 2018-10-29</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>常见架构MVC,MVVM,VIPER模式。</p>
-<p>对于开发速度来说，Cocoa MVC是最好的设计模式。</p>
-<p>问题:一个项目是否只能采用一种设计模式？如果多种设计模式可以并存，那么如何协调好它们之前的关系？</p>
-<h3 id="MVC模式"><a href="#MVC模式" class="headerlink" title="MVC模式"></a>MVC模式</h3><h3 id="MVP模式"><a href="#MVP模式" class="headerlink" title="MVP模式"></a>MVP模式</h3><h3 id="MVVM模式"><a href="#MVVM模式" class="headerlink" title="MVVM模式"></a>MVVM模式</h3><h4 id="小结-MV-X"><a href="#小结-MV-X" class="headerlink" title="小结 MV(X)"></a>小结 MV(X)</h4><h3 id="VIPER模式"><a href="#VIPER模式" class="headerlink" title="VIPER模式"></a>VIPER模式</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.jianshu.com/p/68aa6071c02e" target="_blank" rel="noopener">iOS架构设计：揭秘MVC, MVP, MVVM以及VIPER
-</a><br>2.<a href="https://www.jianshu.com/p/072552705610" target="_blank" rel="noopener">iOS架构设计</a><br>3.<a href="https://www.cnblogs.com/oc-bowen/p/5953320.html" target="_blank" rel="noopener">iOS应用架构现状分析</a> 整理得不错<br>4.<a href="https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007072-CH1-SW1" target="_blank" rel="noopener">4.App Programming Guide for iOS</a>   苹果官方文档  五星推荐</p>
+        <h3 id="启动Apache服务"><a href="#启动Apache服务" class="headerlink" title="启动Apache服务"></a>启动Apache服务</h3><p>Mac OS X自带了Apache，我们只需要简单的启动它就行了。使用如下命令:<br>启动：<code>sudo apachectl start</code><br>停止：<code>sudo apachectl stop</code><br>重启：<code>sudo apachectl restart</code><br>查看 Apache 版本 <code>httpd -v</code></p>
+<h3 id="开启PHP模块"><a href="#开启PHP模块" class="headerlink" title="开启PHP模块"></a>开启PHP模块</h3><p>Mac OS X已经内置PHP，因此我们只需要在Apache的配置中加载PHP模块即可。<br>打开Apache配置文件，路径如下:/etc/apache2/httpd.conf。<br>打开注释 <code>LoadModule php7_module libexec/apache2/libphp7.so</code><br>然后，重启Apache服务。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://blog.csdn.net/ismilesky/article/details/53894259" target="_blank" rel="noopener">10分钟教会你Mac上搭建Web服务器</a></p>
 
         
         
@@ -329,20 +200,93 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/10/28/iOS开发-压缩图片/" title="iOS开发-压缩图片" itemprop="url">iOS开发-压缩图片</a>
+      <a href="/2018/09/30/iOS属性修饰符/" title="iOS开发-属性修饰符" itemprop="url">iOS开发-属性修饰符</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-10-28T09:21:30.000Z" itemprop="datePublished"> Published 2018-10-28</time>
+    <time datetime="2018-09-30T03:34:18.000Z" itemprop="datePublished"> Published 2018-09-30</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        
+        <h2 id="property是什么？"><a href="#property是什么？" class="headerlink" title="@property是什么？"></a>@property是什么？</h2><p>@property声明属性的语法，它可以快速的为实例变量创建存取器，并且允许通过点语法使用存取器。 </p>
+<p>属性的参数应该按照下面的顺序排列：原子性，读写和内存管理。(–引自 禅与 Objective-C 编程艺术-属性)</p>
+<p>原子性</p>
+<ul>
+<li>atomic</li>
+<li>nonatomic</li>
+</ul>
+<p>读写</p>
+<ul>
+<li>readwrite</li>
+<li>readonly</li>
+</ul>
+<p>内存管理</p>
+<ul>
+<li>strong</li>
+<li>weak</li>
+<li>copy</li>
+<li>assign</li>
+</ul>
+<h3 id="常见的属性描述符"><a href="#常见的属性描述符" class="headerlink" title="常见的属性描述符"></a>常见的属性描述符</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">关键字</th>
+<th style="text-align:center">注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">strong</td>
+<td style="text-align:center">表示指向并拥有该对象，其修饰的对象引用计数会增加1。</td>
+</tr>
+<tr>
+<td style="text-align:center">weak</td>
+<td style="text-align:center">表示指向但不拥有该对象, 其修饰的对象引用计数不会增加。</td>
+</tr>
+<tr>
+<td style="text-align:center">assign</td>
+<td style="text-align:center">主要用于修饰基本数据类型,如NSInteger和NSFloat,这些数值主要存在于栈中。</td>
+</tr>
+<tr>
+<td style="text-align:center">copy</td>
+<td style="text-align:center">建立一个引用计数为1的对象，在赋值时，使用传入值的一份拷贝。</td>
+</tr>
+<tr>
+<td style="text-align:center">nonatomic</td>
+<td style="text-align:center">非原子性操作，不提供线程安全，效率更高</td>
+</tr>
+<tr>
+<td style="text-align:center">atomic</td>
+<td style="text-align:center">原子操作，提供线程安全，默认是atomic的，耗费系统资源</td>
+</tr>
+<tr>
+<td style="text-align:center">readwrite</td>
+<td style="text-align:center">属性可以读写，默认属性</td>
+</tr>
+<tr>
+<td style="text-align:center">readonly</td>
+<td style="text-align:center">属性只读</td>
+</tr>
+</tbody>
+</table>
+<p>ARC下,不显式指定任何属性关键字时,默认的关键字都有哪些?<br>基本数据：  <code>atomic,readwrite,assign</code><br>普通的OC对象: <code>atomic,readwrite,strong</code></p>
+<p>比较atomic和nonatomic关键字区别？</p>
+<p>atomic是否一定线程安全？</p>
+<p>浅拷贝和深拷贝的区别？</p>
+<h2 id="使用规范"><a href="#使用规范" class="headerlink" title="使用规范"></a>使用规范</h2><p>1.Delegate基本总是使用weak，以防止循环引用。特殊情况是，希望在dealloc中调用delegate的某些方法进行释放，此时如果使用weak将引起异常，因为此时已经是nil了，那么采用assign更为合适，这时需要自己手动在dealloc中给Delegate置为nil。</p>
+<p>2.属性可以存储一个代码块。为了让它存活到定义的块的结束，必须使用 copy （block 最早在栈里面创建，使用 copy让 block 拷贝到堆里面去）。</p>
+<h2 id="如何考察这块知识点"><a href="#如何考察这块知识点" class="headerlink" title="如何考察这块知识点"></a>如何考察这块知识点</h2><p>属性声明代码风格考察</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><h4 id="书籍资料"><a href="#书籍资料" class="headerlink" title="书籍资料"></a>书籍资料</h4><p>《iOS面试之道》 Page93</p>
+<h4 id="网站资源"><a href="#网站资源" class="headerlink" title="网站资源"></a>网站资源</h4><p>1.<a href="https://www.jianshu.com/p/8b3cf2187255" target="_blank" rel="noopener">iOS关于属性关键字，你又知道多少？</a><br>特别喜欢最前面的那句话，分享是每个优秀的程序员所必备的品质。<br>对属性修饰符的使用场景有介绍</p>
+<p>2.<a href="https://blog.csdn.net/ck_fear/article/details/53415208" target="_blank" rel="noopener">iOS中属性@property中的关键字的使用说明</a>  这篇有一个简单的demo，元知识都应该从简单的案例开始学习。整理的属性修饰符也比较全。</p>
+<p>3.<a href="https://github.com/oa414/objc-zen-book-cn#%E5%B1%9E%E6%80%A7" target="_blank" rel="noopener">禅与 Objective-C 编程艺术 属性</a></p>
+<p>4.<a href="https://www.jianshu.com/p/aa4cc28d7160" target="_blank" rel="noopener">iOS声明属性常用关键字解析</a></p>
+
         
         
         <p class="article-more-link">
@@ -378,20 +322,27 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/10/26/C语言-宏定义/" title="C语言-宏定义" itemprop="url">C语言-宏定义</a>
+      <a href="/2018/09/29/高质量的技术博客整理/" title="高质量的技术博客整理" itemprop="url">高质量的技术博客整理</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-10-26T13:07:55.000Z" itemprop="datePublished"> Published 2018-10-26</time>
+    <time datetime="2018-09-29T06:04:47.000Z" itemprop="datePublished"> Published 2018-09-29</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        <p>参考资料:<br>1.<a href="https://www.cnblogs.com/challenger-vip/p/3386819.html" target="_blank" rel="noopener">#ifndef, #define, #endif 作用</a></p>
+        <h3 id="ios技术博客整理"><a href="#ios技术博客整理" class="headerlink" title="ios技术博客整理"></a>ios技术博客整理</h3><p>1.<a href="http://mrpeak.cn/" target="_blank" rel="noopener">MrPeak杂货铺</a><br>2.<a href="https://www.jianshu.com/u/8d5b91490ca5" target="_blank" rel="noopener">故胤道长</a><br>3.<a href="https://juejin.im/user/57f8ffda2e958a005581e3c0/posts" target="_blank" rel="noopener">J_Knight_</a><br>4.<a href="https://www.jianshu.com/u/96a14318a4de" target="_blank" rel="noopener">iOS程序犭袁</a><br>5.<a href="https://www.objc.io/" target="_blank" rel="noopener">objc.io</a> 五星推荐   <a href="https://objccn.io/" target="_blank" rel="noopener">objccn.io</a> 中文翻译<br>9.<a href="http://www.imlifengfeng.com/blog/" target="_blank" rel="noopener">李峰峰博客</a><br>10.<a href="https://github.com/bestswifter/blog" target="_blank" rel="noopener">bestswifter 的博客</a><br>11.<a href="https://nshipster.cn/" target="_blank" rel="noopener">NSHipster</a></p>
+<p>12 . <a href="https://github.com/ming1016/study/wiki" target="_blank" rel="noopener">https://github.com/ming1016/study/wiki</a><br>13.<a href="http://blog.cnbang.net/" target="_blank" rel="noopener">cnbang</a><br>14.<a href="http://www.hudongdong.com/" target="_blank" rel="noopener">胡东东博客</a><br>15.<a href="http://blog.devtang.com/" target="_blank" rel="noopener">唐巧的博客</a><br>16.<a href="https://draveness.me/tag/iOS" target="_blank" rel="noopener">draveness</a><br>17.<a href="https://kangzubin.com/" target="_blank" rel="noopener">Kangzubin的技术博客</a></p>
+<h3 id="大公司技术部的技术博客"><a href="#大公司技术部的技术博客" class="headerlink" title="大公司技术部的技术博客"></a>大公司技术部的技术博客</h3><p>11.<a href="https://tech.meituan.com/" target="_blank" rel="noopener">美团技术团队</a><br>8.<a href="http://wereadteam.github.io/" target="_blank" rel="noopener">WeRead团队博客</a><br>3.<a href="https://neyoufan.github.io/" target="_blank" rel="noopener">网易杭州前端技术部</a><br>4.<a href="https://lpd-ios.github.io/" target="_blank" rel="noopener">饿了么物流 iOS 开发组博客</a></p>
+<h3 id="iOS学习指导类"><a href="#iOS学习指导类" class="headerlink" title="iOS学习指导类"></a>iOS学习指导类</h3><p>1.<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTIyNTUyMQ==&amp;mid=2709545194&amp;idx=1&amp;sn=e0e20cd038874aaf57b7e9de0910ab92&amp;scene=0#rd" target="_blank" rel="noopener">这可能是最详细的 iOS 学习入门指南（含书目/文档/学习资料）</a></p>
+<h3 id="主题类整理的不错的文章"><a href="#主题类整理的不错的文章" class="headerlink" title="主题类整理的不错的文章"></a>主题类整理的不错的文章</h3><p>1.动画<br><a href="https://github.com/AttackOnDobby/iOS-Core-Animation-Advanced-Techniques" target="_blank" rel="noopener">iOS-Core-Animation-Advanced-Techniques</a></p>
+<h3 id="他人整理的博客推荐"><a href="#他人整理的博客推荐" class="headerlink" title="他人整理的博客推荐"></a>他人整理的博客推荐</h3><p>1.<a href="https://github.com/vsouza/awesome-ios" target="_blank" rel="noopener">awesome-ios</a>        五星推荐<br>  <a href="https://github.com/jobbole/awesome-ios-cn" target="_blank" rel="noopener">awesome-ios-cn</a> 中文版本<br>2.<a href="https://github.com/QianKaiLu/trip-to-iOS" target="_blank" rel="noopener">iOS 学习资料整理</a>  五星推荐</p>
+<p>1.<a href="https://blog.csdn.net/u013602835/article/details/79537366" target="_blank" rel="noopener">https://blog.csdn.net/u013602835/article/details/79537366</a>   </p>
+<h3 id="个人学习博客"><a href="#个人学习博客" class="headerlink" title="个人学习博客"></a>个人学习博客</h3><p>值得学习技术博客<br>1.<a href="https://dreamerwinston.github.io/blog/" target="_blank" rel="noopener">dreamerwinston 博客</a></p>
 
         
         
@@ -428,20 +379,21 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/10/26/Xcode-自定义内容模板/" title="xcode-自定义内容模板" itemprop="url">xcode-自定义内容模板</a>
+      <a href="/2018/09/29/iOS常见的面试题/" title="iOS常见的面试题" itemprop="url">iOS常见的面试题</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-10-26T12:44:18.000Z" itemprop="datePublished"> Published 2018-10-26</time>
+    <time datetime="2018-09-29T03:03:27.000Z" itemprop="datePublished"> Published 2018-09-29</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        
+        <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h3><p>1.<a href="http://www.cocoachina.com/ios/20160414/15918.html" target="_blank" rel="noopener">那些著名或非著名的iOS面试题（上）</a><br>2.<a href="https://blog.csdn.net/ab20514/article/details/49160877" target="_blank" rel="noopener">iOS面试题汇总</a><br>3.<a href="https://www.jianshu.com/p/2e1b3f54b4f3" target="_blank" rel="noopener">iOS面试题及答案</a><br>4.<a href="https://www.jianshu.com/p/f8c7eb0c2778" target="_blank" rel="noopener">iOS面试题，面试答这么多就可以了</a><br>5.<a href="https://www.jianshu.com/p/a9e4c8914e67" target="_blank" rel="noopener">《招聘一个靠谱的 iOS》—参考答案（一）</a></p>
+
         
         
         <p class="article-more-link">
@@ -451,6 +403,11 @@
     <footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/面试题/">面试题</a>
+  </div>
 
 </div>
 
@@ -477,20 +434,46 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/10/26/iOS开发-数据类型转换总结/" title="iOS开发-数据类型转换总结" itemprop="url">iOS开发-数据类型转换总结</a>
+      <a href="/2018/09/27/iOS网络编程1-NSURLSession使用总结/" title="iOS-网络编程1-NSURLConnection和NSURLSession使用总结" itemprop="url">iOS-网络编程1-NSURLConnection和NSURLSession使用总结</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-10-26T06:46:12.000Z" itemprop="datePublished"> Published 2018-10-26</time>
+    <time datetime="2018-09-27T09:01:21.000Z" itemprop="datePublished"> Published 2018-09-27</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        
+        <p>在iOS中，我们常用发送网络请求的方案一般有如下两种方案:</p>
+<ul>
+<li>1.苹果原生（自带）框架<br>NSURLConnection：用法简单，最古老最经典最直接的一种方案 （iOS 9.0弃用)<br>NSURLSession：功能比NSURLConnection更加强大，苹果目前比较<strong>推荐使用</strong>这种技术.</li>
+<li>2.第三方框架AFNetworking：简单易用，提供了基本够用的常用功能，维护和使用者多.</li>
+</ul>
+<p>知识点: NSURLConnection和NSURLSession两个框架，为什么苹果目前比较推荐使用NSURLSession？<br>答: NSURLSession改进是可以配置每个session的缓存，协议，cookie以及credential policy。每个NSURLSession对象都是一个NSURLSessionConfiguration对象来进行初始化，指定那些策略和增强移动设备上性能选项。</p>
+<h2 id="NSURLRequest和NSMutableURLRequest"><a href="#NSURLRequest和NSMutableURLRequest" class="headerlink" title="NSURLRequest和NSMutableURLRequest"></a>NSURLRequest和NSMutableURLRequest</h2><p>NSURLRequest默认的请求方法是GET，当我们需要修改请求方法为POST的时候就要用可变的NSMutableURLRequest，并设置请求方式，请求头和请求体。</p>
+<h2 id="NSURLSession"><a href="#NSURLSession" class="headerlink" title="NSURLSession"></a>NSURLSession</h2><p>使用NSURLSession就需要用到NSURLSessionTask，所以关于Task的类和其子类的关系还是要了解的。NSURLsessionTask是一个抽象类，其下有3个实体子类可以直接使用：NSURLSessionDataTask、NSURLSessionUploadTask、NSURLSessionDownloadTask。所有task都是可以取消，暂停或恢复的。这3个子类封装了程序三个最基本的网络任务：获取数据，比如 JSON 或者 XML，上传文件和下载文件。<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180930-114007%402x.png" alt="NSURLSessionTask类和其子类的关系"></p>
+<h3 id="NSURLSessionConfiguration"><a href="#NSURLSessionConfiguration" class="headerlink" title="NSURLSessionConfiguration"></a>NSURLSessionConfiguration</h3><p>NSURLSessionConfiguration对象用于初始化NSURLSession对象。当NSURLSession开启多个任务Task的时候可以用NSURLSessionConfiguration对象统一配置。<br>会话在初始化时复制它们的配置，NSURLSession有一个只读的配置属性，使得该配置对象上的变化对这个会话无效。配置在初始化时被读取一次，之后都是不会变化的。<br>NSURLSessionConfiguration有三个类构造函数:</p>
+<ul>
+<li>defaultSessionConfiguration返回标准默认配置，一般我们都使用这个</li>
+<li>ephemeralSessionConfiguration返回一个预设配置，没有持久性存储的缓存，Cookie或证书。可以用来实现像”无痕浏览”功能的功能。</li>
+<li>backgroundSessionConfiguration：独特之处在于，它会创建一个后台会话。它甚至可以在应用程序挂起，退出，崩溃的情况下运行上传和下载任务。</li>
+</ul>
+<h3 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h3><p>dataTaskWithURL  根据请求的URL创建任务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSURLSession *session = [NSURLSession sharedSession];  </span><br><span class="line">NSURL *url = [NSURL URLWithString:@&quot;http://example.com&quot;];</span><br><span class="line">NSURLSessionTask *task = [session dataTaskWithURL:url</span><br><span class="line">  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) &#123;</span><br><span class="line">&#125;];</span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure>
+<p>dataTaskWithRequest 根据请求对象创建任务  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NSURL *URL = [NSURL URLWithString:@&quot;http://example.com&quot;];</span><br><span class="line">NSURLRequest *request = [NSURLRequest requestWithURL:URL];</span><br><span class="line">NSURLSession *session = [NSURLSession sharedSession];</span><br><span class="line">NSURLSessionDataTask *task = [session dataTaskWithRequest:request</span><br><span class="line">          completionHandler:</span><br><span class="line">     ^(NSData *data, NSURLResponse *response, NSError *error) &#123;</span><br><span class="line">          // ...</span><br><span class="line">     &#125;];</span><br><span class="line">[task resume];</span><br></pre></td></tr></table></figure>
+<h3 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h3><p>post请求<strong>必须</strong>使用dataTaskWithRequest创建任务。</p>
+<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>NSURLSessionDownloadTask大文件之block下载<br>NSURLSessionDownloadTask大文件之代理方法下载<br>NSURLSessionDownloadTask大文件之代理方法实现断点续传下载</p>
+<p>Block下载方式不适合大文件下载，因为该方法需要等到文件下载完毕了，才会回调completionHandler。</p>
+<ul>
+<li>离线文件下载<br>文件句柄<br>输出流</li>
+</ul>
+<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>总的来说，NSURLSession仍然是实现更高级别网络功能的一个强大的基础框架。</p>
+<p>参考链接:<br>1.<a href="https://www.jianshu.com/p/78964aac72d5" target="_blank" rel="noopener">iOS-网络编程(二)文件上传和断点离线下载</a>   整理得还不错，有原理也有案例<br>2.<a href="https://developer.apple.com/documentation/foundation/nsurlsession?language=objc" target="_blank" rel="noopener">苹果官方文档 NSURLSession</a><br>3.<a href="https://github.com/ming1016/study/wiki/NSURLSession" target="_blank" rel="noopener">NSURLSession知识点整理</a><br>4.<a href="https://objccn.io/issue-5-4/" target="_blank" rel="noopener">从 NSURLConnection 到 NSURLSession</a>   精品技术博文，强烈推荐<br>5.<a href="https://www.jianshu.com/p/816467910783" target="_blank" rel="noopener">IOS开发系列——NSUrlSession专题</a><br>6.<a href="https://www.cnblogs.com/goodboy-heyang/p/5193960.html" target="_blank" rel="noopener">iOS开发之网络编程–1、NSURLSession的基本使用</a><br>7.<a href="https://blog.csdn.net/zenggen021151/article/details/70199713" target="_blank" rel="noopener">网络编程知识总结 之 iOS网络框架概述</a></p>
+
         
         
         <p class="article-more-link">
@@ -500,6 +483,11 @@
     <footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/网络/">网络</a>
+  </div>
 
 </div>
 
@@ -526,20 +514,238 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/10/25/iOS开发-数据存储/" title="iOS开发-数据存储" itemprop="url">iOS开发-数据存储</a>
+      <a href="/2018/09/25/iOS内存泄露排查以及解决方案/" title="iOS内存泄露排查以及解决方案" itemprop="url">iOS内存泄露排查以及解决方案</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-10-25T02:27:54.000Z" itemprop="datePublished"> Published 2018-10-25</time>
+    <time datetime="2018-09-25T05:40:55.000Z" itemprop="datePublished"> Published 2018-09-25</time>
     
   </p>
 </header>
     <div class="article-content">
         
+        <p>一句话介绍内存泄露:</p>
+<blockquote>
+<p>内存泄露就是应当废弃的对象在超出其生存周期后继续存在。</p>
+</blockquote>
+<h2 id="内存泄露的原因分析"><a href="#内存泄露的原因分析" class="headerlink" title="内存泄露的原因分析"></a>内存泄露的原因分析</h2><h2 id="排查方法"><a href="#排查方法" class="headerlink" title="排查方法"></a>排查方法</h2><h3 id="1-静态检测"><a href="#1-静态检测" class="headerlink" title="1.静态检测"></a>1.静态检测</h3><h3 id="2-动态检测"><a href="#2-动态检测" class="headerlink" title="2.动态检测"></a>2.动态检测</h3><h3 id="3-第三方工具"><a href="#3-第三方工具" class="headerlink" title="3.第三方工具"></a>3.第三方工具</h3><h2 id="常见内存泄露的场景"><a href="#常见内存泄露的场景" class="headerlink" title="常见内存泄露的场景"></a>常见内存泄露的场景</h2><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>书籍<br>1.《Objective-C 高级编程 iOS与OS X多线程和内存管理》</p>
+<p>网站<br>1.<a href="https://www.cnblogs.com/mukekeheart/p/8144742.html" target="_blank" rel="noopener">iOS学习——内存泄漏检查及原因分析</a><br>2.<a href="https://www.jianshu.com/p/e9d989c12ff8" target="_blank" rel="noopener">IOS内存泄漏检测方式和泄漏场景</a><br>3.<a href="http://www.cocoachina.com/ios/20170102/18490.html" target="_blank" rel="noopener">iOS 内存泄漏监测自动化</a></p>
+
         
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/内存泄露/">内存泄露</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/09/24/socket网络编程/" title="socket网络编程" itemprop="url">socket网络编程</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
+		
+  <p class="article-time">
+    <time datetime="2018-09-24T13:51:52.000Z" itemprop="datePublished"> Published 2018-09-24</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>   之前做了一段时间IM即时通讯APP，是基于XMPPFramework框架开发的，对于底层的socket不是太了解。以前听到Socket编程，觉得它是比较高深的编程知识，但是只要弄清Socket编程的工作原理，神秘的面纱也就揭开了。</p>
+<h2 id="Socket理论篇"><a href="#Socket理论篇" class="headerlink" title="Socket理论篇"></a>Socket理论篇</h2><p>一句话介绍socket:</p>
+<blockquote>
+<p>Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。</p>
+</blockquote>
+<p> 需要先弄清楚一些基本概念网络模型,TCP/IP协议簇, HTTP,TCP,UDP,TCP三次握手和四次挥手,ICMP。如果很清楚可以直接跳过。</p>
+<h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><p>OSI七层网络模型: 1.应用层 2.表示层 3.会话层 4.传输层 5.网络层 6.数据链路层 7.物理层<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180929-155848%402x.png" alt="OSI七层网络模型"></p>
+<p>TCP/IP四层网络模型: 1.应用层 2.传输层 3.网络层 4.数据链路层<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180929-155659%402x.png" alt="TCP/IP四层网络模型"></p>
+<p><a href="https://www.jianshu.com/p/e0e735e76ebc" target="_blank" rel="noopener">网络模型详解</a></p>
+<h3 id="TCP-IP协议簇"><a href="#TCP-IP协议簇" class="headerlink" title="TCP/IP协议簇"></a>TCP/IP协议簇</h3><p>TCP/IP协议簇是一个分层、多协议的通讯体系。TCP/IP协议族是一个四层协议系统，包括了数据链路层、网络层、传输层和应用层。</p>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><h3 id="TCP三次握手和四次挥手"><a href="#TCP三次握手和四次挥手" class="headerlink" title="TCP三次握手和四次挥手"></a>TCP三次握手和四次挥手</h3><h4 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h4><p>TCP的连接建立过程又称为TCP三次握手。三次握手的目标是使数据段的发送和接收同步。同时也向其他主机表明其一次可接收的数据量（窗口大小），并建立逻辑连接。</p>
+<p>TCP四次挥手</p>
+<p>为什么要三次握手？</p>
+<p>为什么要四次挥手？</p>
+<h3 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h3><p><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180929-154901%402x.png" alt="Socket抽象层"></p>
+<blockquote>
+<p>socket是在应用层和传输层之间的一个抽象层，它把TCP/IP层复杂的操作抽象为几个简单的接口供应用层调用已实现进程在网络中通信。</p>
+</blockquote>
+<p>Socket建立网络连接的步骤:<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180929-144322%402x.png" alt="socket的流程图">   </p>
+<h2 id="Socket实践篇"><a href="#Socket实践篇" class="headerlink" title="Socket实践篇"></a>Socket实践篇</h2><h3 id="苹果提供的框架"><a href="#苹果提供的框架" class="headerlink" title="苹果提供的框架:"></a>苹果提供的框架:</h3><p>Streams, Sockets, and Ports<br>Use low-level Unix features to manage input and output among files, processes, and the network.</p>
+<p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Streams/Streams.html#//apple_ref/doc/uid/10000188-SW1" target="_blank" rel="noopener">https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Streams/Streams.html#//apple_ref/doc/uid/10000188-SW1</a></p>
+<h3 id="开源类库cocoaasyncsocket"><a href="#开源类库cocoaasyncsocket" class="headerlink" title="开源类库cocoaasyncsocket"></a>开源类库cocoaasyncsocket</h3><p>cocoaasyncsocket是支持tcp和ump的。</p>
+<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><p>基于自己开发经历，说明一下自己那些地方使用了socket技术。</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://blog.csdn.net/ab20514/article/details/50680984" target="_blank" rel="noopener">关于TCP/IP,HTTP,Socket的那些事</a><br>2.<a href="https://www.jianshu.com/p/1883977690b3" target="_blank" rel="noopener">ios底层Socket编程理解</a>   有demo 整理得还不错<br>3.<a href="https://blog.csdn.net/httpdrestart/article/details/80670388" target="_blank" rel="noopener">socket</a>  这篇文章对原理讲得比较深<br>4.<a href="https://www.jianshu.com/p/a6eb296aa1ea" target="_blank" rel="noopener">iOS开发 Socket网络编程</a><br>5.<a href="https://www.jianshu.com/p/0a050f098a1e" target="_blank" rel="noopener">iOS socket网络编程(一)</a><br>6.<a href="https://www.cnblogs.com/jy578154186/archive/2013/02/26/2933995.html" target="_blank" rel="noopener">iOS 各种网络编程面试总结</a><br>7.<a href="https://blog.csdn.net/woaifen3344/article/details/50196983" target="_blank" rel="noopener">iOS Socket编程-C语言版</a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/socket-TCP-IP/">socket,TCP/IP</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/09/22/iOS开发-私有pods创建/" title="iOS开发-基于cocoapods创建私有库" itemprop="url">iOS开发-基于cocoapods创建私有库</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
+		
+  <p class="article-time">
+    <time datetime="2018-09-22T08:06:51.000Z" itemprop="datePublished"> Published 2018-09-22</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="我的实践笔记"><a href="#我的实践笔记" class="headerlink" title="我的实践笔记"></a>我的实践笔记</h2><p>   笔者是基于码云来创建私有库的。<br>   这里就需要两个仓库,其中一个仓库是托管cocoapods所需要的配置文件,另外一个仓库才是存放我们的代码。如下图所示。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-213645%402x.png" alt=""></p>
+<h3 id="1-创建管理podspec索引文件的Git仓库"><a href="#1-创建管理podspec索引文件的Git仓库" class="headerlink" title="1.创建管理podspec索引文件的Git仓库"></a>1.创建管理podspec索引文件的Git仓库</h3><p>   大家通过pod安装第三方库时，都需要在创建Podfile文件之后，在其头部添加 <code>source https://github.com/CocoaPods/Specs</code>。访问该地址，显示如下图。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204445%402x.png" alt="CocoaPods/Specs"><br>   cocoapods是通过.podspec文件来索引私有库真的存代码的仓库。其所有配置文件托管在Master Repo。podspec文件为你的代码仓库索引描述文件,CocoaPods通过该文件对你真正存储代码工程的Git仓库进行索引与下载。</p>
+<p>   话不多说，我们进入主题。现在我们在码云上创建私有的Git仓库，将其命名成 <code>PrivatePodspec</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-204758%402x.png" alt="CocoaPods/Specs"><br>   我们选择是否开源这里选中<code>公开</code>,添加开源许可证选择<code>MIT License</code>。<br>   <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-205246%402x.png" alt="CocoaPods/Specs"></p>
+<h3 id="2-创建私有Git仓库"><a href="#2-创建私有Git仓库" class="headerlink" title="2.创建私有Git仓库"></a>2.创建私有Git仓库</h3><p> 我们创建的第一个私有库名称为<code>TestPrivateLib</code>。<br>    <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212519%402x.png" alt="CocoaPods/Specs"><br>   我们选择是否开源这里选中<code>私有</code>。创建完成之后，显示如下:<br> <img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/WX20180924-212652%402x.png" alt="CocoaPods/Specs"></p>
+<h3 id="3-提交代码到仓库两种情况"><a href="#3-提交代码到仓库两种情况" class="headerlink" title="3.提交代码到仓库两种情况:"></a>3.提交代码到仓库两种情况:</h3><p>（1）.如果在创建仓库的时候，选择README.md初始化，然后git clone到本地，将需要提交的代码添加到该本地工作区。<br>（2）.如果在创建仓库的时候，没有选择README.md初始化，现在本地创建pod模板，在本地初始化仓库之后，然后再关联远程Git地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir KRChart</span><br><span class="line">cd KRChart</span><br><span class="line">git init</span><br><span class="line">touch README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@gitee.com:renaissance_ios_group/KRChart.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>创建的KRChart.podspec显示如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Pod::Spec.new do |s|</span><br><span class="line"></span><br><span class="line">  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #</span><br><span class="line">  s.name         = &quot;KRChart&quot;</span><br><span class="line">  s.version      = &quot;0.0.2&quot;</span><br><span class="line">  s.summary      = &quot;KRChart是文艺复习iOS小组封装的图表库&quot;</span><br><span class="line">  s.description  = &lt;&lt;-DESC</span><br><span class="line">                       KRChart是文艺复习iOS小组封装的图表库 </span><br><span class="line">                   DESC</span><br><span class="line">  s.homepage     = &quot;https://gitee.com/renaissance_ios_group/KRChart&quot;</span><br><span class="line">  s.license      = &#123; :type =&gt; &quot;MIT&quot;&#125;</span><br><span class="line">  s.author       = &#123; &quot;kingdomrain002&quot; =&gt; &quot;kingdomrain002@163.com&quot; &#125;</span><br><span class="line">  s.ios.deployment_target = &quot;8.0&quot;</span><br><span class="line">  s.source       = &#123; :git =&gt; &quot;https://gitee.com/renaissance_ios_group/KRChart.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125;</span><br><span class="line"></span><br><span class="line">  s.vendored_frameworks = &apos;KRChart.framework&apos;</span><br><span class="line">  s.frameworks = &quot;UIKit&quot;, &quot;Foundation&quot;</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h3 id="4-对提交的版本打tag"><a href="#4-对提交的版本打tag" class="headerlink" title="4.对提交的版本打tag"></a>4.对提交的版本打tag</h3><p>我们可以看到KRChart.podspec中，s.source这行显示如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s.source  = &#123; :git =&gt; &quot;https://gitee.com/renaissance_ios_group/KRChart.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125;</span><br></pre></td></tr></table></figure>
+<p>一般使用pod安装第三方库时，可能会指定第三方库的版本。我们现在要提交一个0.0.2版本KRChart私有库。就必须先对版本库打个tag,到时候才能使用指定的版本。然后到码云网站上查看一下，tag是否已经提交到上去。如下图所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a &apos;0.0.1&apos; -m &apos;KRChart 0.0.1&apos;</span><br><span class="line">git push origin 0.0.1</span><br></pre></td></tr></table></figure>
+<h3 id="5-验证和提交podspec"><a href="#5-验证和提交podspec" class="headerlink" title="5.验证和提交podspec"></a>5.验证和提交podspec</h3><h4 id="如何和远程私有索引库进行关联"><a href="#如何和远程私有索引库进行关联" class="headerlink" title="如何和远程私有索引库进行关联"></a>如何和远程私有索引库进行关联</h4><p>第一次提交，需要创建本地的私有索引库文件夹，并与远程私有索引库进行关联。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod spec lint KRGestrueLock.podspec --verbose --allow-warnings</span><br><span class="line">pod repo push PrivatePodspec KRChart.podspec --allow-warnings</span><br></pre></td></tr></table></figure>
+<h4 id="如何提交有有依赖的私有库"><a href="#如何提交有有依赖的私有库" class="headerlink" title="如何提交有有依赖的私有库"></a>如何提交有有依赖的私有库</h4><p>一种特殊的情况,提交的私有库需要依赖已经存在的存在私有库，如何验证和提交podspec？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod spec lint XXXXXX.podspec --sources=&apos;私有的cocoapods托管地址 ,https://github.com/CocoaPods/Specs.git&apos; --allow-warnings</span><br><span class="line">pod repo push PrivatePodspec XXXXXX.podspec --sources=&apos;私有的cocoapods托管地址,https://github.com/CocoaPods/Specs.git&apos; --allow-warnings</span><br></pre></td></tr></table></figure>
+<p><a href="https://guides.cocoapods.org/terminal/commands.html#pod_spec_lint" target="_blank" rel="noopener"><strong>pod spec lint </strong></a>命令官网给出的解释</p>
+<h3 id="如何使用私有库"><a href="#如何使用私有库" class="headerlink" title="如何使用私有库"></a>如何使用私有库</h3><p>cd 到工程，然后执行<code>touch Podfile</code>命令。修改Podfile文件成如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">source &apos;https://gitee.com/renaissance_ios_group/PrivatePodspec.git&apos;  ##远程私有仓库地址</span><br><span class="line">source &apos;https://github.com/CocoaPods/Specs.git&apos;  ##github上公共仓库地址 </span><br><span class="line">platform :ios, &apos;8.0&apos;</span><br><span class="line">target &apos;KRChartDemo&apos; do</span><br><span class="line">  pod &apos;KRChart&apos;, &apos;~&gt; 0.0.2&apos;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>修改好之后，执行<code>pod install</code>命令。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://cocoapods.org/" target="_blank" rel="noopener">cocoapods官网地址</a>    </li>
+<li><a href="https://www.aliyun.com/jiaocheng/351617.html" target="_blank" rel="noopener">Cocoapods私有库管理</a></li>
+<li><a href="https://www.cnblogs.com/hs-funky/p/6780203.html" target="_blank" rel="noopener">iOS开发 - CocoaPods远程私有库从0到1</a></li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/pod命令-cocoapods/">pod命令,cocoapods</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/09/21/Markdown学习笔记/" title="Markdown学习笔记" itemprop="url">Markdown学习笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
+		
+  <p class="article-time">
+    <time datetime="2018-09-21T08:17:46.000Z" itemprop="datePublished"> Published 2018-09-21</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>学习资料整理</p>
+
         
         
         <p class="article-more-link">
@@ -571,7 +777,7 @@
 
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
   </nav>
 
 </div>
@@ -598,23 +804,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/多线程/" title="多线程">多线程<sup>3</sup></a></li>
+				<li><a href="/tags/多线程/" title="多线程">多线程<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Homebrew/" title="Homebrew">Homebrew<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Bitcode/" title="Bitcode">Bitcode<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Xcode-快捷键/" title="Xcode,快捷键">Xcode,快捷键<sup>1</sup></a></li>
+				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
 			
 		
 			
@@ -622,11 +816,7 @@
 			
 		
 			
-				<li><a href="/tags/UserNotifications-推送/" title="UserNotifications,推送">UserNotifications,推送<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/内存泄露/" title="内存泄露">内存泄露<sup>1</sup></a></li>
+				<li><a href="/tags/Homebrew/" title="Homebrew">Homebrew<sup>1</sup></a></li>
 			
 		
 			
@@ -634,7 +824,7 @@
 			
 		
 			
-				<li><a href="/tags/IM/" title="IM">IM<sup>1</sup></a></li>
+				<li><a href="/tags/加密/" title="加密">加密<sup>1</sup></a></li>
 			
 		
 			
@@ -642,19 +832,11 @@
 			
 		
 			
-				<li><a href="/tags/加密/" title="加密">加密<sup>1</sup></a></li>
+				<li><a href="/tags/内存泄露/" title="内存泄露">内存泄露<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/iOS安全/" title="iOS安全">iOS安全<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/libimobiledevice/" title="libimobiledevice">libimobiledevice<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Charles/" title="Charles">Charles<sup>1</sup></a></li>
+				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
 			
 		
 			
@@ -662,11 +844,15 @@
 			
 		
 			
+				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/代码块/" title="代码块">代码块<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/奔溃统计/" title="奔溃统计">奔溃统计<sup>1</sup></a></li>
+				<li><a href="/tags/iOS安全/" title="iOS安全">iOS安全<sup>1</sup></a></li>
 			
 		
 			
@@ -674,7 +860,15 @@
 			
 		
 			
+				<li><a href="/tags/libimobiledevice/" title="libimobiledevice">libimobiledevice<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/socket-TCP-IP/" title="socket,TCP/IP">socket,TCP/IP<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
 			
 		
 		</ul>
