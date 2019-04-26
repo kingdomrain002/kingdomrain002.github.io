@@ -1,6 +1,6 @@
 
  <!DOCTYPE HTML>
-<html >
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://kingdomrain002.github.io/2018/09/24/socket网络编程/index.html">
 <meta property="og:site_name" content="yuzhifei的技术博客">
 <meta property="og:description" content="之前做了一段时间IM即时通讯APP，是基于XMPPFramework框架开发的，对于底层的socket不是太了解。以前听到Socket编程，觉得它是比较高深的编程知识，但是只要弄清Socket编程的工作原理，神秘的面纱也就揭开了。 Socket理论篇一句话介绍socket:  Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。   需要先弄清楚一些基本概念网络模型,">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180929-155848%402x.png">
 <meta property="og:image" content="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180929-155659%402x.png">
 <meta property="og:image" content="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/WX20180929-154901%402x.png">
@@ -55,7 +55,7 @@
 				<h1 class="site-name"><a href="/" title="yuzhifei的技术博客">yuzhifei的技术博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -71,7 +71,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:kingdomrain002.github.io">
 					</form>
 					
@@ -94,14 +94,14 @@
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-09-24T13:51:52.000Z" itemprop="datePublished"> Published 2018-09-24</time>
+    <time datetime="2018-09-24T13:51:52.000Z" itemprop="datePublished"> 发表于 2018-09-24</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket理论篇"><span class="toc-number">1.</span> <span class="toc-text">Socket理论篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络模型"><span class="toc-number">1.1.</span> <span class="toc-text">网络模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP协议簇"><span class="toc-number">1.2.</span> <span class="toc-text">TCP/IP协议簇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP"><span class="toc-number">1.3.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-number">1.4.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP"><span class="toc-number">1.5.</span> <span class="toc-text">UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP三次握手和四次挥手"><span class="toc-number">1.6.</span> <span class="toc-text">TCP三次握手和四次挥手</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP三次握手"><span class="toc-number">1.6.1.</span> <span class="toc-text">TCP三次握手</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Socket"><span class="toc-number">1.7.</span> <span class="toc-text">Socket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket实践篇"><span class="toc-number">2.</span> <span class="toc-text">Socket实践篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#苹果提供的框架"><span class="toc-number">2.1.</span> <span class="toc-text">苹果提供的框架:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开源类库cocoaasyncsocket"><span class="toc-number">2.2.</span> <span class="toc-text">开源类库cocoaasyncsocket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实际应用"><span class="toc-number">3.</span> <span class="toc-text">实际应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">3.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
 		
@@ -185,33 +185,24 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket理论篇"><span class="toc-number">1.</span> <span class="toc-text">Socket理论篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络模型"><span class="toc-number">1.1.</span> <span class="toc-text">网络模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-IP协议簇"><span class="toc-number">1.2.</span> <span class="toc-text">TCP/IP协议簇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP"><span class="toc-number">1.3.</span> <span class="toc-text">HTTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-number">1.4.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP"><span class="toc-number">1.5.</span> <span class="toc-text">UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP三次握手和四次挥手"><span class="toc-number">1.6.</span> <span class="toc-text">TCP三次握手和四次挥手</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP三次握手"><span class="toc-number">1.6.1.</span> <span class="toc-text">TCP三次握手</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Socket"><span class="toc-number">1.7.</span> <span class="toc-text">Socket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Socket实践篇"><span class="toc-number">2.</span> <span class="toc-text">Socket实践篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#苹果提供的框架"><span class="toc-number">2.1.</span> <span class="toc-text">苹果提供的框架:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开源类库cocoaasyncsocket"><span class="toc-number">2.2.</span> <span class="toc-text">开源类库cocoaasyncsocket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实际应用"><span class="toc-number">3.</span> <span class="toc-text">实际应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">3.1.</span> <span class="toc-text">参考资料</span></a></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
-
-  
-<div class="github-card">
-<p class="asidetitle">Github Card</p>
-<div class="github-card" data-github="kingdomrain002" data-theme="medium"></div>
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
-</div>
-
-
 
   
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			
@@ -219,27 +210,7 @@
 			
 		
 			
-				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Homebrew/" title="Homebrew">Homebrew<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/isa指针/" title="isa指针">isa指针<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/加密/" title="加密">加密<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/面试题/" title="面试题">面试题<sup>1</sup></a></li>
+				<li><a href="/tags/libimobiledevice/" title="libimobiledevice">libimobiledevice<sup>1</sup></a></li>
 			
 		
 			
@@ -247,19 +218,19 @@
 			
 		
 			
-				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
+				<li><a href="/tags/Homebrew/" title="Homebrew">Homebrew<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/WebDriverAgent/" title="WebDriverAgent">WebDriverAgent<sup>1</sup></a></li>
+				<li><a href="/tags/加密/" title="加密">加密<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
+				<li><a href="/tags/XCTest/" title="XCTest">XCTest<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/代码块/" title="代码块">代码块<sup>1</sup></a></li>
+				<li><a href="/tags/面试题/" title="面试题">面试题<sup>1</sup></a></li>
 			
 		
 			
@@ -267,11 +238,39 @@
 			
 		
 			
-				<li><a href="/tags/AFNetWorking/" title="AFNetWorking">AFNetWorking<sup>1</sup></a></li>
+				<li><a href="/tags/计时器/" title="计时器">计时器<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/libimobiledevice/" title="libimobiledevice">libimobiledevice<sup>1</sup></a></li>
+				<li><a href="/tags/isa指针/" title="isa指针">isa指针<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码块/" title="代码块">代码块<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/WebDriverAgent/" title="WebDriverAgent">WebDriverAgent<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
 			
 		
 			
@@ -279,7 +278,7 @@
 			
 		
 			
-				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
+				<li><a href="/tags/AFNetWorking/" title="AFNetWorking">AFNetWorking<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -287,30 +286,21 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            	<a href="https://github.com/kingdomrain002" target="_blank" title="github">github</a>
             
           </li>
         
     </ul>
 </div>
 
-  
-
-
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=&dpc=1"></iframe>
-</div>
-
 
 </aside>
 </div>
@@ -325,7 +315,7 @@
 	
 	<section class="info">
 		<p> Hello ,I&#39;m yuzhifei. <br/>
-			Stay hungry. Stay foolish. </p>
+			我不是个伟大的程序员，我只是个有着一些优秀习惯的好程序员。</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -543,7 +533,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

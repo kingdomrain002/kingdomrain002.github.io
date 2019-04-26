@@ -1,6 +1,6 @@
 
  <!DOCTYPE HTML>
-<html >
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
@@ -18,11 +18,11 @@
 <meta property="og:url" content="https://kingdomrain002.github.io/2018/09/19/git/index.html">
 <meta property="og:site_name" content="yuzhifei的技术博客">
 <meta property="og:description" content="Git学习笔记一句话介绍Git：    世界上目前最先进的分布式版本控制系统。  学习资料最好的入门教程 Learning Git Branching最全的资料 : https://git-scm.com/book/en/v2Git官网地址:https://git-scm.com/  比较好的教程:     廖雪峰git教程   廖雪峰Git教程笔记CVS及SVN都是集中式的版本控制系统，而Git">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/git/WX20180920-162806%402x.png">
 <meta property="og:image" content="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/git/WX20180920-163012%402x.png">
 <meta property="og:image" content="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/git/WX20180920-205950%402x.png">
-<meta property="og:updated_time" content="2018-11-09T09:20:11.881Z">
+<meta property="og:updated_time" content="2019-04-11T02:59:30.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git">
 <meta name="twitter:description" content="Git学习笔记一句话介绍Git：    世界上目前最先进的分布式版本控制系统。  学习资料最好的入门教程 Learning Git Branching最全的资料 : https://git-scm.com/book/en/v2Git官网地址:https://git-scm.com/  比较好的教程:     廖雪峰git教程   廖雪峰Git教程笔记CVS及SVN都是集中式的版本控制系统，而Git">
@@ -54,7 +54,7 @@
 				<h1 class="site-name"><a href="/" title="yuzhifei的技术博客">yuzhifei的技术博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -70,7 +70,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:kingdomrain002.github.io">
 					</form>
 					
@@ -93,16 +93,16 @@
 		<a href="/about" title="yuzhifei" target="_blank" itemprop="author">yuzhifei</a>
 		
   <p class="article-time">
-    <time datetime="2018-09-19T05:25:34.000Z" itemprop="datePublished"> Published 2018-09-19</time>
+    <time datetime="2018-09-19T05:25:34.000Z" itemprop="datePublished"> 发表于 2018-09-19</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Git学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-number">1.1.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#廖雪峰Git教程笔记"><span class="toc-number">1.2.</span> <span class="toc-text">廖雪峰Git教程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时光机穿梭"><span class="toc-number">1.2.1.</span> <span class="toc-text">时光机穿梭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-number">1.2.2.</span> <span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-number">1.2.3.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建和合并分支"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">创建和合并分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决冲突"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">解决冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支管理策略"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">分支管理策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bug分支"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">Bug分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feature分支"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">Feature分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多人协作"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">多人协作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rebase"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">rebase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签管理"><span class="toc-number">1.2.4.</span> <span class="toc-text">标签管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题外话"><span class="toc-number">1.2.5.</span> <span class="toc-text">题外话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Learning-Git-Branching-教程学习笔记"><span class="toc-number">1.3.</span> <span class="toc-text">Learning Git Branching 教程学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点补充"><span class="toc-number">1.4.</span> <span class="toc-text">知识点补充</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Git学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-number">1.1.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#廖雪峰Git教程笔记"><span class="toc-number">1.2.</span> <span class="toc-text">廖雪峰Git教程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时光机穿梭"><span class="toc-number">1.2.1.</span> <span class="toc-text">时光机穿梭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-number">1.2.2.</span> <span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-number">1.2.3.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建和合并分支"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">创建和合并分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决冲突"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">解决冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支管理策略"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">分支管理策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bug分支"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">Bug分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feature分支"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">Feature分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多人协作"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">多人协作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rebase"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">rebase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签管理"><span class="toc-number">1.2.4.</span> <span class="toc-text">标签管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题外话"><span class="toc-number">1.2.5.</span> <span class="toc-text">题外话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Learning-Git-Branching-教程学习笔记"><span class="toc-number">1.3.</span> <span class="toc-text">Learning Git Branching 教程学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点补充"><span class="toc-number">1.4.</span> <span class="toc-text">知识点补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更新说明"><span class="toc-number">1.4.1.</span> <span class="toc-text">更新说明</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
@@ -160,6 +160,11 @@
 <p>我的感受:廖雪峰Git教程简单易懂的原因:<br>1.通过实际的例子讲述Git命令，例子很简单，但是把命令的意思解释的很清楚。<br>2.有实际的例子，也有原理的阐述。例如对暂存区，Head指针的解释，就用了了很多图，动画来演绎和解释，给人很直观的感受。<br>3.有小结，通过最后的小结把要将的东西做个总结。我的学习笔记也基本上是教程中的总结，应该这些是最重要的东西。</p>
 <p>学习了廖雪峰Git教程之后，给了我写技术博客提供了一些思路。虽然我的技术博客主要还是记录自己学到的一些东西，把自己学习到的东西做个整理。但是积累多了，也就慢慢培养出来一种能把一个技术问题说清楚的能力。</p>
 <h2 id="Learning-Git-Branching-教程学习笔记"><a href="#Learning-Git-Branching-教程学习笔记" class="headerlink" title="Learning Git Branching 教程学习笔记"></a>Learning Git Branching 教程学习笔记</h2><h2 id="知识点补充"><a href="#知识点补充" class="headerlink" title="知识点补充"></a>知识点补充</h2><p>1.一般git clone 下来的是master分支，但是要clone分支的代码，就需要使用如下的命令:<br>Git clone指定分支命令: <code>git clone -b 分支名 仓库地址</code><br>提交分支到远程仓库也指定分支名称，使用如下命令<code>git push origin 分支名</code>。  </p>
+<p>2.删除本地文件后 Git从远程仓库重新获取。Git提示：up-to-date，但未得到删除的文件。<br><a href="https://blog.csdn.net/ffscript/article/details/74450821" target="_blank" rel="noopener">解决方案</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master </span><br><span class="line">git reset --hard</span><br></pre></td></tr></table></figure>
+<h3 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h3><ol>
+<li>20190411   增加知识点补充 删除本地文件后 Git从远程仓库重新获取。</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -214,33 +219,24 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Git学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-number">1.1.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#廖雪峰Git教程笔记"><span class="toc-number">1.2.</span> <span class="toc-text">廖雪峰Git教程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时光机穿梭"><span class="toc-number">1.2.1.</span> <span class="toc-text">时光机穿梭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-number">1.2.2.</span> <span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-number">1.2.3.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建和合并分支"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">创建和合并分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决冲突"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">解决冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支管理策略"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">分支管理策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bug分支"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">Bug分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feature分支"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">Feature分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多人协作"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">多人协作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rebase"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">rebase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签管理"><span class="toc-number">1.2.4.</span> <span class="toc-text">标签管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题外话"><span class="toc-number">1.2.5.</span> <span class="toc-text">题外话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Learning-Git-Branching-教程学习笔记"><span class="toc-number">1.3.</span> <span class="toc-text">Learning Git Branching 教程学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点补充"><span class="toc-number">1.4.</span> <span class="toc-text">知识点补充</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Git学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#学习资料"><span class="toc-number">1.1.</span> <span class="toc-text">学习资料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#廖雪峰Git教程笔记"><span class="toc-number">1.2.</span> <span class="toc-text">廖雪峰Git教程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时光机穿梭"><span class="toc-number">1.2.1.</span> <span class="toc-text">时光机穿梭</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远程仓库"><span class="toc-number">1.2.2.</span> <span class="toc-text">远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支管理"><span class="toc-number">1.2.3.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建和合并分支"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">创建和合并分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解决冲突"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">解决冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支管理策略"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">分支管理策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bug分支"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">Bug分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Feature分支"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">Feature分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多人协作"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">多人协作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rebase"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">rebase</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签管理"><span class="toc-number">1.2.4.</span> <span class="toc-text">标签管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题外话"><span class="toc-number">1.2.5.</span> <span class="toc-text">题外话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Learning-Git-Branching-教程学习笔记"><span class="toc-number">1.3.</span> <span class="toc-text">Learning Git Branching 教程学习笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#知识点补充"><span class="toc-number">1.4.</span> <span class="toc-text">知识点补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更新说明"><span class="toc-number">1.4.1.</span> <span class="toc-text">更新说明</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
-
-  
-<div class="github-card">
-<p class="asidetitle">Github Card</p>
-<div class="github-card" data-github="kingdomrain002" data-theme="medium"></div>
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
-</div>
-
-
 
   
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			
@@ -248,27 +244,7 @@
 			
 		
 			
-				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Homebrew/" title="Homebrew">Homebrew<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/isa指针/" title="isa指针">isa指针<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/加密/" title="加密">加密<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/面试题/" title="面试题">面试题<sup>1</sup></a></li>
+				<li><a href="/tags/libimobiledevice/" title="libimobiledevice">libimobiledevice<sup>1</sup></a></li>
 			
 		
 			
@@ -276,19 +252,19 @@
 			
 		
 			
-				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
+				<li><a href="/tags/Homebrew/" title="Homebrew">Homebrew<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/WebDriverAgent/" title="WebDriverAgent">WebDriverAgent<sup>1</sup></a></li>
+				<li><a href="/tags/加密/" title="加密">加密<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
+				<li><a href="/tags/XCTest/" title="XCTest">XCTest<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/代码块/" title="代码块">代码块<sup>1</sup></a></li>
+				<li><a href="/tags/面试题/" title="面试题">面试题<sup>1</sup></a></li>
 			
 		
 			
@@ -296,11 +272,39 @@
 			
 		
 			
-				<li><a href="/tags/AFNetWorking/" title="AFNetWorking">AFNetWorking<sup>1</sup></a></li>
+				<li><a href="/tags/计时器/" title="计时器">计时器<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/libimobiledevice/" title="libimobiledevice">libimobiledevice<sup>1</sup></a></li>
+				<li><a href="/tags/isa指针/" title="isa指针">isa指针<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码块/" title="代码块">代码块<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/WebDriverAgent/" title="WebDriverAgent">WebDriverAgent<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/framework-静态库/" title="framework,静态库">framework,静态库<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/代码规范/" title="代码规范">代码规范<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/pod命令-cocoapods/" title="pod命令,cocoapods">pod命令,cocoapods<sup>1</sup></a></li>
 			
 		
 			
@@ -308,7 +312,7 @@
 			
 		
 			
-				<li><a href="/tags/网络/" title="网络">网络<sup>1</sup></a></li>
+				<li><a href="/tags/AFNetWorking/" title="AFNetWorking">AFNetWorking<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -316,30 +320,21 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            	<a href="https://github.com/kingdomrain002" target="_blank" title="github">github</a>
             
           </li>
         
     </ul>
 </div>
 
-  
-
-
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=&dpc=1"></iframe>
-</div>
-
 
 </aside>
 </div>
@@ -354,7 +349,7 @@
 	
 	<section class="info">
 		<p> Hello ,I&#39;m yuzhifei. <br/>
-			Stay hungry. Stay foolish. </p>
+			我不是个伟大的程序员，我只是个有着一些优秀习惯的好程序员。</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -572,7 +567,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
