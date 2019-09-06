@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -10,11 +10,19 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -37,38 +45,27 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -78,11 +75,6 @@
 
 
   <link rel="alternate" href="/atom.xml" title="yuzhifei的技术博客" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -104,9 +96,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -129,11 +123,7 @@
 
 
 
-  <title> yuzhifei的技术博客 </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <title>yuzhifei的技术博客</title>
   
 
 
@@ -152,20 +142,17 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -211,18 +198,18 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            归档
+            关于
           </a>
         </li>
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -231,12 +218,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            关于
+            归档
           </a>
         </li>
       
@@ -268,7 +255,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/09/05/Hexo-更换主题NexT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -287,16 +278,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/09/05/Hexo-更换主题NexT/" itemprop="url">
-                  Hexo-更换主题NexT
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/09/05/Hexo-更换主题NexT/" itemprop="url">Hexo-更换主题NexT</a></h1>
         
 
         <div class="post-meta">
@@ -344,6 +327,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/05/Hexo-更换主题NexT/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/05/Hexo-更换主题NexT/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -359,7 +352,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -368,8 +363,10 @@
       
         
           
-            <p>   主要是想加个评论系统，但是一不小心看到一个很好看的主题NexT，就特别想换一下博客主题。本篇博客记录Hexo更换主题NexT需要注意的事项。</p>
-<h3 id="新增评论系统"><a href="#新增评论系统" class="headerlink" title="新增评论系统"></a>新增评论系统</h3><h3 id="设置-分类"><a href="#设置-分类" class="headerlink" title="设置 分类"></a>设置 分类</h3><h3 id="设置-Tag"><a href="#设置-Tag" class="headerlink" title="设置 Tag"></a>设置 Tag</h3><h3 id="设置-RSS"><a href="#设置-RSS" class="headerlink" title="设置 RSS"></a>设置 RSS</h3><h3 id="图片设置"><a href="#图片设置" class="headerlink" title="图片设置"></a>图片设置</h3><h3 id="视频设置"><a href="#视频设置" class="headerlink" title="视频设置"></a>视频设置</h3><h3 id="谷歌统计"><a href="#谷歌统计" class="headerlink" title="谷歌统计"></a>谷歌统计</h3><h3 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h3><p>在<code>主题配置文件</code>填入微信和支付宝收款二维码图片地址,即可开启该功能。关键是指定打赏照片的路径。<br><img src="/image/20190906/WX20190906-160927.png" alt="微信收款码"></p>
+            <p>   主要是想加个评论系统，但是一不小心看到一个很好看的主题NexT，就特别想换一下博客主题。本篇博客记录Hexo更换主题NexT需要注意的事项。<br>  我使用的NexT版本是v5.1.4。</p>
+<h3 id="新增评论系统"><a href="#新增评论系统" class="headerlink" title="新增评论系统"></a>新增评论系统</h3><p>Hexo的评论系统有很多，常见的有以下几个</p>
+<p>多说<br>网易云跟帖<br>畅言<br>来必力（LiveRe）<br>Disqus<br>Hypercomments<br>valine</p>
+<h3 id="设置-分类"><a href="#设置-分类" class="headerlink" title="设置 分类"></a>设置 分类</h3><h3 id="设置-Tag"><a href="#设置-Tag" class="headerlink" title="设置 Tag"></a>设置 Tag</h3><h3 id="设置-RSS"><a href="#设置-RSS" class="headerlink" title="设置 RSS"></a>设置 RSS</h3><h3 id="图片设置"><a href="#图片设置" class="headerlink" title="图片设置"></a>图片设置</h3><h3 id="视频设置"><a href="#视频设置" class="headerlink" title="视频设置"></a>视频设置</h3><h3 id="谷歌统计"><a href="#谷歌统计" class="headerlink" title="谷歌统计"></a>谷歌统计</h3><h3 id="打赏功能"><a href="#打赏功能" class="headerlink" title="打赏功能"></a>打赏功能</h3><p>在<code>主题配置文件</code>填入微信和支付宝收款二维码图片地址,即可开启该功能。关键是指定打赏照片的路径。<br><img src="/image/20190906/WX20190906-160927.png" alt="微信收款码"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！</span><br><span class="line">wechatpay: /path/to/wechat-reward-image</span><br><span class="line">alipay: /path/to/alipay-reward-image</span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/iissnan/hexo-theme-next/pull/687" target="_blank" rel="noopener">参考链接</a></p>
 <p>我是放在source/otherSource路径下，故我指定的路径如下:</p>
@@ -377,21 +374,21 @@
 <h3 id="微信公众号"><a href="#微信公众号" class="headerlink" title="微信公众号"></a>微信公众号</h3><p>在每篇文章的末尾显示微信公众号二维码，扫一扫，轻松订阅博客。现在大家都有微信，通过微信公众号可以及时推送新的文章。<br>在微信公众号平台下载您的二维码，并将它存放于博客source目录下。<br>在<code>主题配置文件</code>编辑，如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wechat_subscriber:</span><br><span class="line">  enabled: true</span><br><span class="line">  qcode: /uploads/wechat-qcode.jpg</span><br><span class="line">  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！</span><br></pre></td></tr></table></figure>
 <p>我放在博客目录的source/otherSource路径下，如下所示:<br><img src="/image/20190906/WX20190906-201103.png" alt="微信公众号图片路径"></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo 文档</a><br>2.<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">HexT主题使用</a>  推荐☆☆☆☆☆<br>3.<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>  NexT仓库</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo 文档</a><br>2.<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">HexT主题使用</a>  推荐☆☆☆☆☆<br>3.<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>  NexT仓库<br>4.<a href="https://theme-next.org/" target="_blank" rel="noopener">theme-next</a>  可以查看最新版本更新的内容</p>
 
           
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -405,6 +402,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -417,7 +418,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/08/30/实践项目-基于Jenkins的持续集成/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -436,16 +441,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/08/30/实践项目-基于Jenkins的持续集成/" itemprop="url">
-                  实践项目-基于Jenkins的持续集成
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/08/30/实践项目-基于Jenkins的持续集成/" itemprop="url">实践项目-基于Jenkins的持续集成</a></h1>
         
 
         <div class="post-meta">
@@ -471,6 +468,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/30/实践项目-基于Jenkins的持续集成/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/30/实践项目-基于Jenkins的持续集成/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -486,7 +493,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -501,15 +510,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -523,6 +532,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -535,7 +548,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/08/20/实践项目-跳一跳自动化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -554,16 +571,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/08/20/实践项目-跳一跳自动化/" itemprop="url">
-                  实践项目-跳一跳自动化
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/08/20/实践项目-跳一跳自动化/" itemprop="url">实践项目-跳一跳自动化</a></h1>
         
 
         <div class="post-meta">
@@ -589,6 +598,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/20/实践项目-跳一跳自动化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/20/实践项目-跳一跳自动化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -604,7 +623,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -619,15 +640,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -641,6 +662,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -653,7 +678,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/03/04/iOS开发-XCTest框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -672,16 +701,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/03/04/iOS开发-XCTest框架/" itemprop="url">
-                  iOS开发-XCTest框架
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/03/04/iOS开发-XCTest框架/" itemprop="url">iOS开发-XCTest框架</a></h1>
         
 
         <div class="post-meta">
@@ -707,6 +728,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/04/iOS开发-XCTest框架/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/04/iOS开发-XCTest框架/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -722,7 +753,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -754,15 +787,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -776,6 +809,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -788,7 +825,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/02/15/Mac开发-Homebrew/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -807,16 +848,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/02/15/Mac开发-Homebrew/" itemprop="url">
-                  Mac开发-Homebrew
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/02/15/Mac开发-Homebrew/" itemprop="url">Mac开发-Homebrew</a></h1>
         
 
         <div class="post-meta">
@@ -842,6 +875,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/15/Mac开发-Homebrew/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/15/Mac开发-Homebrew/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -857,7 +900,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -879,15 +924,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -901,6 +946,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -913,7 +962,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/02/15/iOS开发-移动测试框架WebDriverAgent/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -932,16 +985,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/02/15/iOS开发-移动测试框架WebDriverAgent/" itemprop="url">
-                  iOS开发-移动测试框架WebDriverAgent
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/02/15/iOS开发-移动测试框架WebDriverAgent/" itemprop="url">iOS开发-移动测试框架WebDriverAgent</a></h1>
         
 
         <div class="post-meta">
@@ -967,6 +1012,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/15/iOS开发-移动测试框架WebDriverAgent/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/15/iOS开发-移动测试框架WebDriverAgent/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -982,7 +1037,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1003,15 +1060,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -1025,6 +1082,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1037,7 +1098,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/02/15/iOS开发-神器libimobiledevice安装及使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1056,16 +1121,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/02/15/iOS开发-神器libimobiledevice安装及使用/" itemprop="url">
-                  iOS开发-神器libimobiledevice安装及使用
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/02/15/iOS开发-神器libimobiledevice安装及使用/" itemprop="url">iOS开发-神器libimobiledevice安装及使用</a></h1>
         
 
         <div class="post-meta">
@@ -1091,6 +1148,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/15/iOS开发-神器libimobiledevice安装及使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/15/iOS开发-神器libimobiledevice安装及使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1106,7 +1173,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1150,15 +1219,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -1172,6 +1241,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1184,7 +1257,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/01/14/iOS开发-安全相关-越狱检测/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1203,16 +1280,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/01/14/iOS开发-安全相关-越狱检测/" itemprop="url">
-                  iOS开发-安全相关-越狱检测
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/14/iOS开发-安全相关-越狱检测/" itemprop="url">iOS开发-安全相关-越狱检测</a></h1>
         
 
         <div class="post-meta">
@@ -1238,6 +1307,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/14/iOS开发-安全相关-越狱检测/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/14/iOS开发-安全相关-越狱检测/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1253,7 +1332,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1294,15 +1375,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -1316,6 +1397,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1328,7 +1413,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/01/07/iOS开发-安全相关-反调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1347,16 +1436,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2019/01/07/iOS开发-安全相关-反调试/" itemprop="url">
-                  iOS开发-安全相关-反调试攻防
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2019/01/07/iOS开发-安全相关-反调试/" itemprop="url">iOS开发-安全相关-反调试攻防</a></h1>
         
 
         <div class="post-meta">
@@ -1382,6 +1463,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/07/iOS开发-安全相关-反调试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/07/iOS开发-安全相关-反调试/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1397,7 +1488,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1420,15 +1513,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -1442,6 +1535,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1454,7 +1551,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2018/11/30/iOS开发-代码规范/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1473,16 +1574,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2018/11/30/iOS开发-代码规范/" itemprop="url">
-                  Objective-C代码规范
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2018/11/30/iOS开发-代码规范/" itemprop="url">Objective-C代码规范</a></h1>
         
 
         <div class="post-meta">
@@ -1508,6 +1601,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/30/iOS开发-代码规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/30/iOS开发-代码规范/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1523,7 +1626,9 @@
       </header>
     
 
-
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -1615,15 +1720,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
+    
 
     <footer class="post-footer">
       
@@ -1637,6 +1742,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1649,7 +1758,7 @@
   </nav>
 
 
-          
+
           </div>
           
 
@@ -1669,86 +1778,92 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.png"
-               alt="yuzhifei" />
-          <p class="site-author-name" itemprop="name">yuzhifei</p>
-           
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="yuzhifei" />
+            
+              <p class="site-author-name" itemprop="name">yuzhifei</p>
               <p class="site-description motion-element" itemprop="description"></p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">25</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">标签</span>
-              
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
           </div>
-        
 
-        <div class="links-of-author motion-element">
-          
+          <nav class="site-state motion-element">
+
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/kingdomrain002" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kingdomrain002" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
@@ -1765,30 +1880,36 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2018 - 
-  <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">yuzhifei</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -1800,7 +1921,9 @@
         
       </div>
     
+
     
+
   </div>
 
   
@@ -1824,48 +1947,67 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
   
   
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
 
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
   
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
   
-
 
 
   
@@ -1891,12 +2033,40 @@
 
 
 
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'peD0KcpANfYTFUykIpnyDG2a-gzGzoHsz',
+        appKey: 'kaz3WWskJCFpHhnqJlRa3UEz',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
   
 
 
 
-  
-  
+
 
   
 
@@ -1905,7 +2075,11 @@
   
 
   
+  
 
+  
+
+  
 
   
 
