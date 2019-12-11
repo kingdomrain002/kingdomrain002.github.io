@@ -341,17 +341,6 @@
 
           
           
-             <span id="/2019/09/05/Hexo-更换主题NexT/" class="leancloud_visitors" data-flag-title="Hexo-更换主题NexT">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
@@ -390,158 +379,6 @@
 <p>我放在博客目录的source/otherSource路径下，如下所示:<br><img src="/image/20190906/WX20190906-201103.png" alt="微信公众号图片路径"></p>
 <h3 id="设置-分类"><a href="#设置-分类" class="headerlink" title="设置 分类"></a>设置 分类</h3><h3 id="设置-Tag"><a href="#设置-Tag" class="headerlink" title="设置 Tag"></a>设置 Tag</h3><h3 id="设置-RSS"><a href="#设置-RSS" class="headerlink" title="设置 RSS"></a>设置 RSS</h3><p>待实现中</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo 文档</a><br>2.<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">HexT主题使用</a>  推荐☆☆☆☆☆<br>3.<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">hexo-theme-next</a>  NexT仓库<br>4.<a href="https://theme-next.org/" target="_blank" rel="noopener">theme-next</a>  可以查看最新版本更新的内容</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2019/08/30/实践项目-基于Jenkins的持续集成/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yuzhifei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yuzhifei的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/30/实践项目-基于Jenkins的持续集成/" itemprop="url">实践项目-基于Jenkins的iOS自动化打包</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-30T11:56:00+08:00">
-                2019-08-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/30/实践项目-基于Jenkins的持续集成/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/30/实践项目-基于Jenkins的持续集成/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/08/30/实践项目-基于Jenkins的持续集成/" class="leancloud_visitors" data-flag-title="实践项目-基于Jenkins的iOS自动化打包">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>   自动化打包是我两年前的一个项目，公司一些项目开始基于Jenkins来打包发布，我感觉很方便。所以就想自己基于Jenkins来实现一下自动化打包。当然Jenkins可以用来实现CI/CD，还有很多地方值得深入学习。本篇技术博客记录基于Jenkins的iOS自动化打包碰到的一些问题和思考。</p>
-<h3 id="Jenkins安装和初次使用"><a href="#Jenkins安装和初次使用" class="headerlink" title="Jenkins安装和初次使用"></a>Jenkins安装和初次使用</h3><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><h3 id="证书管理"><a href="#证书管理" class="headerlink" title="证书管理"></a>证书管理</h3><h3 id="自动化打包"><a href="#自动化打包" class="headerlink" title="自动化打包"></a>自动化打包</h3><p>有以下几种方式:<br>1.执行shell脚本<br>2.Jenkins的xcode插件<br>3.基于开源工具<code>fastlane</code>实现自动化打包，这个可以实现iOS/android自动化打包，还可以截图，完成测试/生产的发布，功能很强大。</p>
-<p>我选择的是执行shell脚本。</p>
-<h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><p>问题1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Build system information</span><br><span class="line">error: No profile for team &apos;M7PXTCG24D&apos; matching &apos;iospackage-dis&apos; found: Xcode couldn&apos;t find any provisioning profiles matching &apos;M7PXTCG24D/iospackage-dis&apos;. </span><br><span class="line">Install the profile (by dragging and dropping it onto Xcode&apos;s dock item) or select a different one in the General tab of the target editor. (in target &apos;ios-package&apos;)</span><br><span class="line"></span><br><span class="line">** ARCHIVE FAILED **</span><br><span class="line"></span><br><span class="line">Build step &apos;Execute shell&apos; marked build as failure</span><br><span class="line">Finished: FAILURE</span><br></pre></td></tr></table></figure>
-<p>问题2</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">** ARCHIVE FAILED **</span><br><span class="line"></span><br><span class="line">The following build commands failed:</span><br><span class="line">	CodeSign /Users/Shared/Jenkins/Library/Developer/Xcode/DerivedData/ios-package-fqilncziobrpprcdhclwbqcdjrni/Build/Intermediates.noindex/ArchiveIntermediates/ios-package/InstallationBuildProductsLocation/Applications/ios-package.app</span><br></pre></td></tr></table></figure>
-<h3 id="分发平台"><a href="#分发平台" class="headerlink" title="分发平台"></a>分发平台</h3><p>我有两种方案:<br>1.自己搭建分发平台。<br>2.采用蒲公英/fir.im等平台，进行发布。</p>
-<p>我采用的发布到蒲公英。上传App示例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -F &apos;file=@/tmp/example.ipa&apos; -F &apos;_api_key=32d46504ec829b0e166df6048cce6f6d&apos;  </span><br><span class="line">https://www.pgyer.com/apiv2/app/upload</span><br></pre></td></tr></table></figure>
-<h3 id="高性能和可靠性的自动化打包系统的思考"><a href="#高性能和可靠性的自动化打包系统的思考" class="headerlink" title="高性能和可靠性的自动化打包系统的思考"></a>高性能和可靠性的自动化打包系统的思考</h3><h4 id="碰到的问题"><a href="#碰到的问题" class="headerlink" title="碰到的问题"></a>碰到的问题</h4><p>1.打包失败，有很多的原因，如工程变动，开发人员当时提交的时候就会报错等等。所以我们之前在做自动化打包项目的时候，项目组在打包的时候就总是碰到打包失败的情况。我们就只能赶紧去帮他们排查问题。当然我们希望自动化打包系统不要老是失败，至少我们需要提供一些机制，能及早的发现问题。例如一个开发人员提交最新的代码，如果没有通过构建（build），就及时发通知或邮件给开发者，让他赶紧去看下存在的问题。<br>2.项目组多了，打包的效率比较低。如果打包都集中在一个时间段，这个时候我们只有一台服务器工作，就可能需要半个都小时才能打出新包。打包的效率，也是我们急需解决的一个问题。</p>
-<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="http://www.cocoachina.com/articles/17281" target="_blank" rel="noopener">手把手教你利用Jenkins持续集成iOS项目</a><br>2.<a href="https://wiki.jenkins.io/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin#KeychainsandProvisioningProfilesPlugin-Uploadkeychainandprovisioningprofilefilessection" target="_blank" rel="noopener">Keychains+and+Provisioning+Profiles+Plugin</a><br>3.<a href="https://my.oschina.net/u/2340880/blog/1837031" target="_blank" rel="noopener">使用Jenkins配置iOS自动化构建工具</a>     执行shell部分的脚本对我有帮助<br>4.<a href="https://wiki.jenkins.io/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin" target="_blank" rel="noopener">Keychains+and+Provisioning+Profiles+Plugin插件 官方资料</a> </p>
 
           
         
@@ -648,17 +485,6 @@
           
 
           
-          
-             <span id="/2019/03/04/iOS开发-XCTest框架/" class="leancloud_visitors" data-flag-title="iOS开发-XCTest框架">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -807,17 +633,6 @@
 
           
           
-             <span id="/2019/02/15/Mac开发-Homebrew/" class="leancloud_visitors" data-flag-title="Mac开发-Homebrew">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
@@ -955,17 +770,6 @@
 
           
           
-             <span id="/2019/02/15/iOS开发-移动测试框架WebDriverAgent/" class="leancloud_visitors" data-flag-title="iOS开发-移动测试框架WebDriverAgent">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
@@ -1101,17 +905,6 @@
           
 
           
-          
-             <span id="/2019/02/15/iOS开发-神器libimobiledevice安装及使用/" class="leancloud_visitors" data-flag-title="iOS开发-神器libimobiledevice安装及使用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1272,17 +1065,6 @@
 
           
           
-             <span id="/2019/01/14/iOS开发-安全相关-越狱检测/" class="leancloud_visitors" data-flag-title="iOS开发-安全相关-越狱检测">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
@@ -1439,17 +1221,6 @@
 
           
           
-             <span id="/2019/01/07/iOS开发-安全相关-反调试/" class="leancloud_visitors" data-flag-title="iOS开发-安全相关-反调试攻防">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
@@ -1587,17 +1358,6 @@
           
 
           
-          
-             <span id="/2018/11/30/iOS开发-代码规范/" class="leancloud_visitors" data-flag-title="Objective-C代码规范">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1806,17 +1566,6 @@
 
           
           
-             <span id="/2018/11/27/iOS开发-深拷贝浅拷贝总结/" class="leancloud_visitors" data-flag-title="iOS开发-深拷贝浅拷贝总结">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
 
           
 
@@ -1840,6 +1589,136 @@
         
           
             
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2018/11/22/Mac-清理磁盘空间/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yuzhifei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yuzhifei的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/22/Mac-清理磁盘空间/" itemprop="url">Mac-清理磁盘空间</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T17:48:12+08:00">
+                2018-11-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/22/Mac-清理磁盘空间/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/22/Mac-清理磁盘空间/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.jianshu.com/p/722093bc3dea" target="_blank" rel="noopener">Mac清理磁盘空间</a></p>
+
           
         
       
@@ -1928,7 +1807,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1950,7 +1829,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -2199,113 +2078,6 @@
 
 
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("peD0KcpANfYTFUykIpnyDG2a-gzGzoHsz", "kaz3WWskJCFpHhnqJlRa3UEz");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
   
 
