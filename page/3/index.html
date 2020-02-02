@@ -198,6 +198,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
@@ -653,11 +663,6 @@
 <blockquote>
 <p>世界上目前最先进的分布式版本控制系统。</p>
 </blockquote>
-<h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><p>最好的入门教程 <a href="https://learngitbranching.js.org" target="_blank" rel="noopener">Learning Git Branching</a><br>最全的资料 : <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">https://git-scm.com/book/en/v2</a><br>Git官网地址:<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a> </p>
-<p>比较好的教程:   </p>
-<ul>
-<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰git教程</a> </li>
-</ul>
 <h2 id="廖雪峰Git教程笔记"><a href="#廖雪峰Git教程笔记" class="headerlink" title="廖雪峰Git教程笔记"></a>廖雪峰Git教程笔记</h2><p>CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统，集中式和分布式版本控制系统有什么区别呢？集中式vs分布式?<br><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/git/WX20180920-162806%402x.png" alt="集中式版本系统"></p>
 <p>集中式的缺点:<br>1.集中式的版本控制系统不但速度慢，而且必须联网才能使用。<br>2.分支管理使用不方便。    </p>
 <p><img src="https://github.com/kingdomrain002/kingdomrain002.github.io/raw/master/image/git/WX20180920-163012%402x.png" alt="分布式版本系统"><br>分布式的优点:<br>1.分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步。<br>2.Git极其强大的分支管理，把SVN等远远抛在了后面。<br>3.分布式版本控制系统的安全性要高很多。</p>
@@ -702,12 +707,17 @@
 <h3 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h3><p>实践出真知。<br>Unix的哲学是“没有消息就是好消息”，说明添加成功。<br>历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。<br>Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub。 </p>
 <p>我的感受:廖雪峰Git教程简单易懂的原因:<br>1.通过实际的例子讲述Git命令，例子很简单，但是把命令的意思解释的很清楚。<br>2.有实际的例子，也有原理的阐述。例如对暂存区，Head指针的解释，就用了了很多图，动画来演绎和解释，给人很直观的感受。<br>3.有小结，通过最后的小结把要将的东西做个总结。我的学习笔记也基本上是教程中的总结，应该这些是最重要的东西。</p>
 <p>学习了廖雪峰Git教程之后，给了我写技术博客提供了一些思路。虽然我的技术博客主要还是记录自己学到的一些东西，把自己学习到的东西做个整理。但是积累多了，也就慢慢培养出来一种能把一个技术问题说清楚的能力。</p>
-<h2 id="Learning-Git-Branching-教程学习笔记"><a href="#Learning-Git-Branching-教程学习笔记" class="headerlink" title="Learning Git Branching 教程学习笔记"></a>Learning Git Branching 教程学习笔记</h2><h2 id="知识点补充"><a href="#知识点补充" class="headerlink" title="知识点补充"></a>知识点补充</h2><p>1.一般git clone 下来的是master分支，但是要clone分支的代码，就需要使用如下的命令:<br>Git clone指定分支命令: <code>git clone -b 分支名 仓库地址</code><br>提交分支到远程仓库也指定分支名称，使用如下命令<code>git push origin 分支名</code>。  </p>
+<h2 id="Learning-Git-Branching-学习笔记"><a href="#Learning-Git-Branching-学习笔记" class="headerlink" title="Learning Git Branching 学习笔记"></a>Learning Git Branching 学习笔记</h2><h2 id="知识点补充"><a href="#知识点补充" class="headerlink" title="知识点补充"></a>知识点补充</h2><p>1.一般git clone 下来的是master分支，但是要clone分支的代码，就需要使用如下的命令:<br>Git clone指定分支命令: <code>git clone -b 分支名 仓库地址</code><br>提交分支到远程仓库也指定分支名称，使用如下命令<code>git push origin 分支名</code>。  </p>
 <p>2.删除本地文件后 Git从远程仓库重新获取。Git提示：up-to-date，但未得到删除的文件。<br><a href="https://blog.csdn.net/ffscript/article/details/74450821" target="_blank" rel="noopener">解决方案</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master </span><br><span class="line">git reset --hard</span><br></pre></td></tr></table></figure>
-<h3 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h3><ol>
-<li>20190411   增加知识点补充 删除本地文件后 Git从远程仓库重新获取。</li>
-</ol>
+<h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><p>最好的入门教程 <a href="https://learngitbranching.js.org" target="_blank" rel="noopener">Learning Git Branching</a><br>最全的资料 : <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">https://git-scm.com/book/en/v2</a><br>Git官网地址:<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a> </p>
+<p>比较好的教程:   </p>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰git教程</a> </li>
+</ul>
+<h3 id="更新说明"><a href="#更新说明" class="headerlink" title="更新说明"></a>更新说明</h3><ul>
+<li>20190411  增加知识点补充 删除本地文件后 Git从远程仓库重新获取。</li>
+</ul>
 
           
         
@@ -818,10 +828,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
