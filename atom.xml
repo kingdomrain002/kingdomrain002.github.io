@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kingdomrain002.github.io/"/>
-  <updated>2019-03-20T07:53:58.000Z</updated>
+  <updated>2020-07-05T14:26:31.344Z</updated>
   <id>https://kingdomrain002.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sonar-iOS的实践</title>
+    <link href="https://kingdomrain002.github.io/2020/07/04/snoar-ios/"/>
+    <id>https://kingdomrain002.github.io/2020/07/04/snoar-ios/</id>
+    <published>2020-07-04T14:00:00.000Z</published>
+    <updated>2020-07-05T14:26:31.344Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Sonar是一个用于代码质量管理的开放平台。&lt;/p&gt;
+&lt;h3 id=&quot;架构与整合-Architecture-and-Integration&quot;&gt;&lt;a href=&quot;#架构与整合-Architecture-and-Integration&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="sonar" scheme="https://kingdomrain002.github.io/tags/sonar/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS开发-XCTest框架</title>
@@ -473,32 +499,6 @@
     
     
       <category term="面试题" scheme="https://kingdomrain002.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>socket网络编程</title>
-    <link href="https://kingdomrain002.github.io/2018/09/24/socket%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    <id>https://kingdomrain002.github.io/2018/09/24/socket网络编程/</id>
-    <published>2018-09-24T13:51:52.000Z</published>
-    <updated>2018-10-25T02:19:30.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;   之前做了一段时间IM即时通讯APP，是基于XMPPFramework框架开发的，对于底层的socket不是太了解。以前听到Socket编程，觉得它是比较高深的编程知识，但是只要弄清Socket编程的工作原理，神秘的面纱也就揭开了。&lt;/p&gt;
-&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="socket,TCP/IP" scheme="https://kingdomrain002.github.io/tags/socket-TCP-IP/"/>
     
   </entry>
   
