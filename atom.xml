@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kingdomrain002.github.io/"/>
-  <updated>2020-07-05T14:26:31.344Z</updated>
+  <updated>2021-01-06T06:01:04.029Z</updated>
   <id>https://kingdomrain002.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>iOS开发-如何下载苹果源码</title>
+    <link href="https://kingdomrain002.github.io/2020/12/17/iOS%E5%BC%80%E5%8F%91-%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%E8%8B%B9%E6%9E%9C%E6%BA%90%E7%A0%81/iOS%E5%BC%80%E5%8F%91-%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%E8%8B%B9%E6%9E%9C%E6%BA%90%E7%A0%81/"/>
+    <id>https://kingdomrain002.github.io/2020/12/17/iOS开发-如何下载苹果源码/iOS开发-如何下载苹果源码/</id>
+    <published>2020-12-17T03:26:35.286Z</published>
+    <updated>2021-01-06T06:01:04.029Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;例如我们想下载这个Block源码&lt;/p&gt;
+&lt;p&gt;打开网址后，找到父级别&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://opensource.apple.com/source/libclosure/libclosure-63/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="技巧" scheme="https://kingdomrain002.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sonar-iOS的实践</title>
-    <link href="https://kingdomrain002.github.io/2020/07/04/snoar-ios/"/>
-    <id>https://kingdomrain002.github.io/2020/07/04/snoar-ios/</id>
+    <link href="https://kingdomrain002.github.io/2020/07/04/iOS%E5%BC%80%E5%8F%91-snoar/"/>
+    <id>https://kingdomrain002.github.io/2020/07/04/iOS开发-snoar/</id>
     <published>2020-07-04T14:00:00.000Z</published>
-    <updated>2020-07-05T14:26:31.344Z</updated>
+    <updated>2020-07-27T05:35:08.517Z</updated>
     
     <summary type="html">
     
@@ -39,81 +66,6 @@
     
     
       <category term="sonar" scheme="https://kingdomrain002.github.io/tags/sonar/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发-XCTest框架</title>
-    <link href="https://kingdomrain002.github.io/2019/03/04/iOS%E5%BC%80%E5%8F%91-XCTest%E6%A1%86%E6%9E%B6/"/>
-    <id>https://kingdomrain002.github.io/2019/03/04/iOS开发-XCTest框架/</id>
-    <published>2019-03-04T06:28:03.000Z</published>
-    <updated>2019-03-20T07:53:58.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="XCTest" scheme="https://kingdomrain002.github.io/tags/XCTest/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac开发-Homebrew</title>
-    <link href="https://kingdomrain002.github.io/2019/02/15/Mac%E5%BC%80%E5%8F%91-Homebrew/"/>
-    <id>https://kingdomrain002.github.io/2019/02/15/Mac开发-Homebrew/</id>
-    <published>2019-02-15T08:35:16.000Z</published>
-    <updated>2019-05-07T06:33:31.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Homebrew是什么？&quot;&gt;&lt;a href=&quot;#Homebrew是什么？&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Homebrew" scheme="https://kingdomrain002.github.io/tags/Homebrew/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发-移动测试框架WebDriverAgent</title>
-    <link href="https://kingdomrain002.github.io/2019/02/15/iOS%E5%BC%80%E5%8F%91-%E7%A7%BB%E5%8A%A8%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6WebDriverAgent/"/>
-    <id>https://kingdomrain002.github.io/2019/02/15/iOS开发-移动测试框架WebDriverAgent/</id>
-    <published>2019-02-15T08:20:32.000Z</published>
-    <updated>2019-05-17T08:32:44.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;WebDriverAgent是什么&quot;&gt;&lt;a href=&quot;#WebDriverAgent是什么&quot; class=&quot;headerlink&quot; title=&quot;WebDriverAgent是什么?&quot;&gt;&lt;/a&gt;WebDriverAgent是什么?&lt;/h3&gt;&lt;h3
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="WebDriverAgent" scheme="https://kingdomrain002.github.io/tags/WebDriverAgent/"/>
     
   </entry>
   
@@ -143,56 +95,6 @@
   </entry>
   
   <entry>
-    <title>iOS开发-安全相关-越狱检测</title>
-    <link href="https://kingdomrain002.github.io/2019/01/14/iOS%E5%BC%80%E5%8F%91-%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3-%E8%B6%8A%E7%8B%B1%E6%A3%80%E6%B5%8B/"/>
-    <id>https://kingdomrain002.github.io/2019/01/14/iOS开发-安全相关-越狱检测/</id>
-    <published>2019-01-14T09:20:02.000Z</published>
-    <updated>2019-01-25T07:59:17.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;什么是越狱&quot;&gt;&lt;a href=&quot;#什么是越狱&quot; class=&quot;headerlink&quot; title=&quot;什么是越狱&quot;&gt;&lt;/a&gt;什么是越狱&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;iOS越狱（英语：iOS
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发-安全相关-反调试攻防</title>
-    <link href="https://kingdomrain002.github.io/2019/01/07/iOS%E5%BC%80%E5%8F%91-%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3-%E5%8F%8D%E8%B0%83%E8%AF%95/"/>
-    <id>https://kingdomrain002.github.io/2019/01/07/iOS开发-安全相关-反调试/</id>
-    <published>2019-01-07T12:09:10.000Z</published>
-    <updated>2019-01-10T08:17:31.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;   最近公司在做的项目，甲方提供了一份安全测试报告。其中就是涉及反调试的安全问题。经过几天的时间研究，有了一点收获，在此记录。给我最大感受就是安全本身就是矛与盾的关系。&lt;/p&gt;
-&lt;h3 id=&quot;防止动态调试方案（防）&quot;&gt;&lt;a href=&quot;#防止动态调试方案（防）&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="iOS安全" scheme="https://kingdomrain002.github.io/tags/iOS%E5%AE%89%E5%85%A8/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Objective-C代码规范</title>
     <link href="https://kingdomrain002.github.io/2018/11/30/iOS%E5%BC%80%E5%8F%91-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
     <id>https://kingdomrain002.github.io/2018/11/30/iOS开发-代码规范/</id>
@@ -214,119 +116,6 @@
     
     
       <category term="代码规范" scheme="https://kingdomrain002.github.io/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发-深拷贝浅拷贝总结</title>
-    <link href="https://kingdomrain002.github.io/2018/11/27/iOS%E5%BC%80%E5%8F%91-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%B5%85%E6%8B%B7%E8%B4%9D%E6%80%BB%E7%BB%93/"/>
-    <id>https://kingdomrain002.github.io/2018/11/27/iOS开发-深拷贝浅拷贝总结/</id>
-    <published>2018-11-27T08:01:27.000Z</published>
-    <updated>2018-11-27T08:01:27.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Mac-清理磁盘空间</title>
-    <link href="https://kingdomrain002.github.io/2018/11/22/Mac-%E6%B8%85%E7%90%86%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/"/>
-    <id>https://kingdomrain002.github.io/2018/11/22/Mac-清理磁盘空间/</id>
-    <published>2018-11-22T09:48:12.000Z</published>
-    <updated>2019-12-11T13:46:20.529Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;1.&lt;a href=&quot;https://www.jianshu.com/p/722093bc3dea&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发-内存分区和各自用途总结</title>
-    <link href="https://kingdomrain002.github.io/2018/10/20/iOS%E5%BC%80%E5%8F%91-%E5%86%85%E5%AD%98%E5%88%86%E5%8C%BA%E5%92%8C%E5%90%84%E8%87%AA%E7%94%A8%E9%80%94%E6%80%BB%E7%BB%93/"/>
-    <id>https://kingdomrain002.github.io/2018/10/20/iOS开发-内存分区和各自用途总结/</id>
-    <published>2018-10-20T13:18:40.000Z</published>
-    <updated>2018-10-27T02:36:42.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;ROM和RAM&quot;&gt;&lt;a href=&quot;#ROM和RAM&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>开源许可协议</title>
-    <link href="https://kingdomrain002.github.io/2018/10/12/%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE/"/>
-    <id>https://kingdomrain002.github.io/2018/10/12/开源许可协议/</id>
-    <published>2018-10-12T10:11:03.000Z</published>
-    <updated>2018-10-12T10:15:16.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;github上开源许可证协议需要注意。&lt;/p&gt;
-&lt;h3 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h3&gt;&lt;p&gt;1.&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发-常见加密方法和使用场景总结</title>
-    <link href="https://kingdomrain002.github.io/2018/10/11/iOS%E5%BC%80%E5%8F%91-%E5%B8%B8%E8%A7%81%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E6%80%BB%E7%BB%93/"/>
-    <id>https://kingdomrain002.github.io/2018/10/11/iOS开发-常见加密方法和使用场景总结/</id>
-    <published>2018-10-11T11:05:31.000Z</published>
-    <updated>2020-02-07T09:25:42.641Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;常见的iOS代码加密常用加密方式,包括Base64加密、MD5加密、AES加密、RSA加密等。&lt;/p&gt;
-&lt;h2 id=&quot;iOS常见加密方法的封装&quot;&gt;&lt;a href=&quot;#iOS常见加密方法的封装&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="iOS" scheme="https://kingdomrain002.github.io/categories/iOS/"/>
-    
-    
-      <category term="加密" scheme="https://kingdomrain002.github.io/tags/%E5%8A%A0%E5%AF%86/"/>
     
   </entry>
   
@@ -356,11 +145,11 @@
   </entry>
   
   <entry>
-    <title>iOS开发-Blocks</title>
-    <link href="https://kingdomrain002.github.io/2018/10/04/iOS%E5%BC%80%E5%8F%91-%E5%A4%9A%E7%BA%BF%E7%A8%8BBlocks/"/>
-    <id>https://kingdomrain002.github.io/2018/10/04/iOS开发-多线程Blocks/</id>
-    <published>2018-10-04T07:33:46.000Z</published>
-    <updated>2018-10-27T12:24:32.000Z</updated>
+    <title>iOS开发-基于cocoapods创建私有库</title>
+    <link href="https://kingdomrain002.github.io/2018/09/22/iOS%E5%BC%80%E5%8F%91-%E7%A7%81%E6%9C%89pods%E5%88%9B%E5%BB%BA/"/>
+    <id>https://kingdomrain002.github.io/2018/09/22/iOS开发-私有pods创建/</id>
+    <published>2018-09-22T08:06:51.000Z</published>
+    <updated>2020-02-01T13:05:27.412Z</updated>
     
     <summary type="html">
     
@@ -368,7 +157,7 @@
       
         
         
-          &lt;p&gt;什么是代码块？&lt;br&gt;一句话介绍代码块
+          &lt;h2 id=&quot;我的实践笔记&quot;&gt;&lt;a href=&quot;#我的实践笔记&quot; class=&quot;headerlink&quot; title=&quot;我的实践笔记&quot;&gt;&lt;/a&gt;我的实践笔记&lt;/h2&gt;&lt;p&gt;   我是基于码云来创建私有库的。&lt;br&gt;  
         
       
     
@@ -376,16 +165,16 @@
     
     
     
-      <category term="代码块" scheme="https://kingdomrain002.github.io/tags/%E4%BB%A3%E7%A0%81%E5%9D%97/"/>
+      <category term="cocoapods" scheme="https://kingdomrain002.github.io/tags/cocoapods/"/>
     
   </entry>
   
   <entry>
-    <title>iOS多线程(一)  GCD详解</title>
-    <link href="https://kingdomrain002.github.io/2018/09/30/iOS%E5%A4%9A%E7%BA%BF%E7%A8%8B1/"/>
-    <id>https://kingdomrain002.github.io/2018/09/30/iOS多线程1/</id>
-    <published>2018-09-30T07:52:46.000Z</published>
-    <updated>2018-12-21T06:25:24.000Z</updated>
+    <title>Git</title>
+    <link href="https://kingdomrain002.github.io/2018/09/19/git/"/>
+    <id>https://kingdomrain002.github.io/2018/09/19/git/</id>
+    <published>2018-09-19T05:25:34.000Z</published>
+    <updated>2020-02-02T03:17:14.035Z</updated>
     
     <summary type="html">
     
@@ -393,8 +182,7 @@
       
         
         
-          &lt;p&gt;乘着十一假期空闲在家，可以好好整理一下多线程编程的知识点。&lt;/p&gt;
-&lt;h3 id=&quot;GCD任务和队列&quot;&gt;&lt;a href=&quot;#GCD任务和队列&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;Git学习笔记&quot;&gt;&lt;a href=&quot;#Git学习笔记&quot; class=&quot;headerlink&quot; title=&quot;Git学习笔记&quot;&gt;&lt;/a&gt;Git学习笔记&lt;/h1&gt;&lt;p&gt;一句话介绍Git： 
         
       
     
@@ -402,103 +190,7 @@
     
     
     
-      <category term="多线程" scheme="https://kingdomrain002.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac-Web服务器使用</title>
-    <link href="https://kingdomrain002.github.io/2018/09/30/Mac%E5%BC%80%E5%8F%91-Web%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8/"/>
-    <id>https://kingdomrain002.github.io/2018/09/30/Mac开发-Web服务器使用/</id>
-    <published>2018-09-30T06:21:13.000Z</published>
-    <updated>2019-12-11T13:45:59.309Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;启动Apache服务&quot;&gt;&lt;a href=&quot;#启动Apache服务&quot; class=&quot;headerlink&quot; title=&quot;启动Apache服务&quot;&gt;&lt;/a&gt;启动Apache服务&lt;/h3&gt;&lt;p&gt;Mac OS
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Apache" scheme="https://kingdomrain002.github.io/tags/Apache/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>iOS开发-属性修饰符</title>
-    <link href="https://kingdomrain002.github.io/2018/09/30/iOS%E5%BC%80%E5%8F%91-%E5%B1%9E%E6%80%A7%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
-    <id>https://kingdomrain002.github.io/2018/09/30/iOS开发-属性修饰符/</id>
-    <published>2018-09-30T03:34:18.000Z</published>
-    <updated>2018-10-27T09:24:08.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;property是什么？&quot;&gt;&lt;a href=&quot;#property是什么？&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>高质量的技术博客整理</title>
-    <link href="https://kingdomrain002.github.io/2018/09/29/%E9%AB%98%E8%B4%A8%E9%87%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E5%8D%9A%E5%AE%A2%E6%95%B4%E7%90%86/"/>
-    <id>https://kingdomrain002.github.io/2018/09/29/高质量的技术博客整理/</id>
-    <published>2018-09-29T06:04:47.000Z</published>
-    <updated>2019-05-08T03:50:54.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;ios技术博客整理&quot;&gt;&lt;a href=&quot;#ios技术博客整理&quot; class=&quot;headerlink&quot; title=&quot;ios技术博客整理&quot;&gt;&lt;/a&gt;ios技术博客整理&lt;/h3&gt;&lt;p&gt;1.&lt;a href=&quot;http://mrpeak.cn/&quot;
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>iOS常见的面试题</title>
-    <link href="https://kingdomrain002.github.io/2018/09/29/iOS%E5%B8%B8%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://kingdomrain002.github.io/2018/09/29/iOS常见的面试题/</id>
-    <published>2018-09-29T03:03:27.000Z</published>
-    <updated>2018-11-16T15:05:23.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接:&quot;&gt;&lt;/a&gt;参考链接:&lt;/h3&gt;&lt;p&gt;1.&lt;a
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="面试题" scheme="https://kingdomrain002.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="Git" scheme="https://kingdomrain002.github.io/tags/Git/"/>
     
   </entry>
   

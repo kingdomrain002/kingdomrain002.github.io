@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="sonar," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="yuzhifei的技术博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Sonar是一个用于代码质量管理的开放平台。 架构与整合(Architecture and Integration)先简单介绍一下SonarQube的总览SonarQube是由四部分组成的,如下图所示:1.SonarQube Server2.一个SonarQube的数据库3.服务器上安装了多个SonarQube插件，可能包括语言，SCM，集成，身份验证和管理插件4.在构建/持续集成服务器上运行一个">
+<meta name="keywords" content="sonar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sonar-iOS的实践">
+<meta property="og:url" content="https://kingdomrain002.github.io/2020/07/04/iOS开发-snoar/index.html">
+<meta property="og:site_name" content="yuzhifei的技术博客">
+<meta property="og:description" content="Sonar是一个用于代码质量管理的开放平台。 架构与整合(Architecture and Integration)先简单介绍一下SonarQube的总览SonarQube是由四部分组成的,如下图所示:1.SonarQube Server2.一个SonarQube的数据库3.服务器上安装了多个SonarQube插件，可能包括语言，SCM，集成，身份验证和管理插件4.在构建/持续集成服务器上运行一个">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/architecture-scanning.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/architecture-integrate.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/4.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/5.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/11.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/9.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/10.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/6.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/12.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/13.png">
+<meta property="og:image" content="https://kingdomrain002.github.io/image/snoar-iOS/14.png">
+<meta property="og:updated_time" content="2020-07-27T05:35:08.517Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sonar-iOS的实践">
+<meta name="twitter:description" content="Sonar是一个用于代码质量管理的开放平台。 架构与整合(Architecture and Integration)先简单介绍一下SonarQube的总览SonarQube是由四部分组成的,如下图所示:1.SonarQube Server2.一个SonarQube的数据库3.服务器上安装了多个SonarQube插件，可能包括语言，SCM，集成，身份验证和管理插件4.在构建/持续集成服务器上运行一个">
+<meta name="twitter:image" content="https://kingdomrain002.github.io/image/snoar-iOS/architecture-scanning.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://kingdomrain002.github.io/2020/07/04/iOS开发-snoar/"/>
+
+
+
+
+
+  <title>sonar-iOS的实践 | yuzhifei的技术博客</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-132046943-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yuzhifei的技术博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">我没有什么特殊才能。我只是非常好奇。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kingdomrain002.github.io/2020/07/04/iOS开发-snoar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yuzhifei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yuzhifei的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sonar-iOS的实践</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-04T22:00:00+08:00">
+                2020-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/07/04/iOS开发-snoar/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/04/iOS开发-snoar/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Sonar是一个用于代码质量管理的开放平台。</p>
+<h3 id="架构与整合-Architecture-and-Integration"><a href="#架构与整合-Architecture-and-Integration" class="headerlink" title="架构与整合(Architecture and Integration)"></a>架构与整合(Architecture and Integration)</h3><h4 id="先简单介绍一下SonarQube的总览"><a href="#先简单介绍一下SonarQube的总览" class="headerlink" title="先简单介绍一下SonarQube的总览"></a>先简单介绍一下SonarQube的总览</h4><p>SonarQube是由四部分组成的,如下图所示:<br><img src="/image/snoar-iOS/architecture-scanning.png" alt="architecture-scanning"><br>1.SonarQube Server<br>2.一个SonarQube的数据库<br>3.服务器上安装了多个SonarQube插件，可能包括语言，SCM，集成，身份验证和管理插件<br>4.在构建/持续集成服务器上运行一个或多个SonarScanner，以分析项目</p>
+<h4 id="SonarQube在CI中位置"><a href="#SonarQube在CI中位置" class="headerlink" title="SonarQube在CI中位置"></a>SonarQube在CI中位置</h4><p>以下架构显示了SonarQube如何与其他ALM工具集成以及使用SonarQube的各种组件的位置<br><img src="/image/snoar-iOS/architecture-integrate.png" alt="architecture-integrate"></p>
+<p>说明:开发人员提交代码到SCM(代码管理平台)，CI服务器会触发自动构建，并执行运行SonarQube分析所需的SonarScanner，并推送分析报告到SonarQube Server，数据存储到SonarQube配置的数据库。开发人员通过SonarQube UI评审，评论他们的问题，以管理和减少技术债务。并且经理从分析中接收报告。</p>
+<h3 id="Mac环境安装Sonar"><a href="#Mac环境安装Sonar" class="headerlink" title="Mac环境安装Sonar"></a>Mac环境安装Sonar</h3><p>Mac环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MacOS:10.15.5   </span><br><span class="line">java:1.8.0_111</span><br></pre></td></tr></table></figure>
+<p><strong>重点说明</strong><br>安装不同版本的SonarQube有不同的要求。<br>1.例如SonarQube 7.9之后数据库就不再支持MySQL了。所以按照本文安装要先看下你要安装SonarQube对应版本的要求。这个也是我一开始，安装最新版本SonarQube，数据库配置了MySQL，所以服务一直没有起来的原因。<br>2.Sonar 7.9及更高版本需要JAVA 11。</p>
+<p>同事和我说安装SonarQube用Docker方便一些,我为了在我自己电脑上搭建Sonar的环境，选择了低一点的版本。</p>
+<p>我使用的是SonarQube:7.5 和 sonar-scanner-4.3.0.2102<br><img src="/image/snoar-iOS/4.png" alt=""></p>
+<p>环境配置大致分为以几个步骤<br>1.下载SonarQube server<br>2.下载SonarScanner<br>3.配置环境变量<br>4.配置数据库<br>5.下载Swift/OC的插件<br>6.启动SonarQube server </p>
+<h4 id="1-下载SonarQube-server"><a href="#1-下载SonarQube-server" class="headerlink" title="1.下载SonarQube server"></a>1.下载SonarQube server</h4><p>将sonarqube-enterprise-7.5.zip解压，放在/usr/local目录下，建议重新命名删掉版本后缀。</p>
+<h4 id="2-下载SonarScanner"><a href="#2-下载SonarScanner" class="headerlink" title="2.下载SonarScanner"></a>2.下载SonarScanner</h4><p>将sonar-scanner-cli-4.4.0.2170-macosx.zip解压，放在/usr/local目录下，建议重新命名删掉版本后缀。</p>
+<p>如下图所示<br><img src="/image/snoar-iOS/5.png" alt=""></p>
+<h4 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h4><p>打开命令行工具   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/   </span><br><span class="line">open .bash_profile</span><br></pre></td></tr></table></figure>
+<p>添加如下配置,并保存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># add sonar-scanners</span><br><span class="line">SONAR_RUNNER_HOME=/usr/local/sonar-scanner</span><br><span class="line">PATH=$PATH:$SONAR_RUNNER_HOME/bin</span><br><span class="line"></span><br><span class="line"># add sonarqube</span><br><span class="line">SONARQUBE_HOME=/usr/local/sonarqube/</span><br><span class="line">PATH=$PATH:$SONARQUBE_HOME/bin/macosx-universal-64</span><br></pre></td></tr></table></figure>
+<p>在终端中执行一下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p>终端输入命令 sonar-scanner -v，显示如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INFO: Scanner configuration file: /usr/local/sonar-scanner/conf/sonar-scanner.properties</span><br><span class="line">INFO: Project root configuration file: NONE</span><br><span class="line">INFO: SonarScanner 4.3.0.2102</span><br><span class="line">INFO: Java 11.0.3 AdoptOpenJDK (64-bit)</span><br><span class="line">INFO: Mac OS X 10.15.5 x86_64</span><br></pre></td></tr></table></figure>
+<h4 id="4-配置数据库"><a href="#4-配置数据库" class="headerlink" title="4.配置数据库"></a>4.配置数据库</h4><p>我本机MySQL的版本如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql  Ver 14.14 Distrib 5.7.18, for macos10.12 (x86_64) using  EditLine wrapper</span><br></pre></td></tr></table></figure>
+<p>打开终端，输入 mysql -u root -p ，再输入数据库密码，进入MySql，输入下面sql语句创建sonar所需的数据库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE sonar CHARACTER SET utf8 COLLATE utf8_general_ci; </span><br><span class="line">CREATE USER &apos;sonar&apos; IDENTIFIED BY &apos;sonar&apos;;</span><br><span class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;%&apos; IDENTIFIED BY &apos;sonar&apos;;</span><br><span class="line">GRANT ALL ON sonar.* TO &apos;sonar&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;sonar&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+<p>继续输入输入 <code>mysql&gt; show databases ;</code>  检查sonar所需的数据库是否创建成功。如果创建成功，显示如下表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| sonar              |</span><br><span class="line">+--------------------+</span><br></pre></td></tr></table></figure>
+<p>Sonarqube目录下找到conf/sonar.properties文件，编辑文件加入对应数据库的配置。<br><img src="/image/snoar-iOS/11.png" alt="0.4.6"></p>
+<p>sonar.properties文件，如下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sonar.jdbc.username=root</span><br><span class="line">sonar.jdbc.password=yourMySQLPassword</span><br><span class="line">sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance&amp;useSSL=false</span><br><span class="line">sonar.jdbc.maxActive=60</span><br><span class="line">sonar.jdbc.maxIdle=5</span><br><span class="line">sonar.jdbc.minIdle=2</span><br><span class="line">sonar.jdbc.maxWait=5000</span><br><span class="line">sonar.jdbc.minEvictableIdleTimeMillis=600000</span><br><span class="line">sonar.jdbc.timeBetweenEvictionRunsMillis=30000</span><br></pre></td></tr></table></figure>
+<p>说明:刚下载下来的Sonarqube,conf/sonar.properties的文件里面的内容都是注释掉的。需要根据自己情况配置sonar.properties中的信息。</p>
+<h4 id="5-下载Swift-OC的插件"><a href="#5-下载Swift-OC的插件" class="headerlink" title="5.下载Swift/OC的插件"></a>5.下载Swift/OC的插件</h4><p>下载<a href="https://github.com/Idean/sonar-swift/releases" target="_blank" rel="noopener">Swift/OC的插件</a></p>
+<p>我是用的是 0.4.6 版本，如下图所示<br><img src="/image/snoar-iOS/9.png" alt="0.4.6 "></p>
+<p>将下载下来的backelite-sonar-swift-plugin-0.4.6.jar，放到SonarQube/extensions/plugins/目录下，如图所示<br><img src="/image/snoar-iOS/10.png" alt=""></p>
+<p>swift插件使用，还有一些需要安装的<a href="https://github.com/Idean/sonar-swift" target="_blank" rel="noopener">要求</a>，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a Mac with Xcode 7 or +</span><br><span class="line">SonarQube and SonarQube Scanner</span><br><span class="line">xcpretty (see instructions below)</span><br><span class="line">SwiftLint (HomeBrew installed and brew install swiftlint). Version 0.3.0 or above.</span><br><span class="line">Tailor (HomeBrew installed and brew install tailor). Version 0.11.1 or above.</span><br><span class="line">slather (gem install slather). Version 2.1.0 or above (2.4 since Xcode 8.3).</span><br><span class="line">lizard (PIP installed and sudo pip install lizard)</span><br><span class="line">OCLint installed. Version 0.11.0 recommended (0.13.0 since Xcode 9).</span><br><span class="line">Faux Pas command line tools installed (optional)</span><br></pre></td></tr></table></figure>
+<p>推荐使用HomeBrew安装，比如lizard不支持brew安装，就按照lizard文档的步骤进行安装。</p>
+<p>说明:<br>如果你使用了zsh,并且已经安装了lizard,但是终端运行报错原因zsh: command not found</p>
+<p>解决这个方案:在.zshrc中添加一行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># User configuration</span><br><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<h4 id="6-启动SonarQube-server"><a href="#6-启动SonarQube-server" class="headerlink" title="6.启动SonarQube server"></a>6.启动SonarQube server</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sonar.sh console</span><br></pre></td></tr></table></figure>
+<p>浏览器输入<a href="http://localhost:9000/,可以看到管理台界面。如下图所示" target="_blank" rel="noopener">http://localhost:9000/,可以看到管理台界面。如下图所示</a><br><img src="/image/snoar-iOS/6.png" alt="管理台界面"></p>
+<p>输入admin/admin 登录管理台。</p>
+<h3 id="iOS-Demo工程-demo-project"><a href="#iOS-Demo工程-demo-project" class="headerlink" title="iOS Demo工程(demo project)"></a>iOS Demo工程(demo project)</h3><p> <a href="https://github.com/kingdomrain002/DevOpsDemo" target="_blank" rel="noopener">demo project</a> </p>
+<p>iOS工程创建和配置可以参考这篇文章<a href="https://medium.com/@pranay.urkude/sonarqube-integration-with-ios-b76df8405014" target="_blank" rel="noopener">sonarqube-integration-with-ios</a>的Integrate with XCode project部分。</p>
+<p>重点说明一下:工程中需要sonar-project.properties，最好从插件的官网下载。我发现sonarqube-integration-with-ios文章链接里面的sonar-project.properties文件和最新插件的官网提供sonar-project.properties已经有点不一样了。我们这里还是按照<a href="https://github.com/Idean/sonar-swift" target="_blank" rel="noopener">插件官网</a>提供的为准。</p>
+<p>sonar-project.properties和run-sonar-swift.sh 从插件官网下图所示的地方下载:<br><img src="/image/snoar-iOS/12.png" alt=""></p>
+<p>到了最激动人心的时候了，我们cd到工程中。执行 <code>sh run-sonar-swift.sh -v</code>。</p>
+<p>执行完成，浏览器登录<a href="http://localhost:9000/，就可以看到如下结果" target="_blank" rel="noopener">http://localhost:9000/，就可以看到如下结果</a><br><img src="/image/snoar-iOS/13.png" alt=""><br><img src="/image/snoar-iOS/14.png" alt=""></p>
+<h3 id="待研究和实践的事项"><a href="#待研究和实践的事项" class="headerlink" title="待研究和实践的事项"></a>待研究和实践的事项</h3><ol>
+<li>自定义扫描规则  如何新增规则</li>
+<li>sonarQube部署在一台服务器（lunix）上，而SonarScanner在另外一台服务器（mac os）上，并尝试使用Docker安装。</li>
+<li>示范视频(Demonstration video)</li>
+</ol>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p>1.<a href="https://www.sonarqube.org/" target="_blank" rel="noopener">sonarqube 官网地址</a><br>2.<a href="https://docs.sonarqube.org/7.5/architecture/architecture-integration/" target="_blank" rel="noopener">sonarqube Documentation 7.5</a><br>3.<a href="https://medium.com/@pranay.urkude/sonarqube-integration-with-ios-b76df8405014" target="_blank" rel="noopener">sonarqube-integration-with-ios</a>  对我本次实践帮助比较大的一篇文章 ,也启发了录制一个示范视频<br>4.<a href="https://github.com/Idean/sonar-swift" target="_blank" rel="noopener">sonar-swift开源地址</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/otherSource/wechat-qcode.jpg" alt="yuzhifei wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/otherSource/wechat-reward-image.JPG" alt="yuzhifei 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    yuzhifei
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://kingdomrain002.github.io/2020/07/04/iOS开发-snoar/" title="sonar-iOS的实践">https://kingdomrain002.github.io/2020/07/04/iOS开发-snoar/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/sonar/" rel="tag"># sonar</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/15/iOS开发-神器libimobiledevice安装及使用/" rel="next" title="iOS开发-神器libimobiledevice安装及使用">
+                <i class="fa fa-chevron-left"></i> iOS开发-神器libimobiledevice安装及使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/12/17/iOS开发-如何下载苹果源码/iOS开发-如何下载苹果源码/" rel="prev" title="iOS开发-如何下载苹果源码">
+                iOS开发-如何下载苹果源码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="yuzhifei" />
+            
+              <p class="site-author-name" itemprop="name">yuzhifei</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/kingdomrain002" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:kingdomrain002@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#架构与整合-Architecture-and-Integration"><span class="nav-number">1.</span> <span class="nav-text">架构与整合(Architecture and Integration)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#先简单介绍一下SonarQube的总览"><span class="nav-number">1.1.</span> <span class="nav-text">先简单介绍一下SonarQube的总览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SonarQube在CI中位置"><span class="nav-number">1.2.</span> <span class="nav-text">SonarQube在CI中位置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mac环境安装Sonar"><span class="nav-number">2.</span> <span class="nav-text">Mac环境安装Sonar</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-下载SonarQube-server"><span class="nav-number">2.1.</span> <span class="nav-text">1.下载SonarQube server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-下载SonarScanner"><span class="nav-number">2.2.</span> <span class="nav-text">2.下载SonarScanner</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-配置环境变量"><span class="nav-number">2.3.</span> <span class="nav-text">3.配置环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-配置数据库"><span class="nav-number">2.4.</span> <span class="nav-text">4.配置数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-下载Swift-OC的插件"><span class="nav-number">2.5.</span> <span class="nav-text">5.下载Swift/OC的插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-启动SonarQube-server"><span class="nav-number">2.6.</span> <span class="nav-text">6.启动SonarQube server</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-Demo工程-demo-project"><span class="nav-number">3.</span> <span class="nav-text">iOS Demo工程(demo project)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待研究和实践的事项"><span class="nav-number">4.</span> <span class="nav-text">待研究和实践的事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yuzhifei</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'peD0KcpANfYTFUykIpnyDG2a-gzGzoHsz',
+        appKey: 'kaz3WWskJCFpHhnqJlRa3UEz',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
