@@ -4,15 +4,24 @@
   <meta charset="utf-8">
   
   
-  <title>Archives: 2021 | Hexo</title>
+  <title>iOS原理-renderLoop和hitches（卡顿） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="字节的面试中，问了一道renderLoop的问题。我当时一脸懵逼😳，然后又问了UIView的渲染过程。当时没有回答好，准备好好总结一下。 问题卡顿（hitch）是什么？A hitch is any time a frame appears on screen later than expected.任何时候屏幕上出现晚于预计的帧都属于卡顿。 the Render loop的过程整个渲染循环由五个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS原理-renderLoop和hitches（卡顿）">
+<meta property="og:url" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="字节的面试中，问了一道renderLoop的问题。我当时一脸懵逼😳，然后又问了UIView的渲染过程。当时没有回答好，准备好好总结一下。 问题卡顿（hitch）是什么？A hitch is any time a frame appears on screen later than expected.任何时候屏幕上出现晚于预计的帧都属于卡顿。 the Render loop的过程整个渲染循环由五个">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/image/theRenderLoop.png">
+<meta property="article:published_time" content="2021-11-01T05:19:53.000Z">
+<meta property="article:modified_time" content="2021-11-01T14:22:28.035Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="iOS面试题">
+<meta property="article:tag" content="iOS原理">
+<meta property="article:tag" content="iOS卡顿">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/theRenderLoop.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,134 +78,68 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-11-01T05:19:53.000Z" itemprop="datePublished">Nov 1</time>
+        <section id="main"><article id="post-iOS原理-renderLoop/iOS原理-renderLoop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/" class="article-date">
+  <time class="dt-published" datetime="2021-11-01T05:19:53.000Z" itemprop="datePublished">2021-11-01</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/">iOS原理-renderLoop和hitches（卡顿）</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      iOS原理-renderLoop和hitches（卡顿）
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/11/01/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-Runloop/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-11-01T02:43:37.000Z" itemprop="datePublished">Nov 1</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/11/01/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-Runloop/">苹果文档研读-Runloop</a>
-    </h1>
-  
+        <p>字节的面试中，问了一道renderLoop的问题。我当时一脸懵逼😳，然后又问了UIView的渲染过程。当时没有回答好，准备好好总结一下。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="卡顿（hitch）是什么？"><a href="#卡顿（hitch）是什么？" class="headerlink" title="卡顿（hitch）是什么？"></a>卡顿（hitch）是什么？</h3><p>A hitch is any time a frame appears on screen later than expected.<br>任何时候屏幕上出现晚于预计的帧都属于卡顿。</p>
+<h3 id="the-Render-loop的过程"><a href="#the-Render-loop的过程" class="headerlink" title="the Render loop的过程"></a>the Render loop的过程</h3><p>整个渲染循环由五个阶段组成:</p>
+<ul>
+<li>1.事件阶段(Event)</li>
+<li>2.提交阶段（Commit）</li>
+<li>3.渲染准备</li>
+<li>4.渲染执行</li>
+<li>5.展示阶段</li>
+</ul>
+<p><img src="/image/theRenderLoop.png" alt="the Render loop"></p>
+<h3 id="卡顿的类型-hitch-type）"><a href="#卡顿的类型-hitch-type）" class="headerlink" title="卡顿的类型(hitch type）"></a>卡顿的类型(hitch type）</h3><h3 id="如何测量卡顿"><a href="#如何测量卡顿" class="headerlink" title="如何测量卡顿"></a>如何测量卡顿</h3><h3 id="iOS离屏渲染"><a href="#iOS离屏渲染" class="headerlink" title="iOS离屏渲染"></a>iOS离屏渲染</h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10855">Explore UI animation hitches and the render loop</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10856">Find and fix hitches in the commit phase</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10857">Demystify and eliminate hitches in the render phase</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/10/31/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%8D%A1%E9%A1%BF%E6%A3%80%E6%B5%8B%E5%92%8C%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-10-31T08:18:07.000Z" itemprop="datePublished">Oct 31</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/31/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%8D%A1%E9%A1%BF%E6%A3%80%E6%B5%8B%E5%92%8C%E4%BC%98%E5%8C%96/">iOS性能优化-卡顿检测和优化</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/10/30/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-GCD/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-10-30T15:21:58.000Z" itemprop="datePublished">Oct 30</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/" data-id="ckvgr16ry0007q0eq6jgx8aae" data-title="iOS原理-renderLoop和hitches（卡顿）" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/30/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-GCD/">苹果文档研读-GCD</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/10/29/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-KVC/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-10-29T06:38:35.000Z" itemprop="datePublished">Oct 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/29/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-KVC/">苹果文档研读-KVC</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/10/29/HTTPS%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-10-29T06:24:38.000Z" itemprop="datePublished">Oct 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/29/HTTPS%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/">HTTPS建立连接过程</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E5%8D%A1%E9%A1%BF/" rel="tag">iOS卡顿</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E5%8E%9F%E7%90%86/" rel="tag">iOS原理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">iOS面试题</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/11/01/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-Runloop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">苹果文档研读-Runloop</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
