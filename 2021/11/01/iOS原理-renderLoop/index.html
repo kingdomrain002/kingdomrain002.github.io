@@ -9,31 +9,35 @@
   <meta name="description" content="字节的面试中，问了一道renderLoop的问题。我当时一脸懵逼😳，然后又问了UIView的渲染过程。当时没有回答好，准备好好总结一下。 Explore UI animation hitches and the render loop卡顿（hitch）是什么？A hitch is any time a frame appears on screen later than expected.任何时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS原理-renderLoop">
-<meta property="og:url" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/index.html">
+<meta property="og:url" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="字节的面试中，问了一道renderLoop的问题。我当时一脸懵逼😳，然后又问了UIView的渲染过程。当时没有回答好，准备好好总结一下。 Explore UI animation hitches and the render loop卡顿（hitch）是什么？A hitch is any time a frame appears on screen later than expected.任何时">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/theRenderLoop1.png">
-<meta property="og:image" content="http://example.com/theRenderLoop.png">
-<meta property="og:image" content="http://example.com/theTypeHitchs.png">
-<meta property="og:image" content="http://example.com/commitHitchLookLike.png">
-<meta property="og:image" content="http://example.com/renderHitchLookLike.png">
-<meta property="og:image" content="http://example.com/HtichTimeRatio.png">
-<meta property="og:image" content="http://example.com/%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1%E9%98%B6%E6%AE%B5.png">
-<meta property="og:image" content="http://example.com/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE1.png">
-<meta property="og:image" content="http://example.com/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE2.png">
-<meta property="og:image" content="http://example.com/%E6%B8%B2%E6%9F%93%E9%98%B6%E6%AE%B5.png">
-<meta property="og:image" content="http://example.com/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png">
-<meta property="og:image" content="http://example.com/%E8%A7%A6%E5%8F%91%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theRenderLoop1.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theRenderLoop.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theTypeHitchs.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/commitHitchLookLike.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/renderHitchLookLike.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/HtichTimeRatio.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E5%B8%83%E5%B1%80%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%98%BE%E7%A4%BA%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E7%AD%B9%E5%A4%87%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE1.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE2.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%B8%B2%E6%9F%93%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png">
+<meta property="og:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E8%A7%A6%E5%8F%91%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png">
 <meta property="article:published_time" content="2021-11-01T05:19:53.000Z">
-<meta property="article:modified_time" content="2021-11-03T04:07:26.882Z">
+<meta property="article:modified_time" content="2021-11-03T08:55:21.305Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="iOS面试题">
 <meta property="article:tag" content="iOS原理">
 <meta property="article:tag" content="iOS卡顿">
-<meta property="article:tag" content="TechTalks">
+<meta property="article:tag" content="WWDC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/theRenderLoop1.png">
+<meta name="twitter:image" content="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theRenderLoop1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -90,9 +94,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-iOS原理-renderLoop/iOS原理-renderLoop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-iOS原理-renderLoop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/" class="article-date">
+    <a href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/" class="article-date">
   <time class="dt-published" datetime="2021-11-01T05:19:53.000Z" itemprop="datePublished">2021-11-01</time>
 </a>
     
@@ -116,7 +120,7 @@
 <h2 id="Explore-UI-animation-hitches-and-the-render-loop"><a href="#Explore-UI-animation-hitches-and-the-render-loop" class="headerlink" title="Explore UI animation hitches and the render loop"></a>Explore UI animation hitches and the render loop</h2><h3 id="卡顿（hitch）是什么？"><a href="#卡顿（hitch）是什么？" class="headerlink" title="卡顿（hitch）是什么？"></a>卡顿（hitch）是什么？</h3><p>A hitch is any time a frame appears on screen later than expected.<br>任何时候屏幕上出现晚于预计的帧都属于卡顿。</p>
 <h3 id="the-Render-loop"><a href="#the-Render-loop" class="headerlink" title="the Render loop"></a>the Render loop</h3><p>The Render Loop is a continuous process by which touch events are handed to an app, and then changes to the UI are sent to the operating system where the frame is finalized.It’s a loop, and it happens at the device’s refresh rate.</p>
 <p>渲染循环是一个连续性的过程。通过触碰事件传送给app，然后转化到用户界面，向操作系统传送。最终呈现给用户，这就是循环，随着设备的刷新率发生。</p>
-<p><img src="/theRenderLoop1.png" alt="the Render loop "></p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theRenderLoop1.png" alt="the Render loop "></p>
 <p>整个渲染循环由五个阶段组成:</p>
 <ol>
 <li>事件阶段(Event)</li>
@@ -125,7 +129,7 @@
 <li>渲染执行(Render execute)</li>
 <li>展示阶段(Display)</li>
 </ol>
-<p><img src="/theRenderLoop.png" alt="the Render loop 阶段"></p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theRenderLoop.png" alt="the Render loop 阶段"></p>
 <h4 id="事件阶段（Event"><a href="#事件阶段（Event" class="headerlink" title="事件阶段（Event)"></a>事件阶段（Event)</h4><p>在这个阶段，App处理触碰事件或者Timer等其他事件，决定用户界面是否需要变化。</p>
 <h4 id="提交阶段（Commit）"><a href="#提交阶段（Commit）" class="headerlink" title="提交阶段（Commit）"></a>提交阶段（Commit）</h4><p>在提交阶段，app向渲染服务器提交渲染命令。</p>
 <h4 id="渲染准备-Render-prepare"><a href="#渲染准备-Render-prepare" class="headerlink" title="渲染准备(Render prepare)"></a>渲染准备(Render prepare)</h4><p>在下一个VSYNC中，渲染服务器处理命令，在渲染准备阶段，为在GPU上绘制做好准备。</p>
@@ -135,23 +139,29 @@
 <p>布局是常见的性能问题，因为你的APP只有几毫秒来完成这项工作。</p>
 <p>每个阶段都有截止时间，截止时间就是下个VSync信号到来的时间。</p>
 <h3 id="卡顿的类型-the-type-hitchs）"><a href="#卡顿的类型-the-type-hitchs）" class="headerlink" title="卡顿的类型(the type hitchs）"></a>卡顿的类型(the type hitchs）</h3><p>1.提交卡顿(commit hitch)<br>2.渲染卡顿(render hitch)</p>
-<p><img src="/theTypeHitchs.png" alt="the type hitchs"></p>
-<h4 id="提交卡顿"><a href="#提交卡顿" class="headerlink" title="提交卡顿"></a>提交卡顿</h4><p>提交卡顿发生在APP的处理中。提交卡顿就是app花费过长时间来处理或提交事件。<br><img src="/commitHitchLookLike.png" alt="commit hitch look like"></p>
-<h4 id="渲染卡顿"><a href="#渲染卡顿" class="headerlink" title="渲染卡顿"></a>渲染卡顿</h4><p>渲染卡顿发生在渲染服务器中。这种现象发生在渲染服务器无法按时准备或者执行图层树时出现。<br><img src="/renderHitchLookLike.png" alt="render hitch look like"></p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theTypeHitchs.png" alt="the type hitchs"></p>
+<h4 id="提交卡顿"><a href="#提交卡顿" class="headerlink" title="提交卡顿"></a>提交卡顿</h4><p>提交卡顿发生在APP的处理中。提交卡顿就是app花费过长时间来处理或提交事件。<br><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/commitHitchLookLike.png" alt="commit hitch look like"></p>
+<h4 id="渲染卡顿"><a href="#渲染卡顿" class="headerlink" title="渲染卡顿"></a>渲染卡顿</h4><p>渲染卡顿发生在渲染服务器中。这种现象发生在渲染服务器无法按时准备或者执行图层树时出现。<br><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/renderHitchLookLike.png" alt="render hitch look like"></p>
 <h3 id="测量卡顿时间-measuring-hitch-time"><a href="#测量卡顿时间-measuring-hitch-time" class="headerlink" title="测量卡顿时间 (measuring hitch time)"></a>测量卡顿时间 (measuring hitch time)</h3><p>为什么不用总的卡顿时间？</p>
 <p>苹果给出的测量卡顿的新指标<br>卡顿时间比（Htich time ratio）</p>
-<p><img src="/HtichTimeRatio.png" alt="the type hitchs"></p>
-<h2 id="提交阶段的卡顿"><a href="#提交阶段的卡顿" class="headerlink" title="提交阶段的卡顿"></a>提交阶段的卡顿</h2><h3 id="提交事务"><a href="#提交事务" class="headerlink" title="提交事务"></a>提交事务</h3><p>提交阶段有可以分成四个步骤:</p>
-<p><img src="/%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1%E9%98%B6%E6%AE%B5.png" alt="commit phase"></p>
-<p>各个阶段的任务是什么</p>
-<h3 id="使用instrement发现卡顿"><a href="#使用instrement发现卡顿" class="headerlink" title="使用instrement发现卡顿"></a>使用instrement发现卡顿</h3><p>结合自定义UI-手势密码组件作为案例进行实践。</p>
-<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p><img src="/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE1.png" alt="commit phase"></p>
-<p><img src="/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE2.png" alt="commit phase"></p>
-<p>1.使用更轻的对象</p>
-<h2 id="渲染阶段的卡顿"><a href="#渲染阶段的卡顿" class="headerlink" title="渲染阶段的卡顿"></a>渲染阶段的卡顿</h2><h3 id="渲染阶段"><a href="#渲染阶段" class="headerlink" title="渲染阶段"></a>渲染阶段</h3><p><img src="/%E6%B8%B2%E6%9F%93%E9%98%B6%E6%AE%B5.png" alt="commit phase"></p>
-<p><img src="/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png" alt="commit phase"></p>
-<p>离屏渲染</p>
-<p><img src="/%E8%A7%A6%E5%8F%91%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png" alt="commit phase"><br>触发离屏渲染</p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/HtichTimeRatio.png" alt="the type hitchs"></p>
+<h2 id="提交阶段的卡顿"><a href="#提交阶段的卡顿" class="headerlink" title="提交阶段的卡顿"></a>提交阶段的卡顿</h2><h3 id="提交事务"><a href="#提交事务" class="headerlink" title="提交事务"></a>提交事务</h3><p>一次提交阶段有可以分成四个阶段:</p>
+<p>布局阶段（layout）<br>显示阶段（display）<br>筹备阶段(prepare)<br>提交阶段(commit)</p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E4%BA%8B%E5%8A%A1%E9%98%B6%E6%AE%B5.png" alt="commit phase"></p>
+<h4 id="布局阶段"><a href="#布局阶段" class="headerlink" title="布局阶段"></a>布局阶段</h4><p>layoutSubviews将会调用所有需要布局的视图</p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E5%B8%83%E5%B1%80%E9%98%B6%E6%AE%B5.png" alt="布局阶段"></p>
+<h4 id="显示阶段"><a href="#显示阶段" class="headerlink" title="显示阶段"></a>显示阶段</h4><p>drawRect将会调用所有需要显示的视图</p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%98%BE%E7%A4%BA%E9%98%B6%E6%AE%B5.png" alt="显示阶段"></p>
+<h4 id="筹备阶段"><a href="#筹备阶段" class="headerlink" title="筹备阶段"></a>筹备阶段</h4><p>如果有必要的话，图片将被解压<br><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E7%AD%B9%E5%A4%87%E9%98%B6%E6%AE%B5.png" alt="筹备阶段"></p>
+<h4 id="提交阶段"><a href="#提交阶段" class="headerlink" title="提交阶段"></a>提交阶段</h4><p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5.png" alt="提交阶段"></p>
+<h3 id="使用instrement发现卡顿"><a href="#使用instrement发现卡顿" class="headerlink" title="使用instrement发现卡顿"></a>使用instrement发现卡顿</h3><p>结合自定义UI-手势密码组件进行实践。</p>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE1.png" alt="commit phase"></p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE2.png" alt="commit phase"></p>
+<h2 id="渲染阶段的卡顿"><a href="#渲染阶段的卡顿" class="headerlink" title="渲染阶段的卡顿"></a>渲染阶段的卡顿</h2><h3 id="渲染阶段"><a href="#渲染阶段" class="headerlink" title="渲染阶段"></a>渲染阶段</h3><p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%B8%B2%E6%9F%93%E9%98%B6%E6%AE%B5.png" alt="commit phase"></p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png" alt="commit phase"><br>离屏通道是指图形处理器必须先在其他地方渲染一个图层然后再将其复制过来。</p>
+<p>渲染通道使用太多，就会导致卡顿。</p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E8%A7%A6%E5%8F%91%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png" alt="commit phase"><br>有四种主要类型的离屏通道可以优化:</p>
+<p>阴影<br>蒙板<br>圆角矩形<br>视觉效果</p>
 <h3 id="使用instrement发现卡顿-1"><a href="#使用instrement发现卡顿-1" class="headerlink" title="使用instrement发现卡顿"></a>使用instrement发现卡顿</h3><p>结合项目消息中心组件的优化</p>
 <h3 id="建议-1"><a href="#建议-1" class="headerlink" title="建议"></a>建议</h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10855">Explore UI animation hitches and the render loop</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10856">Find and fix hitches in the commit phase</a></p>
@@ -160,11 +170,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/" data-id="ckvj089y70008uzeq4qaues4k" data-title="iOS原理-renderLoop" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/" data-id="ckvjbt5s80003p7eqdgzn2ao3" data-title="iOS原理-renderLoop" class="article-share-link">Share</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TechTalks/" rel="tag">TechTalks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E5%8D%A1%E9%A1%BF/" rel="tag">iOS卡顿</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E5%8E%9F%E7%90%86/" rel="tag">iOS原理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">iOS面试题</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WWDC/" rel="tag">WWDC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E5%8D%A1%E9%A1%BF/" rel="tag">iOS卡顿</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E5%8E%9F%E7%90%86/" rel="tag">iOS原理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">iOS面试题</a></li></ul>
 
     </footer>
   </div>
@@ -204,7 +214,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCD/" rel="tag">GCD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Runloop/" rel="tag">Runloop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TechTalks/" rel="tag">TechTalks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E5%8D%A1%E9%A1%BF/" rel="tag">iOS卡顿</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E5%8E%9F%E7%90%86/" rel="tag">iOS原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E5%BA%95%E5%B1%82%E6%8A%80%E6%9C%AF/" rel="tag">iOS底层技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">iOS性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">iOS面试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3/" rel="tag">苹果文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCD/" rel="tag">GCD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Runloop/" rel="tag">Runloop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WWDC/" rel="tag">WWDC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E5%8D%A1%E9%A1%BF/" rel="tag">iOS卡顿</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E5%8E%9F%E7%90%86/" rel="tag">iOS原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E5%BA%95%E5%B1%82%E6%8A%80%E6%9C%AF/" rel="tag">iOS底层技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" rel="tag">iOS性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">iOS面试题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3/" rel="tag">苹果文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
     </div>
   </div>
 
@@ -214,7 +224,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Runloop/" style="font-size: 10px;">Runloop</a> <a href="/tags/TechTalks/" style="font-size: 10px;">TechTalks</a> <a href="/tags/iOS%E5%8D%A1%E9%A1%BF/" style="font-size: 10px;">iOS卡顿</a> <a href="/tags/iOS%E5%8E%9F%E7%90%86/" style="font-size: 10px;">iOS原理</a> <a href="/tags/iOS%E5%BA%95%E5%B1%82%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">iOS底层技术</a> <a href="/tags/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 10px;">iOS性能优化</a> <a href="/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 20px;">iOS面试题</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3/" style="font-size: 10px;">苹果文档</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
+      <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/Runloop/" style="font-size: 10px;">Runloop</a> <a href="/tags/WWDC/" style="font-size: 10px;">WWDC</a> <a href="/tags/iOS%E5%8D%A1%E9%A1%BF/" style="font-size: 10px;">iOS卡顿</a> <a href="/tags/iOS%E5%8E%9F%E7%90%86/" style="font-size: 10px;">iOS原理</a> <a href="/tags/iOS%E5%BA%95%E5%B1%82%E6%8A%80%E6%9C%AF/" style="font-size: 10px;">iOS底层技术</a> <a href="/tags/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" style="font-size: 10px;">iOS性能优化</a> <a href="/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 20px;">iOS面试题</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 10px;">多线程</a> <a href="/tags/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3/" style="font-size: 10px;">苹果文档</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 10px;">计算机网络</a>
     </div>
   </div>
 
@@ -240,7 +250,7 @@
           </li>
         
           <li>
-            <a href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/iOS%E5%8E%9F%E7%90%86-renderLoop/">iOS原理-renderLoop</a>
+            <a href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/">iOS原理-renderLoop</a>
           </li>
         
           <li>
