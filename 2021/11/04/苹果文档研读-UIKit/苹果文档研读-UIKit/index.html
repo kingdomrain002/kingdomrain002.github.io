@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Tag: iOS面试题 | Hexo</title>
+  <title>苹果文档研读-UIKit | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/iOS%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+  <meta name="description" content="Framework UIKit EssentialsUser InterfaceViews and ControlsView FundamentalsUIViewBecause view objects are the main way your application interacts with the user, they have a number of responsibilities.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="苹果文档研读-UIKit">
+<meta property="og:url" content="http://example.com/2021/11/04/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Framework UIKit EssentialsUser InterfaceViews and ControlsView FundamentalsUIViewBecause view objects are the main way your application interacts with the user, they have a number of responsibilities.">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-04T05:48:32.000Z">
+<meta property="article:modified_time" content="2021-11-05T07:14:41.921Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -69,77 +73,64 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-11-01T05:19:53.000Z" itemprop="datePublished">Nov 1</time>
+        <section id="main"><article id="post-苹果文档研读-UIKit/苹果文档研读-UIKit" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/04/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/" class="article-date">
+  <time class="dt-published" datetime="2021-11-04T05:48:32.000Z" itemprop="datePublished">2021-11-04</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/">iOS原理-renderLoop</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      苹果文档研读-UIKit
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/10/31/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%8D%A1%E9%A1%BF%E6%A3%80%E6%B5%8B%E5%92%8C%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-10-31T08:18:07.000Z" itemprop="datePublished">Oct 31</time>
-</a>
+    <div class="e-content article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/31/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%8D%A1%E9%A1%BF%E6%A3%80%E6%B5%8B%E5%92%8C%E4%BC%98%E5%8C%96/">iOS性能优化-卡顿检测和优化</a>
-    </h1>
-  
+        <p>Framework UIKit</p>
+<h1 id="Essentials"><a href="#Essentials" class="headerlink" title="Essentials"></a>Essentials</h1><h1 id="User-Interface"><a href="#User-Interface" class="headerlink" title="User Interface"></a>User Interface</h1><h2 id="Views-and-Controls"><a href="#Views-and-Controls" class="headerlink" title="Views and Controls"></a>Views and Controls</h2><h3 id="View-Fundamentals"><a href="#View-Fundamentals" class="headerlink" title="View Fundamentals"></a>View Fundamentals</h3><h4 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h4><p>Because view objects are the main way your application interacts with the user, they have a number of responsibilities. </p>
+<p>The View Drawing Cycle<br>视图绘制周期</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/10/29/HTTPS%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-  <time class="dt-published" datetime="2021-10-29T06:24:38.000Z" itemprop="datePublished">Oct 29</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/29/HTTPS%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/">HTTPS建立连接过程</a>
-    </h1>
-  
-
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/04/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/" data-id="ckvm7sew5000pa5eqeern8w4k" data-title="苹果文档研读-UIKit" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/11/05/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          苹果文档研读-ViewProgrammingGuideForiOS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/11/02/iOS%E4%BC%98%E5%8C%96-tableview%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">iOS优化-tableview优化</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>

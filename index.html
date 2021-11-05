@@ -71,6 +71,97 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-苹果文档研读-ViewProgrammingGuideForiOS/苹果文档研读-ViewProgrammingGuideForiOS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/05/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/" class="article-date">
+  <time class="dt-published" datetime="2021-11-05T08:08:01.000Z" itemprop="datePublished">2021-11-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/11/05/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/">苹果文档研读-ViewProgrammingGuideForiOS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="About-Windows-and-Views"><a href="#About-Windows-and-Views" class="headerlink" title="About Windows and Views"></a>About Windows and Views</h1><h2 id="At-a-Glance"><a href="#At-a-Glance" class="headerlink" title="At a Glance"></a>At a Glance</h2><p>Every application has at least one window and one view for presenting its content. </p>
+<p>每个应用程序至少有一个窗口和一个视图来显示其内容。</p>
+<h3 id="Animations-Provide-the-User-with-Visible-Feedback-for-Interface-Changes"><a href="#Animations-Provide-the-User-with-Visible-Feedback-for-Interface-Changes" class="headerlink" title="Animations Provide the User with Visible Feedback for Interface Changes"></a>Animations Provide the User with Visible Feedback for Interface Changes</h3><p>Animations provide users with visible feedback about changes to your view hierarchy.<br>动画为用户提供关于视图层次结构变化的可见反馈。</p>
+<p>我的思考<br>1.转场动画<br>2.app登录时候的动画效果</p>
+<h1 id="View-and-Window-Architecture"><a href="#View-and-Window-Architecture" class="headerlink" title="View and Window Architecture"></a>View and Window Architecture</h1><h2 id="View-Architecture-Fundamentals"><a href="#View-Architecture-Fundamentals" class="headerlink" title="View Architecture Fundamentals"></a>View Architecture Fundamentals</h2><p>知识点</p>
+<p>the backing store</p>
+<p>the relationship between views and layers</p>
+<p>The use of Core Animation layer objects has important implications for performance. </p>
+<h2 id="View-Hierarchies-and-Subview-Management"><a href="#View-Hierarchies-and-Subview-Management" class="headerlink" title="View Hierarchies and Subview Management"></a>View Hierarchies and Subview Management</h2><p>知识点<br>the responder chain</p>
+<h2 id="The-View-Drawing-Cycle"><a href="#The-View-Drawing-Cycle" class="headerlink" title="The View Drawing Cycle"></a>The View Drawing Cycle</h2><p>The UIView class uses an on-demand drawing model for presenting content. When a view first appears on the screen, the system asks it to draw its content. The system captures a snapshot of this content and uses that snapshot as the view’s visual representation. If you never change the view’s content, the view’s drawing code may never be called again. The snapshot image is reused for most operations involving the view. If you do change the content, you notify the system that the view has changed. The view then repeats the process of drawing the view and capturing a snapshot of the new results.</p>
+<p>UIView类使用按需绘制模型来呈现内容。当视图首次出现在屏幕上时，系统要求它绘制其内容。系统捕获该内容的快照，并使用该快照作为视图的可视化表示。如果您从未更改视图的内容，则视图的绘图代码可能永远不会被再次调用。涉及视图的大多数操作都重用快照映像。如果更改了内容，则通知系统视图已更改。然后，视图重复绘制视图和捕获新结果的快照的过程。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/WindowsViews/Conceptual/ViewPG_iPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009503-CH1-SW2">View Programming Guide for iOS</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/05/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/" data-id="ckvm7sew6000ra5eq1m5e76zn" data-title="苹果文档研读-ViewProgrammingGuideForiOS" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-苹果文档研读-UIKit/苹果文档研读-UIKit" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/04/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/" class="article-date">
+  <time class="dt-published" datetime="2021-11-04T05:48:32.000Z" itemprop="datePublished">2021-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/11/04/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/">苹果文档研读-UIKit</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Framework UIKit</p>
+<h1 id="Essentials"><a href="#Essentials" class="headerlink" title="Essentials"></a>Essentials</h1><h1 id="User-Interface"><a href="#User-Interface" class="headerlink" title="User Interface"></a>User Interface</h1><h2 id="Views-and-Controls"><a href="#Views-and-Controls" class="headerlink" title="Views and Controls"></a>Views and Controls</h2><h3 id="View-Fundamentals"><a href="#View-Fundamentals" class="headerlink" title="View Fundamentals"></a>View Fundamentals</h3><h4 id="UIView"><a href="#UIView" class="headerlink" title="UIView"></a>UIView</h4><p>Because view objects are the main way your application interacts with the user, they have a number of responsibilities. </p>
+<p>The View Drawing Cycle<br>视图绘制周期</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/04/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/" data-id="ckvm7sew5000pa5eqeern8w4k" data-title="苹果文档研读-UIKit" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-iOS优化-tableview优化" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/11/02/iOS%E4%BC%98%E5%8C%96-tableview%E4%BC%98%E5%8C%96/" class="article-date">
@@ -97,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/02/iOS%E4%BC%98%E5%8C%96-tableview%E4%BC%98%E5%8C%96/" data-id="ckvjbt5s40001p7eqd0m7aj58" data-title="iOS优化-tableview优化" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/02/iOS%E4%BC%98%E5%8C%96-tableview%E4%BC%98%E5%8C%96/" data-id="ckvm7sevo0001a5eqezph726t" data-title="iOS优化-tableview优化" class="article-share-link">Share</a>
       
       
       
@@ -150,12 +241,13 @@
 <h4 id="渲染准备-Render-prepare"><a href="#渲染准备-Render-prepare" class="headerlink" title="渲染准备(Render prepare)"></a>渲染准备(Render prepare)</h4><p>在下一个VSYNC中，渲染服务器处理命令，在渲染准备阶段，为在GPU上绘制做好准备。</p>
 <h4 id="渲染执行-Render-execute"><a href="#渲染执行-Render-execute" class="headerlink" title="渲染执行(Render execute)"></a>渲染执行(Render execute)</h4><p>在渲染执行阶段，GPU将用户界面的最后图像绘制出来。</p>
 <h4 id="展示阶段-Display"><a href="#展示阶段-Display" class="headerlink" title="展示阶段(Display)"></a>展示阶段(Display)</h4><p>在下一个VSYNC，这一帧将会呈现给用户。</p>
-<p>一个例子展示整个渲染循环的过程</p>
+<p>一个例子展示整个渲染循环的过程。</p>
 <p>布局是常见的性能问题，因为你的APP只有几毫秒来完成这项工作。</p>
 <p>每个阶段都有截止时间，截止时间就是下个VSync信号到来的时间。</p>
 <h3 id="卡顿的类型-the-type-hitchs）"><a href="#卡顿的类型-the-type-hitchs）" class="headerlink" title="卡顿的类型(the type hitchs）"></a>卡顿的类型(the type hitchs）</h3><p>1.提交卡顿(commit hitch)<br>2.渲染卡顿(render hitch)</p>
 <p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/theTypeHitchs.png" alt="the type hitchs"></p>
-<h4 id="提交卡顿"><a href="#提交卡顿" class="headerlink" title="提交卡顿"></a>提交卡顿</h4><p>提交卡顿发生在APP的处理中。提交卡顿就是app花费过长时间来处理或提交事件。<br><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/commitHitchLookLike.png" alt="commit hitch look like"></p>
+<h4 id="提交卡顿"><a href="#提交卡顿" class="headerlink" title="提交卡顿"></a>提交卡顿</h4><p>提交卡顿发生在APP的处理中。提交卡顿就是app花费过长时间来处理或提交事件。</p>
+<p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/commitHitchLookLike.png" alt="commit hitch look like"></p>
 <h4 id="渲染卡顿"><a href="#渲染卡顿" class="headerlink" title="渲染卡顿"></a>渲染卡顿</h4><p>渲染卡顿发生在渲染服务器中。这种现象发生在渲染服务器无法按时准备或者执行图层树时出现。<br><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/renderHitchLookLike.png" alt="render hitch look like"></p>
 <h3 id="测量卡顿时间-measuring-hitch-time"><a href="#测量卡顿时间-measuring-hitch-time" class="headerlink" title="测量卡顿时间 (measuring hitch time)"></a>测量卡顿时间 (measuring hitch time)</h3><p>为什么不用总的卡顿时间？</p>
 <p>苹果给出的测量卡顿的新指标<br>卡顿时间比（Htich time ratio）</p>
@@ -172,20 +264,22 @@
 <h3 id="使用instrement发现卡顿"><a href="#使用instrement发现卡顿" class="headerlink" title="使用instrement发现卡顿"></a>使用instrement发现卡顿</h3><p>结合自定义UI-手势密码组件进行实践。</p>
 <h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE1.png" alt="commit phase"></p>
 <p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%8F%90%E4%BA%A4%E9%98%B6%E6%AE%B5%E7%9A%84%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE2.png" alt="commit phase"></p>
+<p>自己总结</p>
 <h2 id="渲染阶段的卡顿"><a href="#渲染阶段的卡顿" class="headerlink" title="渲染阶段的卡顿"></a>渲染阶段的卡顿</h2><h3 id="渲染阶段"><a href="#渲染阶段" class="headerlink" title="渲染阶段"></a>渲染阶段</h3><p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E6%B8%B2%E6%9F%93%E9%98%B6%E6%AE%B5.png" alt="commit phase"></p>
 <p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png" alt="commit phase"><br>离屏通道是指图形处理器必须先在其他地方渲染一个图层然后再将其复制过来。</p>
 <p>渲染通道使用太多，就会导致卡顿。</p>
 <p><img src="/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/%E8%A7%A6%E5%8F%91%E7%A6%BB%E5%B1%8F%E6%B8%B2%E6%9F%93.png" alt="commit phase"><br>有四种主要类型的离屏通道可以优化:</p>
 <p>阴影<br>蒙板<br>圆角矩形<br>视觉效果</p>
-<h3 id="使用instrement发现卡顿-1"><a href="#使用instrement发现卡顿-1" class="headerlink" title="使用instrement发现卡顿"></a>使用instrement发现卡顿</h3><p>结合项目消息中心组件的优化</p>
-<h3 id="建议-1"><a href="#建议-1" class="headerlink" title="建议"></a>建议</h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10855">Explore UI animation hitches and the render loop</a></p>
+<h3 id="使用instrement发现卡顿-1"><a href="#使用instrement发现卡顿-1" class="headerlink" title="使用instrement发现卡顿"></a>使用instrement发现卡顿</h3><p>结合项目消息中心组件进行实践</p>
+<h3 id="建议-1"><a href="#建议-1" class="headerlink" title="建议"></a>建议</h3><p>自己总结</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10855">Explore UI animation hitches and the render loop</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10856">Find and fix hitches in the commit phase</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.apple.com/videos/play/tech-talks/10857">Demystify and eliminate hitches in the render phase</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/" data-id="ckvjbt5s80003p7eqdgzn2ao3" data-title="iOS原理-renderLoop" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/01/iOS%E5%8E%9F%E7%90%86-renderLoop/" data-id="ckvmftkw00000kbeqe81s601f" data-title="iOS原理-renderLoop" class="article-share-link">Share</a>
       
       
       
@@ -225,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/01/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-Runloop/" data-id="ckvjbt5sc0008p7eqgjws6oht" data-title="苹果文档研读-Runloop" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/01/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-Runloop/" data-id="ckvm7sevu0007a5eqco6g1q3f" data-title="苹果文档研读-Runloop" class="article-share-link">Share</a>
       
       
       
@@ -282,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/31/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%8D%A1%E9%A1%BF%E6%A3%80%E6%B5%8B%E5%92%8C%E4%BC%98%E5%8C%96/" data-id="ckvjbt5sa0005p7eqa8yr4xf7" data-title="iOS性能优化-卡顿检测和优化" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/31/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%8D%A1%E9%A1%BF%E6%A3%80%E6%B5%8B%E5%92%8C%E4%BC%98%E5%8C%96/" data-id="ckvm7sevr0003a5eqd1yocyuv" data-title="iOS性能优化-卡顿检测和优化" class="article-share-link">Share</a>
       
       
       
@@ -334,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/30/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-GCD/" data-id="ckvjbt5s90004p7eq2xceac1s" data-title="苹果文档研读-GCD" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/30/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-GCD/" data-id="ckvm7sevs0004a5eqh5qn2kvx" data-title="苹果文档研读-GCD" class="article-share-link">Share</a>
       
       
       
@@ -374,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/29/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-KVC/" data-id="ckvjbt5sb0007p7eq40yig0ca" data-title="苹果文档研读-KVC" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/29/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-KVC/" data-id="ckvm7sevt0005a5eq1148bqan" data-title="苹果文档研读-KVC" class="article-share-link">Share</a>
       
       
       
@@ -426,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/10/29/HTTPS%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/" data-id="ckvjbt5rw0000p7eq0bw0bqgv" data-title="HTTPS建立连接过程" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/10/29/HTTPS%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B/" data-id="ckvm7sevg0000a5eqa6q89en0" data-title="HTTPS建立连接过程" class="article-share-link">Share</a>
       
       
       
@@ -485,6 +579,14 @@
       <ul>
         
           <li>
+            <a href="/2021/11/05/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-ViewProgrammingGuideForiOS/">苹果文档研读-ViewProgrammingGuideForiOS</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/04/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-UIKit/">苹果文档研读-UIKit</a>
+          </li>
+        
+          <li>
             <a href="/2021/11/02/iOS%E4%BC%98%E5%8C%96-tableview%E4%BC%98%E5%8C%96/">iOS优化-tableview优化</a>
           </li>
         
@@ -494,14 +596,6 @@
         
           <li>
             <a href="/2021/11/01/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-Runloop/">苹果文档研读-Runloop</a>
-          </li>
-        
-          <li>
-            <a href="/2021/10/31/iOS%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E5%8D%A1%E9%A1%BF%E6%A3%80%E6%B5%8B%E5%92%8C%E4%BC%98%E5%8C%96/">iOS性能优化-卡顿检测和优化</a>
-          </li>
-        
-          <li>
-            <a href="/2021/10/30/%E8%8B%B9%E6%9E%9C%E6%96%87%E6%A1%A3%E7%A0%94%E8%AF%BB-GCD/">苹果文档研读-GCD</a>
           </li>
         
       </ul>
